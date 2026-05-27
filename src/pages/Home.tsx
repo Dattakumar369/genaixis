@@ -11,7 +11,6 @@ import {
   Lock,
   Network,
   Shield,
-  Sparkles,
   Workflow,
 } from 'lucide-react';
 import SectionHeader from '../components/SectionHeader';
@@ -172,11 +171,6 @@ function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
         >
-          <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-sm font-medium text-cyan-100">
-            <Sparkles className="h-4 w-4" />
-            AI-driven software and product engineering
-          </div>
-
           <h1 className="max-w-4xl text-4xl font-bold leading-[1.03] text-white sm:text-5xl lg:text-6xl xl:text-7xl">
             AI Product Engineering for Ambitious Businesses
           </h1>
