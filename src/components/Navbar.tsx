@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Zap } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const navLinks = [
   { label: 'Home', path: '/' },
@@ -39,10 +39,9 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2.5 group">
-            <div className="relative w-9 h-9 flex items-center justify-center">
-              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg opacity-20 group-hover:opacity-40 transition-opacity" />
-              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg blur-lg opacity-30 group-hover:opacity-60 transition-opacity" />
-              <Zap className="w-5 h-5 text-cyan-400 relative z-10" fill="currentColor" />
+            <div className="relative h-10 w-10">
+              <div className="absolute inset-0 rounded-xl bg-cyan-400/20 blur-lg opacity-50 transition-opacity group-hover:opacity-80" />
+              <img src="/genaixis-logo.svg" alt="GENAIXIS logo" className="relative h-full w-full rounded-xl object-contain" />
             </div>
             <div>
               <span className="text-lg font-bold font-display tracking-tight">

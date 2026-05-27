@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Zap, Mail, MapPin, Twitter, Linkedin, Github, ArrowUpRight } from 'lucide-react';
+import { Mail, MapPin, Twitter, Linkedin, Github, ArrowUpRight } from 'lucide-react';
 
 const footerLinks = {
   Company: [
@@ -36,9 +36,9 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center gap-2.5 mb-5">
-              <div className="relative w-9 h-9 flex items-center justify-center">
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg opacity-20" />
-                <Zap className="w-5 h-5 text-cyan-400 relative z-10" fill="currentColor" />
+              <div className="relative h-10 w-10">
+                <div className="absolute inset-0 rounded-xl bg-cyan-400/20 blur-lg opacity-50" />
+                <img src="/genaixis-logo.svg" alt="GENAIXIS logo" className="relative h-full w-full rounded-xl object-contain" />
               </div>
               <div>
                 <span className="text-lg font-bold font-display">
