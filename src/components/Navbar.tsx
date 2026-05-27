@@ -39,7 +39,7 @@ export default function Navbar() {
         <div className="flex h-16 items-center justify-between md:h-20">
           {/* Logo */}
           <Link to="/" className="group flex items-center">
-            <img src="/genaixis-wordmark.svg" alt="GENAIXIS" className="brand-logo-motion h-10 w-[168px] object-contain sm:h-11 sm:w-[196px]" />
+            <img src="/genaixis-full-logo.svg" alt="GENAIXIS" className="brand-logo-motion h-10 w-[190px] object-contain sm:h-11 sm:w-[220px]" />
           </Link>
 
           {/* Desktop Nav */}

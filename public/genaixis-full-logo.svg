@@ -1,0 +1,13 @@
+<svg width="860" height="220" viewBox="0 0 860 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M34 22H81C96 22 107 27 118 38L144 65L170 38C181 27 192 22 207 22H251L182 93C170 106 159 110 141 110H120C104 110 92 106 80 93L34 22Z" fill="url(#top)"/>
+  <path d="M34 191H79C96 191 107 187 119 174L144 148L169 174C182 187 193 191 210 191H251L182 120C170 108 159 103 141 103H120C103 103 92 108 80 120L34 191Z" fill="#F8FAFC"/>
+  <path d="M125 110L144 92L163 110L144 128L125 110Z" fill="#050812"/>
+  <text x="300" y="141" fill="#F8FAFC" font-family="Inter, Arial, Helvetica, sans-serif" font-size="86" font-weight="800" letter-spacing="10">GENAIXIS</text>
+  <defs>
+    <linearGradient id="top" x1="34" y1="22" x2="251" y2="112" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2563EB"/>
+      <stop offset="0.52" stop-color="#4F46E5"/>
+      <stop offset="1" stop-color="#A855F7"/>
+    </linearGradient>
+  </defs>
+</svg>
