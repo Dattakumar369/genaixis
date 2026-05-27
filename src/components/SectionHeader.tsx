@@ -31,7 +31,7 @@ export default function SectionHeader({
           </span>
         </div>
       )}
-      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display text-white leading-tight">
+      <h2 className="text-3xl font-bold font-display leading-tight text-white sm:text-4xl lg:text-5xl">
         {titleHighlight ? (
           <>
             {title}{' '}
@@ -42,7 +42,7 @@ export default function SectionHeader({
         )}
       </h2>
       {description && (
-        <p className={`mt-4 text-slate-400 text-base sm:text-lg leading-relaxed ${centered ? 'max-w-2xl mx-auto' : 'max-w-2xl'}`}>
+        <p className={`mt-4 text-sm leading-7 text-slate-400 sm:text-lg sm:leading-relaxed ${centered ? 'max-w-2xl mx-auto' : 'max-w-2xl'}`}>
           {description}
         </p>
       )}

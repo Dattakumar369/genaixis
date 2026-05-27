@@ -101,7 +101,7 @@ function CareersHero() {
             Careers at GENAIXIS
           </div>
 
-          <h1 className="max-w-4xl text-4xl font-bold leading-[1.03] text-white sm:text-5xl lg:text-6xl xl:text-7xl">
+          <h1 className="max-w-4xl text-4xl font-bold leading-[1.05] text-white sm:text-5xl lg:text-6xl xl:text-7xl">
             Build What the Next Generation of Businesses Will Use
           </h1>
 
@@ -131,7 +131,7 @@ function CareersHero() {
           initial={{ opacity: 0, x: 32 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.75, delay: 0.1 }}
-          className="relative min-h-[540px]"
+          className="relative min-h-[500px] sm:min-h-[540px]"
         >
           <div className="absolute inset-0 rounded-[2rem] bg-[radial-gradient(circle_at_50%_38%,rgba(34,211,238,0.34),rgba(16,185,129,0.14)_36%,transparent_72%)] blur-2xl" />
           <div className="absolute inset-0 overflow-hidden rounded-[2rem] border border-white/10 bg-[#07101a]/92 shadow-2xl shadow-cyan-950/30">

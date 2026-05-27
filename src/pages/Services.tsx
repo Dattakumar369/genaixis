@@ -66,7 +66,7 @@ function TechnologyVisual() {
       initial={{ opacity: 0, x: 30 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.75 }}
-      className="scene-3d relative min-h-[500px]"
+      className="scene-3d relative min-h-[430px] sm:min-h-[500px]"
     >
       <div className="absolute inset-0 rounded-[2rem] bg-[radial-gradient(circle_at_50%_40%,rgba(34,211,238,0.32),rgba(16,185,129,0.13)_36%,transparent_72%)] blur-2xl" />
       <div className="absolute inset-0 overflow-hidden rounded-[2rem] border border-white/10 bg-[#07101a]/90 shadow-2xl shadow-cyan-950/30">
@@ -138,7 +138,7 @@ export default function Services() {
               <Zap className="h-4 w-4" />
               Technology behind GENAIXIS products
             </div>
-            <h1 className="max-w-4xl text-4xl font-bold leading-[1.04] text-white sm:text-5xl lg:text-6xl">
+            <h1 className="max-w-4xl text-4xl font-bold leading-[1.05] text-white sm:text-5xl lg:text-6xl">
               A product technology system for AI-first software.
             </h1>
             <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-300">

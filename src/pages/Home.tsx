@@ -94,7 +94,7 @@ function ProductShowcase() {
       initial={{ opacity: 0, x: 36 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.8, delay: 0.15 }}
-      className="scene-3d relative min-h-[560px]"
+      className="scene-3d relative min-h-[390px] sm:min-h-[500px] lg:min-h-[560px]"
     >
       <div className="absolute inset-0 rounded-[2.25rem] bg-[radial-gradient(circle_at_50%_42%,rgba(34,211,238,0.42),rgba(16,185,129,0.18)_34%,rgba(8,15,28,0)_72%)] blur-2xl" />
       <div className="absolute inset-0 overflow-hidden rounded-[2rem] border border-white/10 bg-[#071321]/88 shadow-2xl shadow-cyan-950/40">
@@ -104,17 +104,17 @@ function ProductShowcase() {
         <div className="data-stream absolute bottom-28 right-8 h-px w-80 bg-gradient-to-r from-transparent via-emerald-200/60 to-transparent" style={{ animationDelay: '1.2s' }} />
       </div>
 
-      <div className="absolute left-1/2 top-[42%] h-[380px] w-[380px] -translate-x-1/2 -translate-y-1/2">
+      <div className="absolute left-1/2 top-[42%] h-[260px] w-[260px] -translate-x-1/2 -translate-y-1/2 sm:h-[340px] sm:w-[340px] lg:h-[380px] lg:w-[380px]">
         <div className="neural-orb absolute inset-0 rounded-full opacity-95" />
-        <div className="orbit-3d-center absolute left-1/2 top-1/2 h-[350px] w-[350px] rounded-full border border-cyan-200/22">
+        <div className="orbit-3d-center absolute left-1/2 top-1/2 h-[240px] w-[240px] rounded-full border border-cyan-200/22 sm:h-[310px] sm:w-[310px] lg:h-[350px] lg:w-[350px]">
           <span className="absolute left-1/2 top-0 h-3.5 w-3.5 -translate-x-1/2 rounded-full bg-cyan-100 shadow-lg shadow-cyan-200/60" />
         </div>
-        <div className="orbit-3d-center absolute left-1/2 top-1/2 h-[270px] w-[270px] rounded-full border border-emerald-200/18" style={{ animationDirection: 'reverse', animationDuration: '18s' }}>
+        <div className="orbit-3d-center absolute left-1/2 top-1/2 h-[190px] w-[190px] rounded-full border border-emerald-200/18 sm:h-[245px] sm:w-[245px] lg:h-[270px] lg:w-[270px]" style={{ animationDirection: 'reverse', animationDuration: '18s' }}>
           <span className="absolute bottom-0 left-1/2 h-3 w-3 -translate-x-1/2 rounded-full bg-emerald-100 shadow-lg shadow-emerald-200/50" />
         </div>
       </div>
 
-      <div className="platform-3d absolute left-1/2 top-[43%] h-60 w-60 -translate-x-1/2 -translate-y-1/2">
+      <div className="platform-3d absolute left-1/2 top-[43%] h-40 w-40 -translate-x-1/2 -translate-y-1/2 sm:h-52 sm:w-52 lg:h-60 lg:w-60">
         <div className="platform-layer layer-back" />
         <div className="platform-layer layer-mid">
           <div className="absolute left-9 top-9 h-2 w-28 rounded-full bg-cyan-100/60" />
@@ -141,11 +141,11 @@ function ProductShowcase() {
         </motion.div>
       ))}
 
-      <div className="absolute bottom-7 left-1/2 z-20 w-[78%] -translate-x-1/2 rounded-2xl border border-cyan-200/15 bg-[#07111c]/95 p-5 shadow-2xl shadow-cyan-950/25 backdrop-blur">
+      <div className="absolute bottom-5 left-1/2 z-20 w-[88%] -translate-x-1/2 rounded-2xl border border-cyan-200/15 bg-[#07111c]/95 p-4 shadow-2xl shadow-cyan-950/25 backdrop-blur sm:bottom-7 sm:w-[78%] sm:p-5">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-200">AI Product Engineering</p>
-            <p className="mt-1 text-sm text-slate-300">Intelligent platforms, automation systems, and SaaS products</p>
+            <p className="mt-1 text-xs leading-5 text-slate-300 sm:text-sm">Intelligent platforms, automation systems, and SaaS products</p>
           </div>
           <div className="flex items-center gap-2 rounded-full border border-emerald-300/20 bg-emerald-300/10 px-3 py-1 text-xs font-semibold text-emerald-200">
             <span className="h-2 w-2 rounded-full bg-emerald-200 shadow-lg shadow-emerald-200/50" />
@@ -159,30 +159,30 @@ function ProductShowcase() {
 
 function Hero() {
   return (
-    <section className="relative overflow-hidden pt-36 pb-20 lg:pt-40">
+    <section className="relative overflow-hidden pb-16 pt-28 sm:pb-20 sm:pt-32 lg:pt-40">
       <div className="absolute inset-0 grid-pattern opacity-35" />
       <div className="hero-aurora absolute inset-0" />
       <div className="hero-particles absolute inset-0 opacity-70" />
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/30 to-transparent" />
 
-      <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-[0.98fr_1.02fr] lg:px-8">
+      <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 sm:gap-14 sm:px-6 lg:grid-cols-[0.98fr_1.02fr] lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
         >
-          <h1 className="max-w-4xl text-4xl font-bold leading-[1.03] text-white sm:text-5xl lg:text-6xl xl:text-7xl">
+          <h1 className="max-w-4xl text-4xl font-bold leading-[1.05] text-white sm:text-5xl lg:text-6xl xl:text-7xl">
             AI Product Engineering for Ambitious Businesses
           </h1>
 
-          <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-300">
+          <p className="mt-6 max-w-2xl text-base leading-7 text-slate-300 sm:mt-7 sm:text-lg sm:leading-8">
             GENAIXIS designs and builds premium AI-powered software, SaaS platforms, automation systems, and enterprise-grade digital products for companies that want to move faster.
           </p>
-          <p className="mt-4 max-w-2xl leading-7 text-slate-400">
+          <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-400 sm:text-base">
             Strategy, product design, cloud engineering, and intelligent automation come together here so clients get more than code: they get a launch-ready technology partner.
           </p>
 
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-8 flex flex-col gap-3 sm:mt-9 sm:flex-row">
             <Link
               to="/products"
               className="inline-flex items-center justify-center gap-2 rounded-xl bg-cyan-300 px-6 py-3.5 text-sm font-bold text-slate-950 shadow-lg shadow-cyan-500/20 transition hover:bg-white"

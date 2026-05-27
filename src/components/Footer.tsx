@@ -36,7 +36,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link to="/" className="mb-5 flex items-center">
-              <img src="/genaixis-wordmark.svg" alt="GENAIXIS" className="h-12 w-[214px] object-contain" />
+              <img src="/genaixis-wordmark.svg" alt="GENAIXIS" className="h-10 w-[178px] object-contain sm:h-12 sm:w-[214px]" />
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed mb-6 max-w-xs">
               Building intelligent digital products for the AI era through AI, automation, SaaS platforms, and scalable software engineering.
