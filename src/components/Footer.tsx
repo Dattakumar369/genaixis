@@ -112,10 +112,10 @@ export default function Footer() {
           <p className="text-xs text-slate-500">
             &copy; {new Date().getFullYear()} GENAIXIS LABS PRIVATE LIMITED. All rights reserved.
           </p>
-          <div className="flex items-center gap-6">
-            <a href="#" className="text-xs text-slate-500 hover:text-slate-300 transition-colors">Privacy Policy</a>
-            <a href="#" className="text-xs text-slate-500 hover:text-slate-300 transition-colors">Terms of Service</a>
-            <a href="#" className="text-xs text-slate-500 hover:text-slate-300 transition-colors">Cookie Policy</a>
+          <div className="flex flex-wrap items-center justify-center gap-6">
+            <Link to="/privacy-policy" className="text-xs text-slate-500 hover:text-slate-300 transition-colors">Privacy Policy</Link>
+            <Link to="/terms-and-conditions" className="text-xs text-slate-500 hover:text-slate-300 transition-colors">Terms and Conditions</Link>
+            <Link to="/cookie-policy" className="text-xs text-slate-500 hover:text-slate-300 transition-colors">Cookie Policy</Link>
           </div>
         </div>
       </div>

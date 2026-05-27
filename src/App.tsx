@@ -7,6 +7,7 @@ import Products from './pages/Products';
 import Services from './pages/Services';
 import Careers from './pages/Careers';
 import Contact from './pages/Contact';
+import { CookiePolicy, PrivacyPolicy, TermsAndConditions } from './pages/LegalPages';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
@@ -30,6 +31,9 @@ function AppContent() {
         <Route path="/services" element={<Services />} />
         <Route path="/careers" element={<Careers />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+        <Route path="/cookie-policy" element={<CookiePolicy />} />
       </Routes>
       <Footer />
     </div>
