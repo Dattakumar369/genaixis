@@ -35,19 +35,8 @@ export default function Footer() {
         <div className="py-16 grid grid-cols-1 lg:grid-cols-5 gap-12">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <Link to="/" className="flex items-center gap-2.5 mb-5">
-              <div className="relative h-10 w-10">
-                <div className="absolute inset-0 rounded-xl bg-cyan-400/20 blur-lg opacity-50" />
-                <img src="/genaixis-logo.svg" alt="GENAIXIS logo" className="relative h-full w-full rounded-xl object-contain" />
-              </div>
-              <div>
-                <span className="text-lg font-bold font-display">
-                  <span className="text-gradient">GENAIXIS</span>
-                </span>
-                <span className="block text-[9px] text-slate-500 tracking-[0.2em] uppercase font-medium -mt-1">
-                  AI PRODUCT ENGINEERING
-                </span>
-              </div>
+            <Link to="/" className="mb-5 flex items-center">
+              <img src="/genaixis-wordmark.svg" alt="GENAIXIS" className="h-12 w-[214px] object-contain" />
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed mb-6 max-w-xs">
               Building intelligent digital products for the AI era through AI, automation, SaaS platforms, and scalable software engineering.

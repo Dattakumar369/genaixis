@@ -38,19 +38,8 @@ export default function Navbar() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2.5 group">
-            <div className="relative h-10 w-10">
-              <div className="absolute inset-0 rounded-xl bg-cyan-400/20 blur-lg opacity-50 transition-opacity group-hover:opacity-80" />
-              <img src="/genaixis-logo.svg" alt="GENAIXIS logo" className="relative h-full w-full rounded-xl object-contain" />
-            </div>
-            <div>
-              <span className="text-lg font-bold font-display tracking-tight">
-                <span className="text-gradient">GENAIXIS</span>
-              </span>
-              <span className="hidden sm:block text-[9px] text-slate-500 tracking-[0.2em] uppercase font-medium -mt-1">
-                AI PRODUCT ENGINEERING
-              </span>
-            </div>
+          <Link to="/" className="group flex items-center">
+            <img src="/genaixis-wordmark.svg" alt="GENAIXIS" className="h-10 w-[178px] object-contain sm:h-11 sm:w-[196px]" />
           </Link>
 
           {/* Desktop Nav */}
