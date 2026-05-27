@@ -97,7 +97,7 @@ function ProductShowcase() {
       className="scene-3d relative min-h-[390px] sm:min-h-[500px] lg:min-h-[560px]"
     >
       <div className="absolute inset-0 rounded-[2.25rem] bg-[radial-gradient(circle_at_50%_42%,rgba(34,211,238,0.42),rgba(16,185,129,0.18)_34%,rgba(8,15,28,0)_72%)] blur-2xl" />
-      <div className="absolute inset-0 overflow-hidden rounded-[2rem] border border-white/10 bg-[#071321]/88 shadow-2xl shadow-cyan-950/40">
+      <div className="premium-card absolute inset-0 overflow-hidden rounded-[2rem] border border-white/10 bg-[#071321]/88 shadow-2xl shadow-cyan-950/40">
         <div className="absolute inset-0 grid-pattern opacity-35" />
         <div className="absolute inset-x-10 top-10 h-px bg-gradient-to-r from-transparent via-cyan-200/50 to-transparent" />
         <div className="data-stream absolute left-8 top-24 h-px w-72 bg-gradient-to-r from-transparent via-cyan-200/70 to-transparent" />
@@ -171,7 +171,7 @@ function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
         >
-          <h1 className="max-w-4xl text-4xl font-bold leading-[1.05] text-white sm:text-5xl lg:text-6xl xl:text-7xl">
+          <h1 className="reveal-soft max-w-4xl text-4xl font-bold leading-[1.05] text-white sm:text-5xl lg:text-6xl xl:text-7xl">
             AI Product Engineering for Ambitious Businesses
           </h1>
 
@@ -185,7 +185,7 @@ function Hero() {
           <div className="mt-8 flex flex-col gap-3 sm:mt-9 sm:flex-row">
             <Link
               to="/products"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-cyan-300 px-6 py-3.5 text-sm font-bold text-slate-950 shadow-lg shadow-cyan-500/20 transition hover:bg-white"
+              className="premium-button inline-flex items-center justify-center gap-2 rounded-xl bg-cyan-300 px-6 py-3.5 text-sm font-bold text-slate-950 shadow-lg shadow-cyan-500/20 transition hover:bg-white"
             >
               View Capabilities
               <ArrowRight className="h-4 w-4" />
@@ -211,7 +211,7 @@ function StandardsStrip() {
     <section className="border-y border-white/8 bg-[#07101a] py-8">
       <div className="mx-auto grid max-w-7xl gap-3 px-4 sm:px-6 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
         {standards.map((item) => (
-          <div key={item.label} className="flex items-center gap-3 rounded-xl border border-white/8 bg-white/[0.035] p-4">
+          <div key={item.label} className="premium-card flex items-center gap-3 rounded-xl border border-white/8 bg-white/[0.035] p-4 transition hover:-translate-y-0.5 hover:border-cyan-300/20">
             <item.icon className="h-5 w-5 text-cyan-300" />
             <span className="text-sm font-semibold text-slate-200">{item.label}</span>
           </div>
@@ -264,7 +264,7 @@ function WhatWeDo() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.08, duration: 0.55 }}
-              className="group rounded-2xl border border-white/8 bg-white/[0.035] p-6 transition hover:-translate-y-1 hover:border-cyan-300/25 hover:bg-white/[0.055]"
+              className="premium-card group rounded-2xl border border-white/8 bg-white/[0.035] p-6 transition hover:-translate-y-1 hover:border-cyan-300/25 hover:bg-white/[0.055]"
             >
               <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-cyan-300/20 bg-cyan-300/10">
                 <item.icon className="h-5 w-5 text-cyan-300" />
@@ -288,9 +288,9 @@ function ClientProof() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.65 }}
-          className="overflow-hidden rounded-2xl border border-white/10 bg-[#091522]"
+          className="premium-card overflow-hidden rounded-2xl border border-white/10 bg-[#091522]"
         >
-          <div className="relative min-h-64 border-b border-white/10 bg-gradient-to-br from-cyan-300/16 via-slate-900 to-emerald-300/10 p-6">
+          <div className="animated-gradient-surface relative min-h-64 border-b border-white/10 bg-gradient-to-br from-cyan-300/16 via-slate-900 to-emerald-300/10 p-6">
             <div className="absolute inset-0 grid-pattern opacity-30" />
             <div className="relative flex items-center justify-between gap-4">
               <div>
@@ -303,7 +303,7 @@ function ClientProof() {
             </div>
             <div className="relative mt-9 grid gap-3 sm:grid-cols-3">
               {proofPoints.map((item) => (
-                <div key={item.label} className="rounded-xl border border-white/10 bg-[#07111c]/80 p-4">
+                <div key={item.label} className="premium-card rounded-xl border border-white/10 bg-[#07111c]/80 p-4 transition hover:-translate-y-0.5 hover:border-cyan-200/25">
                   <p className="text-2xl font-bold text-cyan-100">{item.value}</p>
                   <p className="mt-2 text-sm font-semibold text-white">{item.label}</p>
                 </div>
@@ -313,7 +313,7 @@ function ClientProof() {
 
           <div className="grid gap-4 p-6">
             {proofPoints.map((item) => (
-              <div key={item.desc} className="flex gap-3 rounded-xl border border-white/8 bg-white/[0.035] p-4">
+              <div key={item.desc} className="premium-card flex gap-3 rounded-xl border border-white/8 bg-white/[0.035] p-4 transition hover:-translate-y-0.5 hover:border-emerald-300/20">
                 <CheckCircle2 className="mt-1 h-4 w-4 flex-none text-emerald-300" />
                 <div>
                   <p className="text-sm font-semibold text-slate-100">{item.label}</p>
@@ -371,7 +371,7 @@ function Process() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.08, duration: 0.55 }}
-              className="rounded-2xl border border-white/8 bg-white/[0.035] p-7"
+              className="premium-card rounded-2xl border border-white/8 bg-white/[0.035] p-7 transition hover:-translate-y-1 hover:border-cyan-300/22"
             >
               <p className="text-sm font-bold text-cyan-300">{item.step}</p>
               <h3 className="mt-5 text-xl font-bold text-white">{item.title}</h3>
@@ -389,7 +389,7 @@ function VisionAndWhy() {
     <section className="relative py-24">
       <div className="absolute inset-0 grid-pattern opacity-25" />
       <div className="relative mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[1fr_0.9fr] lg:px-8">
-        <div className="rounded-2xl border border-white/10 bg-white/[0.035] p-8 sm:p-10">
+        <div className="premium-card rounded-2xl border border-white/10 bg-white/[0.035] p-8 transition hover:-translate-y-1 hover:border-amber-200/20 sm:p-10">
           <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-amber-300/10">
             <Network className="h-6 w-6 text-amber-300" />
           </div>
@@ -407,7 +407,7 @@ function VisionAndWhy() {
           <h2 className="mt-4 text-3xl font-bold text-white">Built like a product company.</h2>
           <div className="mt-7 space-y-3">
             {reasons.map((reason) => (
-              <div key={reason} className="flex items-center gap-3 rounded-xl border border-white/8 bg-white/[0.035] p-4">
+              <div key={reason} className="premium-card flex items-center gap-3 rounded-xl border border-white/8 bg-white/[0.035] p-4 transition hover:-translate-y-0.5 hover:border-cyan-300/20">
                 <Cpu className="h-5 w-5 text-cyan-300" />
                 <span className="text-sm font-medium text-slate-200">{reason}</span>
               </div>
@@ -424,7 +424,7 @@ function TechStrip() {
     <section className="border-y border-white/8 bg-[#07101a] py-10">
       <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-3 px-4 sm:px-6 lg:px-8">
         {stack.map((item) => (
-          <span key={item} className="rounded-full border border-white/10 bg-white/[0.035] px-4 py-2 text-sm font-medium text-slate-300">
+          <span key={item} className="premium-card rounded-full border border-white/10 bg-white/[0.035] px-4 py-2 text-sm font-medium text-slate-300 transition hover:-translate-y-0.5 hover:border-cyan-300/25 hover:text-white">
             {item}
           </span>
         ))}
@@ -447,7 +447,7 @@ function ContactCTA() {
         <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
           <Link
             to="/contact"
-            className="inline-flex items-center justify-center gap-2 rounded-xl bg-cyan-300 px-7 py-3.5 text-sm font-bold text-slate-950 transition hover:bg-white"
+            className="premium-button inline-flex items-center justify-center gap-2 rounded-xl bg-cyan-300 px-7 py-3.5 text-sm font-bold text-slate-950 transition hover:bg-white"
           >
             Contact Us
             <ArrowRight className="h-4 w-4" />

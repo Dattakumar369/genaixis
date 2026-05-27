@@ -66,7 +66,7 @@ export default function Products() {
       >
         <Link
           to="/contact"
-          className="inline-flex items-center gap-2 rounded-xl bg-cyan-300 px-6 py-3 text-sm font-bold text-slate-950 transition hover:bg-white"
+          className="premium-button inline-flex items-center gap-2 rounded-xl bg-cyan-300 px-6 py-3 text-sm font-bold text-slate-950 transition hover:bg-white"
         >
           Discuss a Product
           <ArrowRight className="h-4 w-4" />
@@ -81,7 +81,7 @@ export default function Products() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.65 }}
-            className="rounded-2xl border border-emerald-300/15 bg-[#07101a] p-7"
+            className="premium-card rounded-2xl border border-emerald-300/15 bg-[#07101a] p-7"
           >
             <a
               href="https://www.learnstackhub.com/"
@@ -99,7 +99,7 @@ export default function Products() {
             </p>
             <div className="mt-7 grid gap-3 sm:grid-cols-2">
               {learnStackHub.map((feature) => (
-                <div key={feature} className="flex items-start gap-3 rounded-xl border border-white/8 bg-white/[0.035] p-3">
+                <div key={feature} className="premium-card flex items-start gap-3 rounded-xl border border-white/8 bg-white/[0.035] p-3 transition hover:-translate-y-0.5 hover:border-emerald-300/20">
                   <CheckCircle2 className="mt-0.5 h-4 w-4 flex-none text-emerald-300" />
                   <span className="text-sm text-slate-200">{feature}</span>
                 </div>
@@ -123,7 +123,7 @@ export default function Products() {
             transition={{ duration: 0.65 }}
             className="space-y-5"
           >
-            <div className="rounded-2xl border border-white/10 bg-white/[0.035] p-7">
+            <div className="premium-card rounded-2xl border border-white/10 bg-white/[0.035] p-7">
               <Brain className="h-7 w-7 text-cyan-300" />
               <h3 className="mt-5 text-2xl font-bold text-white">AI Mock Interview System</h3>
               <p className="mt-4 leading-7 text-slate-400">
@@ -137,7 +137,7 @@ export default function Products() {
                 { icon: Workflow, label: 'Automated scoring pipelines' },
                 { icon: LineChart, label: 'Performance analytics layer' },
               ].map((item) => (
-                <div key={item.label} className="rounded-2xl border border-white/8 bg-white/[0.035] p-5">
+                <div key={item.label} className="premium-card rounded-2xl border border-white/8 bg-white/[0.035] p-5 transition hover:-translate-y-0.5 hover:border-cyan-300/20">
                   <item.icon className="h-5 w-5 text-cyan-300" />
                   <p className="mt-4 text-sm font-semibold text-slate-200">{item.label}</p>
                 </div>
@@ -164,7 +164,7 @@ export default function Products() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.08, duration: 0.55 }}
-                className="rounded-2xl border border-white/8 bg-white/[0.035] p-6"
+                className="premium-card rounded-2xl border border-white/8 bg-white/[0.035] p-6 transition hover:-translate-y-1 hover:border-cyan-300/22"
               >
                 <item.icon className="h-6 w-6 text-cyan-300" />
                 <h3 className="mt-5 text-lg font-semibold text-white">{item.title}</h3>
@@ -185,7 +185,7 @@ export default function Products() {
           </p>
           <Link
             to="/contact"
-            className="mt-8 inline-flex items-center gap-2 rounded-xl bg-cyan-300 px-7 py-3.5 text-sm font-bold text-slate-950 transition hover:bg-white"
+            className="premium-button mt-8 inline-flex items-center gap-2 rounded-xl bg-cyan-300 px-7 py-3.5 text-sm font-bold text-slate-950 transition hover:bg-white"
           >
             Contact Us
             <ArrowRight className="h-4 w-4" />

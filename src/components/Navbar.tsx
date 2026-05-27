@@ -39,7 +39,7 @@ export default function Navbar() {
         <div className="flex h-16 items-center justify-between md:h-20">
           {/* Logo */}
           <Link to="/" className="group flex items-center">
-            <img src="/genaixis-wordmark.svg" alt="GENAIXIS" className="h-10 w-[168px] object-contain sm:h-11 sm:w-[196px]" />
+            <img src="/genaixis-wordmark.svg" alt="GENAIXIS" className="brand-logo-motion h-10 w-[168px] object-contain sm:h-11 sm:w-[196px]" />
           </Link>
 
           {/* Desktop Nav */}
@@ -73,7 +73,7 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-3">
             <Link
               to="/contact"
-              className="px-5 py-2 text-sm font-semibold bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg hover:from-cyan-400 hover:to-blue-500 transition-all duration-200 shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/40"
+              className="premium-button px-5 py-2 text-sm font-semibold bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg hover:from-cyan-400 hover:to-blue-500 transition-all duration-200 shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/40"
             >
               Build With Us
             </Link>
@@ -125,7 +125,7 @@ export default function Navbar() {
               })}
               <Link
                 to="/contact"
-                className="mt-2 px-4 py-3 text-sm font-semibold bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg text-center"
+                className="premium-button mt-2 px-4 py-3 text-sm font-semibold bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg text-center"
               >
                 Build With Us
               </Link>

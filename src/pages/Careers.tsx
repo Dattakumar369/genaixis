@@ -112,7 +112,7 @@ function CareersHero() {
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <a
               href="mailto:careers@genaixis.com?subject=Career%20Application%20-%20GENAIXIS"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-cyan-300 px-6 py-3.5 text-sm font-bold text-slate-950 shadow-lg shadow-cyan-500/20 transition hover:bg-white"
+              className="premium-button inline-flex items-center justify-center gap-2 rounded-xl bg-cyan-300 px-6 py-3.5 text-sm font-bold text-slate-950 shadow-lg shadow-cyan-500/20 transition hover:bg-white"
             >
               Send Your Profile
               <ArrowRight className="h-4 w-4" />
@@ -134,13 +134,13 @@ function CareersHero() {
           className="relative min-h-[500px] sm:min-h-[540px]"
         >
           <div className="absolute inset-0 rounded-[2rem] bg-[radial-gradient(circle_at_50%_38%,rgba(34,211,238,0.34),rgba(16,185,129,0.14)_36%,transparent_72%)] blur-2xl" />
-          <div className="absolute inset-0 overflow-hidden rounded-[2rem] border border-white/10 bg-[#07101a]/92 shadow-2xl shadow-cyan-950/30">
+          <div className="premium-card absolute inset-0 overflow-hidden rounded-[2rem] border border-white/10 bg-[#07101a]/92 shadow-2xl shadow-cyan-950/30">
             <div className="absolute inset-0 grid-pattern opacity-35" />
             <div className="absolute inset-x-8 top-10 h-px bg-gradient-to-r from-transparent via-cyan-200/50 to-transparent" />
           </div>
 
           <div className="relative p-6 sm:p-8">
-            <div className="rounded-2xl border border-white/10 bg-white/[0.045] p-5">
+            <div className="premium-card rounded-2xl border border-white/10 bg-white/[0.045] p-5">
               <div className="flex items-center gap-4">
                 <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-cyan-300/20 bg-cyan-300/10">
                   <Workflow className="h-7 w-7 text-cyan-200" />
@@ -154,14 +154,14 @@ function CareersHero() {
 
             <div className="mt-5 grid gap-4 sm:grid-cols-3">
               {highlights.map((item) => (
-                <div key={item.label} className="rounded-2xl border border-white/8 bg-[#07111c]/85 p-4">
+                <div key={item.label} className="premium-card rounded-2xl border border-white/8 bg-[#07111c]/85 p-4 transition hover:-translate-y-0.5 hover:border-cyan-300/20">
                   <p className="text-3xl font-bold text-cyan-100">{item.value}</p>
                   <p className="mt-2 text-sm leading-5 text-slate-300">{item.label}</p>
                 </div>
               ))}
             </div>
 
-            <div className="mt-5 rounded-2xl border border-white/10 bg-[#07111c]/90 p-5">
+            <div className="premium-card mt-5 rounded-2xl border border-white/10 bg-[#07111c]/90 p-5">
               <p className="text-sm font-semibold uppercase tracking-[0.22em] text-emerald-200">What You Will Build</p>
               <div className="mt-5 grid gap-3">
                 {[
@@ -170,7 +170,7 @@ function CareersHero() {
                   'Cloud-ready applications for business operations',
                   'Premium client-facing digital experiences',
                 ].map((item) => (
-                  <div key={item} className="flex items-center gap-3 rounded-xl border border-white/8 bg-white/[0.035] p-3">
+                  <div key={item} className="premium-card flex items-center gap-3 rounded-xl border border-white/8 bg-white/[0.035] p-3 transition hover:-translate-y-0.5 hover:border-emerald-300/20">
                     <CheckCircle2 className="h-4 w-4 flex-none text-emerald-300" />
                     <span className="text-sm text-slate-200">{item}</span>
                   </div>
@@ -178,7 +178,7 @@ function CareersHero() {
               </div>
             </div>
 
-            <div className="mt-5 flex items-start gap-3 rounded-2xl border border-amber-300/15 bg-amber-300/[0.045] p-5">
+            <div className="premium-card mt-5 flex items-start gap-3 rounded-2xl border border-amber-300/15 bg-amber-300/[0.045] p-5">
               <MapPin className="mt-0.5 h-5 w-5 flex-none text-amber-200" />
               <div>
                 <p className="text-sm font-semibold text-white">Primary location</p>
@@ -226,7 +226,7 @@ export default function Careers() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.08, duration: 0.55 }}
-                className="group rounded-2xl border border-white/8 bg-white/[0.035] p-6 transition hover:-translate-y-1 hover:border-cyan-300/25 hover:bg-white/[0.055]"
+                className="premium-card group rounded-2xl border border-white/8 bg-white/[0.035] p-6 transition hover:-translate-y-1 hover:border-cyan-300/25 hover:bg-white/[0.055]"
               >
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-cyan-300/20 bg-cyan-300/10">
@@ -240,7 +240,7 @@ export default function Careers() {
                 <p className="mt-3 leading-7 text-slate-400">{role.desc}</p>
                 <div className="mt-5 flex flex-wrap gap-2">
                   {role.skills.map((skill) => (
-                    <span key={skill} className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-medium text-slate-300">
+                    <span key={skill} className="premium-card rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-medium text-slate-300 transition hover:-translate-y-0.5 hover:border-cyan-300/20">
                       {skill}
                     </span>
                   ))}
@@ -268,7 +268,7 @@ export default function Careers() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.06, duration: 0.5 }}
-                className="rounded-2xl border border-white/8 bg-white/[0.035] p-6"
+                className="premium-card rounded-2xl border border-white/8 bg-white/[0.035] p-6 transition hover:-translate-y-1 hover:border-cyan-300/22"
               >
                 <benefit.icon className="h-6 w-6 text-cyan-300" />
                 <h3 className="mt-5 text-lg font-semibold text-white">{benefit.title}</h3>
@@ -300,7 +300,7 @@ export default function Careers() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.08, duration: 0.5 }}
-                className="rounded-2xl border border-white/8 bg-white/[0.035] p-6"
+                className="premium-card rounded-2xl border border-white/8 bg-white/[0.035] p-6 transition hover:-translate-y-1 hover:border-cyan-300/22"
               >
                 <div className="flex items-center justify-between gap-4">
                   <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-cyan-300/20 bg-cyan-300/10">
@@ -318,7 +318,7 @@ export default function Careers() {
 
       <section className="py-24">
         <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:px-8">
-          <div className="rounded-2xl border border-white/10 bg-[#091522] p-8">
+          <div className="premium-card rounded-2xl border border-white/10 bg-[#091522] p-8">
             <GraduationCap className="h-8 w-8 text-cyan-300" />
             <p className="mt-6 text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300">What We Value</p>
             <h2 className="mt-4 text-3xl font-bold leading-tight text-white sm:text-4xl">
@@ -328,7 +328,7 @@ export default function Careers() {
 
           <div className="grid gap-3">
             {principles.map((item) => (
-              <div key={item} className="flex items-center gap-3 rounded-xl border border-white/8 bg-white/[0.035] p-4">
+              <div key={item} className="premium-card flex items-center gap-3 rounded-xl border border-white/8 bg-white/[0.035] p-4 transition hover:-translate-y-0.5 hover:border-emerald-300/20">
                 <CheckCircle2 className="h-4 w-4 flex-none text-emerald-300" />
                 <span className="text-sm font-medium text-slate-200">{item}</span>
               </div>
@@ -349,7 +349,7 @@ export default function Careers() {
           </p>
           <a
             href="mailto:careers@genaixis.com?subject=Career%20Application%20-%20GENAIXIS"
-            className="mt-9 inline-flex items-center justify-center gap-2 rounded-xl bg-cyan-300 px-7 py-3.5 text-sm font-bold text-slate-950 transition hover:bg-white"
+            className="premium-button mt-9 inline-flex items-center justify-center gap-2 rounded-xl bg-cyan-300 px-7 py-3.5 text-sm font-bold text-slate-950 transition hover:bg-white"
           >
             careers@genaixis.com
             <ArrowRight className="h-4 w-4" />

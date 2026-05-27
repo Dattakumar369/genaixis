@@ -65,7 +65,7 @@ export default function Contact() {
                   <a
                     key={contact.email}
                     href={`mailto:${contact.email}`}
-                    className="group flex items-center gap-4 rounded-2xl bg-glass p-5 border border-white/5 hover:border-cyan-500/25 transition-all duration-300"
+                    className="premium-card group flex items-center gap-4 rounded-2xl bg-glass p-5 border border-white/5 hover:-translate-y-0.5 hover:border-cyan-500/25 transition-all duration-300"
                   >
                     <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-500/10 border border-cyan-500/20 group-hover:bg-cyan-500/20">
                       <contact.icon className="h-5 w-5 text-cyan-400" />
@@ -82,7 +82,7 @@ export default function Contact() {
                 href={mapsUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="group flex items-start gap-4 rounded-2xl bg-glass p-5 border border-white/5 hover:border-cyan-500/25 transition-all duration-300"
+                className="premium-card group flex items-start gap-4 rounded-2xl bg-glass p-5 border border-white/5 hover:-translate-y-0.5 hover:border-cyan-500/25 transition-all duration-300"
               >
                 <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-cyan-500/10 border border-cyan-500/20 group-hover:bg-cyan-500/20">
                   <MapPin className="h-5 w-5 text-cyan-400" />
@@ -99,7 +99,7 @@ export default function Contact() {
                 </div>
               </a>
 
-              <div className="rounded-2xl bg-gradient-to-br from-cyan-500/10 via-blue-500/10 to-teal-500/10 border border-cyan-500/20 p-6">
+              <div className="premium-card animated-gradient-surface rounded-2xl bg-gradient-to-br from-cyan-500/10 via-blue-500/10 to-teal-500/10 border border-cyan-500/20 p-6">
                 <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-white/10">
                   <Sparkles className="h-5 w-5 text-cyan-300" />
                 </div>
@@ -122,7 +122,7 @@ export default function Contact() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               onSubmit={handleSubmit}
-              className="rounded-2xl bg-glass border border-white/5 p-6 sm:p-8 shadow-2xl shadow-cyan-950/20"
+              className="premium-card rounded-2xl bg-glass border border-white/5 p-6 sm:p-8 shadow-2xl shadow-cyan-950/20"
             >
               <div className="mb-8">
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 shadow-lg shadow-cyan-500/20">
@@ -179,7 +179,7 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-cyan-500/25 hover:from-cyan-400 hover:to-blue-500 transition-all duration-300"
+                className="premium-button mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-cyan-500/25 hover:from-cyan-400 hover:to-blue-500 transition-all duration-300"
               >
                 Send Message
                 <Send className="h-4 w-4" />

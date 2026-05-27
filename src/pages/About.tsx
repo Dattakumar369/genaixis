@@ -164,7 +164,7 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.65 }}
-            className="rounded-2xl border border-white/10 bg-[#07101a] p-7"
+            className="premium-card rounded-2xl border border-white/10 bg-[#07101a] p-7"
           >
             <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-300/10">
               <Rocket className="h-6 w-6 text-cyan-300" />
@@ -178,7 +178,7 @@ export default function About() {
             </p>
             <div className="mt-7 grid gap-3 sm:grid-cols-2">
               {foundations.map((item) => (
-                <div key={item} className="flex items-center gap-3 rounded-xl border border-white/8 bg-white/[0.035] p-3">
+                <div key={item} className="premium-card flex items-center gap-3 rounded-xl border border-white/8 bg-white/[0.035] p-3 transition hover:-translate-y-0.5 hover:border-cyan-300/20">
                   <CheckCircle2 className="h-4 w-4 flex-none text-cyan-300" />
                   <span className="text-sm font-medium text-slate-200">{item}</span>
                 </div>
@@ -204,7 +204,7 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.07, duration: 0.55 }}
-                className="rounded-2xl border border-white/8 bg-white/[0.035] p-5"
+                className="premium-card rounded-2xl border border-white/8 bg-white/[0.035] p-5 transition hover:-translate-y-1 hover:border-cyan-300/22"
               >
                 <goal.icon className="h-6 w-6 text-cyan-300" />
                 <h3 className="mt-5 text-base font-semibold leading-6 text-white">{goal.title}</h3>
@@ -223,7 +223,7 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.65 }}
-            className="rounded-2xl border border-emerald-300/15 bg-emerald-300/[0.04] p-7"
+            className="premium-card rounded-2xl border border-emerald-300/15 bg-emerald-300/[0.04] p-7"
           >
             <a
               href="https://www.learnstackhub.com/"
@@ -241,7 +241,7 @@ export default function About() {
             </p>
             <div className="mt-7 grid gap-3">
               {learnStackHubFeatures.map((feature) => (
-                <div key={feature} className="flex items-center gap-3 rounded-xl border border-white/8 bg-white/[0.035] p-3">
+                <div key={feature} className="premium-card flex items-center gap-3 rounded-xl border border-white/8 bg-white/[0.035] p-3 transition hover:-translate-y-0.5 hover:border-emerald-300/20">
                   <CheckCircle2 className="h-4 w-4 flex-none text-emerald-300" />
                   <span className="text-sm text-slate-200">{feature}</span>
                 </div>
@@ -279,7 +279,7 @@ export default function About() {
                 { icon: Layers, text: 'Receive answer-based scoring' },
                 { icon: Workflow, text: 'Review final performance analysis' },
               ].map((item) => (
-                <div key={item.text} className="rounded-xl border border-white/8 bg-white/[0.035] p-4">
+                <div key={item.text} className="premium-card rounded-xl border border-white/8 bg-white/[0.035] p-4 transition hover:-translate-y-0.5 hover:border-cyan-300/20">
                   <item.icon className="h-5 w-5 text-cyan-300" />
                   <p className="mt-3 text-sm font-medium text-slate-200">{item.text}</p>
                 </div>
@@ -306,9 +306,9 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.6 }}
-                className="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.035]"
+                className="premium-card overflow-hidden rounded-2xl border border-white/10 bg-white/[0.035]"
               >
-                <div className={`relative min-h-72 bg-gradient-to-br ${leader.accent} p-6`}>
+                <div className={`animated-gradient-surface relative min-h-72 bg-gradient-to-br ${leader.accent} p-6`}>
                   <div className="absolute inset-0 grid-pattern opacity-25" />
                   <div className="absolute inset-x-8 bottom-0 h-px bg-gradient-to-r from-transparent via-cyan-200/40 to-transparent" />
                   <div className="relative flex h-60 items-end justify-center overflow-hidden rounded-2xl border border-white/10 bg-[#06111d]/80 shadow-2xl shadow-cyan-950/25">
@@ -334,7 +334,7 @@ export default function About() {
 
                   <div className="mt-7 flex flex-wrap gap-2">
                     {leader.areas.map((area) => (
-                      <span key={area} className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-medium text-slate-300">
+                      <span key={area} className="premium-card rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-medium text-slate-300 transition hover:-translate-y-0.5 hover:border-cyan-300/20">
                         {area}
                       </span>
                     ))}
@@ -344,7 +344,7 @@ export default function About() {
             ))}
           </div>
 
-          <div className="mt-8 rounded-2xl border border-amber-300/15 bg-amber-300/[0.04] p-7">
+          <div className="premium-card mt-8 rounded-2xl border border-amber-300/15 bg-amber-300/[0.04] p-7">
             <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
               <div>
                 <p className="text-sm font-semibold uppercase tracking-[0.24em] text-amber-200">Our Leadership Vision</p>
@@ -354,7 +354,7 @@ export default function About() {
               </div>
               <div className="grid gap-3 sm:grid-cols-2">
                 {leadershipVision.map((item) => (
-                  <div key={item} className="flex items-center gap-3 rounded-xl border border-white/8 bg-white/[0.035] p-3">
+                  <div key={item} className="premium-card flex items-center gap-3 rounded-xl border border-white/8 bg-white/[0.035] p-3 transition hover:-translate-y-0.5 hover:border-amber-200/20">
                     <CheckCircle2 className="h-4 w-4 flex-none text-amber-200" />
                     <span className="text-sm font-medium text-slate-200">{item}</span>
                   </div>
@@ -376,7 +376,7 @@ export default function About() {
           </p>
           <Link
             to="/contact"
-            className="mt-9 inline-flex items-center justify-center gap-2 rounded-xl bg-cyan-300 px-7 py-3.5 text-sm font-bold text-slate-950 transition hover:bg-white"
+            className="premium-button mt-9 inline-flex items-center justify-center gap-2 rounded-xl bg-cyan-300 px-7 py-3.5 text-sm font-bold text-slate-950 transition hover:bg-white"
           >
             Build With Us
             <ArrowRight className="h-4 w-4" />
