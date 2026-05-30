@@ -24,7 +24,7 @@ interface LegalPageProps {
 function LegalPage({ title, description, canonicalPath, keywords, sections }: LegalPageProps) {
   return (
     <main>
-      <SEO title={`${title} | GENAIXIS LABS PRIVATE LIMITED`} description={description} keywords={keywords} canonicalPath={canonicalPath} />
+      <SEO title={`${title} | GENAIXIS LABS PRIVATE LIMITED`} description={description} keywords={keywords} canonicalPath={canonicalPath} noIndex />
       <PageHero tag="Legal" title={title} description={description} />
 
       <section className="relative py-20">
