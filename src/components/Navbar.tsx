@@ -39,7 +39,7 @@ export default function Navbar() {
         <div className="flex h-16 items-center justify-between md:h-20">
           {/* Logo */}
           <Link to="/" className="brand-logo-card group flex items-center rounded-2xl border border-white/80 bg-white px-3 py-2 shadow-lg shadow-brand-950/20">
-            <img src="/genaixis-wordmark.svg" alt="GENAIXIS" className="brand-logo-motion h-8 w-[154px] object-contain sm:h-9 sm:w-[180px]" />
+            <img src="/genaixis-wordmark.svg?v=20260601-logo-spacing" alt="GENAIXIS" className="brand-logo-motion h-8 w-[154px] object-contain sm:h-9 sm:w-[180px]" />
           </Link>
 
           {/* Desktop Nav */}
