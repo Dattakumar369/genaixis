@@ -31,19 +31,19 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? 'bg-[#050812]/90 backdrop-blur-xl border-b border-white/5 shadow-2xl'
+          ? 'bg-[#05060d]/92 backdrop-blur-xl border-b border-white/10 shadow-2xl'
           : 'bg-transparent'
       }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between md:h-20">
           {/* Logo */}
-          <Link to="/" className="group flex items-center">
-            <img src="/genaixis-wordmark.svg" alt="GENAIXIS" className="brand-logo-motion h-10 w-[168px] object-contain sm:h-11 sm:w-[196px]" />
+          <Link to="/" className="brand-logo-card group flex items-center rounded-2xl border border-white/80 bg-white px-3 py-2 shadow-lg shadow-brand-950/20">
+            <img src="/genaixis-wordmark.svg" alt="GENAIXIS" className="brand-logo-motion h-8 w-[154px] object-contain sm:h-9 sm:w-[180px]" />
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-1">
+          <div className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => {
               const isActive = location.pathname === link.path;
               return (
@@ -52,14 +52,14 @@ export default function Navbar() {
                   to={link.path}
                   className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 group ${
                     isActive
-                      ? 'text-cyan-400'
+                      ? 'text-white'
                       : 'text-slate-400 hover:text-slate-100'
                   }`}
                 >
                   {isActive && (
                     <motion.div
                       layoutId="nav-active"
-                      className="absolute inset-0 bg-cyan-500/10 rounded-lg border border-cyan-500/20"
+                      className="absolute inset-0 rounded-lg border border-brand-300/25 bg-gradient-to-r from-brand-500/18 to-violet-500/14"
                       transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
                     />
                   )}
@@ -70,10 +70,10 @@ export default function Navbar() {
           </div>
 
           {/* CTA */}
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-3">
             <Link
               to="/contact"
-              className="premium-button px-5 py-2 text-sm font-semibold bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg hover:from-cyan-400 hover:to-blue-500 transition-all duration-200 shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/40"
+              className="premium-button rounded-lg bg-gradient-to-r from-brand-500 via-brand-600 to-violet-500 px-5 py-2 text-sm font-semibold text-white shadow-lg shadow-brand-500/20 transition-all duration-200 hover:from-brand-400 hover:to-violet-400 hover:shadow-violet-500/30"
             >
               Build With Us
             </Link>
@@ -82,7 +82,7 @@ export default function Navbar() {
           {/* Mobile menu button */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden w-10 h-10 flex items-center justify-center rounded-lg bg-white/5 border border-white/10 text-slate-400 hover:text-slate-100 transition-colors"
+            className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-slate-400 transition-colors hover:text-slate-100 lg:hidden"
             aria-label="Toggle menu"
           >
             {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -98,7 +98,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden overflow-hidden bg-[#080c16]/95 backdrop-blur-xl border-b border-white/5"
+            className="overflow-hidden border-b border-white/10 bg-[#060713]/96 backdrop-blur-xl lg:hidden"
           >
             <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-1">
               {navLinks.map((link, i) => {
@@ -114,7 +114,7 @@ export default function Navbar() {
                       to={link.path}
                       className={`block px-4 py-3 text-sm font-medium rounded-lg transition-colors ${
                         isActive
-                          ? 'bg-cyan-500/10 text-cyan-400 border border-cyan-500/20'
+                          ? 'border border-brand-300/25 bg-brand-500/12 text-white'
                           : 'text-slate-400 hover:text-slate-100 hover:bg-white/5'
                       }`}
                     >
@@ -125,7 +125,7 @@ export default function Navbar() {
               })}
               <Link
                 to="/contact"
-                className="premium-button mt-2 px-4 py-3 text-sm font-semibold bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg text-center"
+                className="premium-button mt-2 rounded-lg bg-gradient-to-r from-brand-500 via-brand-600 to-violet-500 px-4 py-3 text-center text-sm font-semibold text-white"
               >
                 Build With Us
               </Link>

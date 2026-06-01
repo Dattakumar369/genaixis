@@ -29,35 +29,37 @@ const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComp
 
 export default function Footer() {
   return (
-    <footer className="relative bg-[#03050e] border-t border-white/5 overflow-hidden">
+    <footer className="relative overflow-hidden border-t border-white/10 bg-[#03040b]">
+      <div className="logo-ribbon -left-40 top-12" />
+      <div className="logo-ribbon -right-48 bottom-10 rotate-12" />
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main footer */}
         <div className="py-16 grid grid-cols-1 lg:grid-cols-5 gap-12">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <Link to="/" className="mb-5 flex items-center">
-              <img src="/genaixis-wordmark.svg" alt="GENAIXIS" className="brand-logo-motion h-10 w-[178px] object-contain sm:h-12 sm:w-[214px]" />
+            <Link to="/" className="brand-logo-card mb-5 inline-flex items-center rounded-2xl border border-white/80 bg-white px-3 py-2 shadow-lg shadow-brand-950/20">
+              <img src="/genaixis-wordmark.svg" alt="GENAIXIS" className="brand-logo-motion h-9 w-[174px] object-contain sm:h-10 sm:w-[204px]" />
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed mb-6 max-w-xs">
               Building intelligent digital products for the AI era through AI, automation, SaaS platforms, and scalable software engineering.
             </p>
 
             <div className="flex flex-col gap-3">
-              <a href="mailto:contact@genaixis.com" className="flex items-center gap-2.5 text-sm text-slate-400 hover:text-cyan-400 transition-colors group">
-                <Mail className="w-4 h-4 text-cyan-500/60 group-hover:text-cyan-400 transition-colors" />
+              <a href="mailto:contact@genaixis.com" className="group flex items-center gap-2.5 text-sm text-slate-400 transition-colors hover:text-brand-200">
+                <Mail className="h-4 w-4 text-brand-400/70 transition-colors group-hover:text-violet-300" />
                 contact@genaixis.com
               </a>
-              <a href="mailto:careers@genaixis.com" className="flex items-center gap-2.5 text-sm text-slate-400 hover:text-cyan-400 transition-colors group">
-                <Mail className="w-4 h-4 text-cyan-500/60 group-hover:text-cyan-400 transition-colors" />
+              <a href="mailto:careers@genaixis.com" className="group flex items-center gap-2.5 text-sm text-slate-400 transition-colors hover:text-brand-200">
+                <Mail className="h-4 w-4 text-brand-400/70 transition-colors group-hover:text-violet-300" />
                 careers@genaixis.com
               </a>
               <a
                 href={mapsUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-start gap-2.5 text-sm text-slate-400 hover:text-cyan-400 transition-colors group max-w-sm"
+                className="group flex max-w-sm items-start gap-2.5 text-sm text-slate-400 transition-colors hover:text-brand-200"
               >
-                <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-cyan-500/60 group-hover:text-cyan-400 transition-colors" />
+                <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-brand-400/70 transition-colors group-hover:text-violet-300" />
                 <span className="leading-relaxed">{companyAddress}</span>
               </a>
             </div>
@@ -67,7 +69,7 @@ export default function Footer() {
                 <a
                   key={i}
                   href="#"
-                  className="w-9 h-9 rounded-lg bg-white/5 border border-white/8 flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:border-cyan-500/30 hover:bg-cyan-500/10 transition-all duration-200"
+                  className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-white/[0.04] text-slate-400 transition-all duration-200 hover:border-brand-300/35 hover:bg-brand-500/10 hover:text-brand-100"
                 >
                   <Icon className="w-4 h-4" />
                 </a>
@@ -84,7 +86,7 @@ export default function Footer() {
                   <li key={link.label}>
                     <Link
                       to={link.path}
-                      className="text-sm text-slate-400 hover:text-cyan-400 transition-colors group flex items-center gap-1"
+                      className="group flex items-center gap-1 text-sm text-slate-400 transition-colors hover:text-brand-200"
                     >
                       <span>{link.label}</span>
                       <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />

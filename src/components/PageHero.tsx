@@ -13,7 +13,8 @@ export default function PageHero({ tag, title, titleHighlight, description, chil
   return (
     <section className="relative overflow-hidden border-b border-white/8 pb-14 pt-28 sm:pb-20 sm:pt-32">
       <div className="absolute inset-0 grid-pattern opacity-50" />
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/30 to-transparent" />
+      <div className="absolute left-1/2 top-16 h-32 w-[38rem] -translate-x-1/2 rounded-full bg-gradient-to-r from-brand-500/18 via-violet-500/14 to-white/8 blur-3xl" />
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-300/35 to-transparent" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {tag && (
@@ -23,8 +24,8 @@ export default function PageHero({ tag, title, titleHighlight, description, chil
             transition={{ duration: 0.5 }}
             className="flex justify-center mb-5"
           >
-            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
-              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+            <span className="inline-flex items-center gap-2 rounded-full border border-brand-300/25 bg-white/[0.055] px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider text-brand-100">
+              <span className="h-1.5 w-1.5 rounded-full bg-gradient-to-r from-brand-400 to-violet-400" />
               {tag}
             </span>
           </motion.div>

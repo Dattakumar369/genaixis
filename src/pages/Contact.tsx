@@ -99,7 +99,7 @@ export default function Contact() {
                 </div>
               </a>
 
-              <div className="premium-card animated-gradient-surface rounded-2xl bg-gradient-to-br from-brand-500/10 via-blue-500/10 to-teal-500/10 border border-brand-500/20 p-6">
+              <div className="premium-card animated-gradient-surface rounded-2xl bg-gradient-to-br from-brand-500/10 via-blue-500/10 to-violet-500/10 border border-brand-500/20 p-6">
                 <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-white/10">
                   <Sparkles className="h-5 w-5 text-brand-300" />
                 </div>

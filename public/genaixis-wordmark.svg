@@ -1,19 +1,25 @@
-<svg width="1120" height="220" viewBox="0 0 1120 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="980" height="220" viewBox="0 0 980 220" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path d="M74 22H121C136 22 147 27 158 38L184 65L210 38C221 27 232 22 247 22H291L222 93C210 106 199 110 181 110H160C144 110 132 106 120 93L74 22Z" fill="url(#top)"/>
-  <path d="M74 191H119C136 191 147 187 159 174L184 148L209 174C222 187 233 191 250 191H291L222 120C210 108 199 103 181 103H160C143 103 132 108 120 120L74 191Z" fill="#000000"/>
-  <path d="M165 110L184 92L203 110L184 128L165 110Z" fill="#050812"/>
-  <text x="350" y="142" fill="#F8FAFC" font-family="Inter, Arial, Helvetica, sans-serif" font-size="88" font-weight="800" letter-spacing="18">GENAI</text>
-  <path d="M755 77H785C795 77 803 80 810 87L826 104L842 87C849 80 857 77 867 77H895L852 121C844 129 837 132 826 132H812C801 132 794 129 786 121L755 77Z" fill="url(#topSmall)"/>
-  <path d="M755 165H784C795 165 802 162 810 154L826 138L842 154C850 162 857 165 868 165H895L852 121C844 113 837 110 826 110H812C801 110 794 113 786 121L755 165Z" fill="#000000"/>
-  <path d="M812 132L826 119L840 132L826 145L812 132Z" fill="#050812"/>
-  <text x="917" y="142" fill="#F8FAFC" font-family="Inter, Arial, Helvetica, sans-serif" font-size="88" font-weight="800" letter-spacing="18">IS</text>
+  <path d="M74 191H119C136 191 147 187 159 174L184 148L209 174C222 187 233 191 250 191H291L222 120C210 108 199 103 181 103H160C143 103 132 108 120 120L74 191Z" fill="#020817"/>
+  <path d="M165 110L184 92L203 110L184 128L165 110Z" fill="#FFFFFF"/>
+
+  <text x="330" y="142" fill="#020817" font-family="Inter, Arial, Helvetica, sans-serif" font-size="86" font-weight="700" letter-spacing="8">GENAI</text>
+
+  <g transform="translate(642 67) scale(0.42)">
+    <path d="M0 0H66C87 0 102 6 117 22L147 53L177 22C192 6 207 0 228 0H290L197 96C180 113 166 119 142 119H115C93 119 77 113 61 96L0 0Z" fill="url(#topSmall)"/>
+    <path d="M0 233H63C86 233 100 227 117 210L147 179L177 210C194 227 208 233 231 233H290L198 138C181 121 167 115 143 115H115C92 115 78 121 61 138L0 233Z" fill="#020817"/>
+    <path d="M125 117L147 96L169 117L147 139L125 117Z" fill="#FFFFFF"/>
+  </g>
+
+  <text x="760" y="142" fill="#020817" font-family="Inter, Arial, Helvetica, sans-serif" font-size="86" font-weight="700" letter-spacing="8">IS</text>
+
   <defs>
     <linearGradient id="top" x1="74" y1="22" x2="291" y2="112" gradientUnits="userSpaceOnUse">
       <stop stop-color="#2563EB"/>
       <stop offset="0.52" stop-color="#4F46E5"/>
       <stop offset="1" stop-color="#A855F7"/>
     </linearGradient>
-    <linearGradient id="topSmall" x1="755" y1="77" x2="895" y2="135" gradientUnits="userSpaceOnUse">
+    <linearGradient id="topSmall" x1="0" y1="0" x2="290" y2="120" gradientUnits="userSpaceOnUse">
       <stop stop-color="#2563EB"/>
       <stop offset="0.52" stop-color="#4F46E5"/>
       <stop offset="1" stop-color="#A855F7"/>
