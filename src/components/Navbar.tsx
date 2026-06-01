@@ -38,7 +38,7 @@ export default function Navbar() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between md:h-20">
           {/* Logo */}
-          <Link to="/" className="brand-logo-card group flex h-[58px] w-[220px] items-center justify-center rounded-2xl border border-white/10 bg-white shadow-lg shadow-brand-950/20 sm:w-[250px]">
+          <Link to="/" className="brand-logo-card group flex h-[48px] w-[184px] items-center justify-center rounded-xl border border-white/10 bg-white shadow-lg shadow-brand-950/20 sm:w-[210px]">
             <img src="/genaixis.png?v=20260601-logo-png" alt="GENAIXIS" className="brand-logo-png h-full w-full" />
           </Link>
 
