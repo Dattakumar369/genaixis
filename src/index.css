@@ -204,7 +204,7 @@
   0%, 100% {
     transform: perspective(900px) rotateX(0deg) rotateY(0deg) translateY(0);
     box-shadow:
-      0 16px 32px rgba(15, 23, 42, 0.24),
+      0 18px 34px rgba(15, 23, 42, 0.28),
       0 0 0 rgba(79, 70, 229, 0);
   }
   35% {
@@ -420,6 +420,13 @@
   transform-style: preserve-3d;
   animation: logo-mark-3d 6s ease-in-out infinite;
   will-change: transform, filter;
+}
+
+.brand-logo-png {
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  transform-origin: center;
 }
 
 .reveal-soft {
