@@ -142,7 +142,7 @@ function ProductShowcase() {
         </motion.div>
       ))}
 
-      <div className="absolute bottom-5 left-1/2 z-20 w-[88%] -translate-x-1/2 rounded-2xl border border-brand-200/15 bg-[#05060d]/90 p-4 shadow-2xl shadow-brand-950/25 backdrop-blur sm:bottom-7 sm:w-[78%] sm:p-5">
+      <div className="absolute bottom-5 left-1/2 z-20 w-[88%] -translate-x-1/2 rounded-2xl border border-brand-400/15 bg-genaixis-canvas/90 p-4 shadow-2xl shadow-brand-950/25 backdrop-blur sm:bottom-7 sm:w-[78%] sm:p-5">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-brand-200">AI Product Engineering</p>
@@ -314,7 +314,7 @@ function BrandProof() {
             </div>
             <div className="relative mt-9 grid gap-3 sm:grid-cols-3">
               {proofPoints.map((item) => (
-                <div key={item.label} className="premium-card rounded-xl border border-white/10 bg-[#05060d]/78 p-4 transition hover:-translate-y-0.5 hover:border-brand-300/25">
+                <div key={item.label} className="premium-card rounded-xl border border-brand-400/12 bg-genaixis-canvas/78 p-4 transition hover:-translate-y-0.5 hover:border-brand-300/25">
                   <p className="text-2xl font-semibold text-white">{item.value}</p>
                   <p className="mt-2 text-sm leading-5 text-slate-400">{item.label}</p>
                 </div>

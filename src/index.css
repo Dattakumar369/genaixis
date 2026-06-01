@@ -200,6 +200,15 @@
   50% { filter: drop-shadow(0 12px 20px rgba(99, 102, 241, 0.22)); transform: translateY(-2px); }
 }
 
+@keyframes brand-logo-glow-breathe {
+  0%, 100% {
+    opacity: 0.38;
+  }
+  50% {
+    opacity: 0.58;
+  }
+}
+
 @keyframes logo-card-3d {
   0%, 100% {
     transform: perspective(900px) rotateX(0deg) rotateY(0deg) translateY(0);
@@ -387,46 +396,42 @@
   animation: logo-breathe 5s ease-in-out infinite;
 }
 
-.brand-logo-card {
+.brand-logo-link {
   position: relative;
-  overflow: hidden;
-  transform-style: preserve-3d;
-  animation: logo-card-3d 7s ease-in-out infinite;
-  will-change: transform, box-shadow;
+  flex-shrink: 0;
+  isolation: isolate;
 }
 
-.brand-logo-card::before {
+.brand-logo-link::before {
   content: '';
   position: absolute;
-  inset: -45%;
-  background: linear-gradient(115deg, transparent 34%, rgba(255, 255, 255, 0.82) 48%, transparent 62%);
-  transform: translateX(-76%) rotate(10deg);
-  animation: shimmer-line 4.2s ease-in-out infinite;
+  left: 0;
+  top: 50%;
+  width: 92%;
+  height: 140%;
+  transform: translateY(-50%);
+  z-index: 0;
   pointer-events: none;
-}
-
-.brand-logo-card::after {
-  content: '';
-  position: absolute;
-  inset: 8px;
-  border-radius: inherit;
-  border: 1px solid rgba(37, 99, 235, 0.08);
-  pointer-events: none;
-}
-
-.brand-logo-card img {
-  position: relative;
-  z-index: 1;
-  transform-style: preserve-3d;
-  animation: logo-mark-3d 6s ease-in-out infinite;
-  will-change: transform, filter;
+  background: radial-gradient(
+    ellipse 100% 72% at 38% 50%,
+    rgba(59, 130, 246, 0.2) 0%,
+    rgba(79, 70, 229, 0.1) 42%,
+    transparent 68%
+  );
+  filter: blur(24px);
+  animation: brand-logo-glow-breathe 10s ease-in-out infinite;
 }
 
 .brand-logo-png {
+  position: relative;
+  z-index: 1;
   display: block;
-  object-fit: cover;
-  object-position: center;
+  object-fit: contain;
+  object-position: left center;
   transform-origin: center;
+  /* Knock out the logo file's black background on dark surfaces; letters stay visible */
+  mix-blend-mode: screen;
+  filter: drop-shadow(0 0 18px rgba(59, 130, 246, 0.12)) drop-shadow(0 0 36px rgba(79, 70, 229, 0.06));
 }
 
 .reveal-soft {

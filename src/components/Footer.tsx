@@ -37,8 +37,8 @@ export default function Footer() {
         <div className="py-16 grid grid-cols-1 lg:grid-cols-5 gap-12">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <Link to="/" className="brand-logo-card mb-5 inline-flex h-[48px] w-[206px] items-center justify-center rounded-xl border border-white/10 bg-white shadow-lg shadow-brand-950/20">
-              <img src="/genaixis.png?v=20260601-logo-png" alt="GENAIXIS" className="brand-logo-png h-full w-full" />
+            <Link to="/" className="brand-logo-link mb-5 inline-flex h-22 w-[220px] items-center sm:h-24 sm:w-[350px]">
+              <img src="/genaixis.png" alt="GENAIXIS" className="brand-logo-png h-full w-full" />
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed mb-6 max-w-xs">
               Building intelligent digital products for the AI era through AI, automation, SaaS platforms, and scalable software engineering.
