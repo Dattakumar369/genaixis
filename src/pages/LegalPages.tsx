@@ -31,13 +31,13 @@ function LegalPage({ title, description, canonicalPath, keywords, sections }: Le
         <div className="absolute inset-0 grid-pattern opacity-25" />
         <div className="relative mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.72fr_1.28fr] lg:px-8">
           <aside className="h-fit rounded-2xl border border-white/10 bg-white/[0.035] p-6">
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-cyan-300/20 bg-cyan-300/10">
-              <ShieldCheck className="h-6 w-6 text-cyan-300" />
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-brand-300/20 bg-brand-300/10">
+              <ShieldCheck className="h-6 w-6 text-brand-300" />
             </div>
             <h2 className="mt-5 text-xl font-bold text-white">{companyName}</h2>
             <p className="mt-3 text-sm leading-6 text-slate-400">Last updated: {lastUpdated}</p>
             <p className="mt-4 text-sm leading-6 text-slate-400">{companyAddress}</p>
-            <a href={`mailto:${contactEmail}`} className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-cyan-300 hover:text-white">
+            <a href={`mailto:${contactEmail}`} className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-brand-300 hover:text-white">
               <Mail className="h-4 w-4" />
               {contactEmail}
             </a>
@@ -46,7 +46,7 @@ function LegalPage({ title, description, canonicalPath, keywords, sections }: Le
             </p>
           </aside>
 
-          <article className="rounded-2xl border border-white/10 bg-[#07101a] p-6 shadow-2xl shadow-cyan-950/10 sm:p-8">
+          <article className="rounded-2xl border border-white/10 bg-[#07101a] p-6 shadow-2xl shadow-brand-950/10 sm:p-8">
             <div className="space-y-10">
               {sections.map((section) => (
                 <section key={section.title}>

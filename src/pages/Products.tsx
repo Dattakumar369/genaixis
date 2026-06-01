@@ -66,7 +66,7 @@ export default function Products() {
       >
         <Link
           to="/contact"
-          className="premium-button inline-flex items-center gap-2 rounded-xl bg-cyan-300 px-6 py-3 text-sm font-bold text-slate-950 transition hover:bg-white"
+          className="premium-button inline-flex items-center gap-2 rounded-xl bg-brand-300 px-6 py-3 text-sm font-bold text-slate-950 transition hover:bg-white"
         >
           Discuss a Product
           <ArrowRight className="h-4 w-4" />
@@ -81,7 +81,7 @@ export default function Products() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.65 }}
-            className="premium-card rounded-2xl border border-emerald-300/15 bg-[#07101a] p-7"
+            className="premium-card rounded-2xl border border-violet-300/15 bg-[#07101a] p-7"
           >
             <a
               href="https://www.learnstackhub.com/"
@@ -92,15 +92,15 @@ export default function Products() {
             >
               <img src="/learnstackhub-logo.png" alt="LearnStackHub logo" className="h-full w-full object-contain" />
             </a>
-            <p className="mt-6 text-sm font-semibold uppercase tracking-[0.24em] text-emerald-300">Core Product</p>
+            <p className="mt-6 text-sm font-semibold uppercase tracking-[0.24em] text-violet-300">Core Product</p>
             <h2 className="mt-4 text-3xl font-bold text-white sm:text-5xl">LearnStackHub</h2>
             <p className="mt-5 text-lg leading-8 text-slate-300">
               A product proof point from GENAIXIS: a full digital platform combining content workflows, AI-powered assessment, user journeys, analytics, and scalable product architecture.
             </p>
             <div className="mt-7 grid gap-3 sm:grid-cols-2">
               {learnStackHub.map((feature) => (
-                <div key={feature} className="premium-card flex items-start gap-3 rounded-xl border border-white/8 bg-white/[0.035] p-3 transition hover:-translate-y-0.5 hover:border-emerald-300/20">
-                  <CheckCircle2 className="mt-0.5 h-4 w-4 flex-none text-emerald-300" />
+                <div key={feature} className="premium-card flex items-start gap-3 rounded-xl border border-white/8 bg-white/[0.035] p-3 transition hover:-translate-y-0.5 hover:border-violet-300/20">
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 flex-none text-violet-300" />
                   <span className="text-sm text-slate-200">{feature}</span>
                 </div>
               ))}
@@ -109,7 +109,7 @@ export default function Products() {
               href="https://www.learnstackhub.com/"
               target="_blank"
               rel="noreferrer"
-              className="mt-8 inline-flex items-center gap-2 rounded-xl border border-emerald-300/25 bg-emerald-300/10 px-5 py-3 text-sm font-bold text-emerald-200 transition hover:border-emerald-200/50 hover:bg-emerald-300/15 hover:text-white"
+              className="mt-8 inline-flex items-center gap-2 rounded-xl border border-violet-300/25 bg-violet-300/10 px-5 py-3 text-sm font-bold text-violet-200 transition hover:border-violet-200/50 hover:bg-violet-300/15 hover:text-white"
             >
               Visit LearnStackHub
               <ArrowRight className="h-4 w-4" />
@@ -124,7 +124,7 @@ export default function Products() {
             className="space-y-5"
           >
             <div className="premium-card rounded-2xl border border-white/10 bg-white/[0.035] p-7">
-              <Brain className="h-7 w-7 text-cyan-300" />
+              <Brain className="h-7 w-7 text-brand-300" />
               <h3 className="mt-5 text-2xl font-bold text-white">AI Mock Interview System</h3>
               <p className="mt-4 leading-7 text-slate-400">
                 A working AI module with resume intelligence, generated question flows, answer scoring, camera-enabled practice sessions, and performance analytics.
@@ -137,8 +137,8 @@ export default function Products() {
                 { icon: Workflow, label: 'Automated scoring pipelines' },
                 { icon: LineChart, label: 'Performance analytics layer' },
               ].map((item) => (
-                <div key={item.label} className="premium-card rounded-2xl border border-white/8 bg-white/[0.035] p-5 transition hover:-translate-y-0.5 hover:border-cyan-300/20">
-                  <item.icon className="h-5 w-5 text-cyan-300" />
+                <div key={item.label} className="premium-card rounded-2xl border border-white/8 bg-white/[0.035] p-5 transition hover:-translate-y-0.5 hover:border-brand-300/20">
+                  <item.icon className="h-5 w-5 text-brand-300" />
                   <p className="mt-4 text-sm font-semibold text-slate-200">{item.label}</p>
                 </div>
               ))}
@@ -150,7 +150,7 @@ export default function Products() {
       <section className="border-y border-white/8 bg-[#07101a] py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300">Product Roadmap</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-brand-300">Product Roadmap</p>
             <h2 className="mt-4 text-3xl font-bold leading-tight text-white sm:text-5xl">
               More GENAIXIS products are being shaped across AI, SaaS, and cloud ecosystems.
             </h2>
@@ -164,9 +164,9 @@ export default function Products() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.08, duration: 0.55 }}
-                className="premium-card rounded-2xl border border-white/8 bg-white/[0.035] p-6 transition hover:-translate-y-1 hover:border-cyan-300/22"
+                className="premium-card rounded-2xl border border-white/8 bg-white/[0.035] p-6 transition hover:-translate-y-1 hover:border-brand-300/22"
               >
-                <item.icon className="h-6 w-6 text-cyan-300" />
+                <item.icon className="h-6 w-6 text-brand-300" />
                 <h3 className="mt-5 text-lg font-semibold text-white">{item.title}</h3>
                 <p className="mt-3 text-sm leading-6 text-slate-400">{item.desc}</p>
               </motion.div>
@@ -185,7 +185,7 @@ export default function Products() {
           </p>
           <Link
             to="/contact"
-            className="premium-button mt-8 inline-flex items-center gap-2 rounded-xl bg-cyan-300 px-7 py-3.5 text-sm font-bold text-slate-950 transition hover:bg-white"
+            className="premium-button mt-8 inline-flex items-center gap-2 rounded-xl bg-brand-300 px-7 py-3.5 text-sm font-bold text-slate-950 transition hover:bg-white"
           >
             Contact Us
             <ArrowRight className="h-4 w-4" />

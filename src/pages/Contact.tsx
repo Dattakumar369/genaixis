@@ -65,14 +65,14 @@ export default function Contact() {
                   <a
                     key={contact.email}
                     href={`mailto:${contact.email}`}
-                    className="premium-card group flex items-center gap-4 rounded-2xl bg-glass p-5 border border-white/5 hover:-translate-y-0.5 hover:border-cyan-500/25 transition-all duration-300"
+                    className="premium-card group flex items-center gap-4 rounded-2xl bg-glass p-5 border border-white/5 hover:-translate-y-0.5 hover:border-brand-500/25 transition-all duration-300"
                   >
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-500/10 border border-cyan-500/20 group-hover:bg-cyan-500/20">
-                      <contact.icon className="h-5 w-5 text-cyan-400" />
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-500/10 border border-brand-500/20 group-hover:bg-brand-500/20">
+                      <contact.icon className="h-5 w-5 text-brand-400" />
                     </div>
                     <div>
                       <p className="text-sm text-slate-500">{contact.label}</p>
-                      <p className="font-semibold text-slate-100 group-hover:text-cyan-300">{contact.email}</p>
+                      <p className="font-semibold text-slate-100 group-hover:text-brand-300">{contact.email}</p>
                     </div>
                   </a>
                 ))}
@@ -82,26 +82,26 @@ export default function Contact() {
                 href={mapsUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="premium-card group flex items-start gap-4 rounded-2xl bg-glass p-5 border border-white/5 hover:-translate-y-0.5 hover:border-cyan-500/25 transition-all duration-300"
+                className="premium-card group flex items-start gap-4 rounded-2xl bg-glass p-5 border border-white/5 hover:-translate-y-0.5 hover:border-brand-500/25 transition-all duration-300"
               >
-                <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-cyan-500/10 border border-cyan-500/20 group-hover:bg-cyan-500/20">
-                  <MapPin className="h-5 w-5 text-cyan-400" />
+                <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-brand-500/10 border border-brand-500/20 group-hover:bg-brand-500/20">
+                  <MapPin className="h-5 w-5 text-brand-400" />
                 </div>
                 <div>
                   <p className="text-sm text-slate-500">Office Location</p>
-                  <p className="mt-1 text-sm font-medium leading-relaxed text-slate-200 group-hover:text-cyan-100">
+                  <p className="mt-1 text-sm font-medium leading-relaxed text-slate-200 group-hover:text-brand-100">
                     {companyAddress}
                   </p>
-                  <span className="mt-3 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-cyan-300">
+                  <span className="mt-3 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-brand-300">
                     Open in Google Maps
                     <ArrowRight className="h-3.5 w-3.5" />
                   </span>
                 </div>
               </a>
 
-              <div className="premium-card animated-gradient-surface rounded-2xl bg-gradient-to-br from-cyan-500/10 via-blue-500/10 to-teal-500/10 border border-cyan-500/20 p-6">
+              <div className="premium-card animated-gradient-surface rounded-2xl bg-gradient-to-br from-brand-500/10 via-blue-500/10 to-teal-500/10 border border-brand-500/20 p-6">
                 <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-white/10">
-                  <Sparkles className="h-5 w-5 text-cyan-300" />
+                  <Sparkles className="h-5 w-5 text-brand-300" />
                 </div>
                 <h2 className="text-xl font-bold font-display text-white">Company inquiry</h2>
                 <p className="mt-2 text-sm leading-relaxed text-slate-400">
@@ -109,7 +109,7 @@ export default function Contact() {
                 </p>
                 <a
                   href="mailto:contact@genaixis.com?subject=Company Inquiry"
-                  className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-cyan-300 hover:text-cyan-200"
+                  className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-brand-300 hover:text-brand-200"
                 >
                   Send company inquiry
                   <ArrowRight className="h-4 w-4" />
@@ -122,10 +122,10 @@ export default function Contact() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               onSubmit={handleSubmit}
-              className="premium-card rounded-2xl bg-glass border border-white/5 p-6 sm:p-8 shadow-2xl shadow-cyan-950/20"
+              className="premium-card rounded-2xl bg-glass border border-white/5 p-6 sm:p-8 shadow-2xl shadow-brand-950/20"
             >
               <div className="mb-8">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 shadow-lg shadow-cyan-500/20">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-brand-500 to-blue-600 shadow-lg shadow-brand-500/20">
                   <MessageSquare className="h-6 w-6 text-white" />
                 </div>
                 <h2 className="text-2xl font-bold font-display text-white">Tell us about your project</h2>
@@ -140,7 +140,7 @@ export default function Contact() {
                   <input
                     required
                     name="name"
-                    className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition focus:border-cyan-400/60 focus:bg-white/8"
+                    className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition focus:border-brand-400/60 focus:bg-white/8"
                     placeholder="Your name"
                   />
                 </label>
@@ -150,7 +150,7 @@ export default function Contact() {
                     required
                     type="email"
                     name="email"
-                    className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition focus:border-cyan-400/60 focus:bg-white/8"
+                    className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition focus:border-brand-400/60 focus:bg-white/8"
                     placeholder="you@company.com"
                   />
                 </label>
@@ -161,7 +161,7 @@ export default function Contact() {
                 <input
                   required
                   name="subject"
-                  className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition focus:border-cyan-400/60 focus:bg-white/8"
+                  className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition focus:border-brand-400/60 focus:bg-white/8"
                   placeholder="AI product development inquiry"
                 />
               </label>
@@ -172,21 +172,21 @@ export default function Contact() {
                   required
                   name="message"
                   rows={6}
-                  className="w-full resize-none rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition focus:border-cyan-400/60 focus:bg-white/8"
+                  className="w-full resize-none rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition focus:border-brand-400/60 focus:bg-white/8"
                   placeholder="Tell us about the product, platform, automation, or software system you want to build."
                 />
               </label>
 
               <button
                 type="submit"
-                className="premium-button mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-cyan-500/25 hover:from-cyan-400 hover:to-blue-500 transition-all duration-300"
+                className="premium-button mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-500 to-blue-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-brand-500/25 hover:from-brand-400 hover:to-blue-500 transition-all duration-300"
               >
                 Send Message
                 <Send className="h-4 w-4" />
               </button>
 
               {submitted && (
-                <div className="mt-5 flex items-start gap-3 rounded-xl border border-emerald-400/20 bg-emerald-400/10 p-4 text-sm text-emerald-200">
+                <div className="mt-5 flex items-start gap-3 rounded-xl border border-violet-400/20 bg-violet-400/10 p-4 text-sm text-violet-200">
                   <CheckCircle2 className="h-5 w-5 flex-shrink-0" />
                   <span>Thanks. Your inquiry is ready for the GENAIXIS team to review.</span>
                 </div>
@@ -197,14 +197,14 @@ export default function Contact() {
       </section>
 
       <section className="relative py-20 bg-[#03050e] overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-brand-500/20 to-transparent" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <Mail className="mx-auto mb-5 h-9 w-9 text-cyan-400" />
+            <Mail className="mx-auto mb-5 h-9 w-9 text-brand-400" />
             <h2 className="text-3xl sm:text-4xl font-bold font-display text-white">
               Build your next intelligent product with GENAIXIS.
             </h2>

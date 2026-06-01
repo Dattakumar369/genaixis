@@ -74,7 +74,7 @@ const leaders = [
     role: 'Co-Founder & Director',
     icon: Brain,
     initials: 'DP',
-    accent: 'from-cyan-300/25 via-blue-400/10 to-emerald-300/20',
+    accent: 'from-brand-300/25 via-blue-400/10 to-violet-300/20',
     bio: 'Dattakumar Pandi is a software engineer, product builder, and technology entrepreneur with strong expertise in Java, Spring Boot, scalable backend systems, AI-driven platforms, cloud technologies, and full-stack product development.',
     extra: 'He is the founder of LearnStackHub, a developer-focused digital product that combines platform engineering, AI-powered assessment, content workflows, and user experience systems.',
     focus: 'With a strong focus on innovation and product development, he aims to build intelligent software platforms and scalable technology ecosystems that create real digital impact.',
@@ -94,7 +94,7 @@ const leaders = [
     role: 'Co-Founder & Director',
     icon: Users,
     initials: 'SS',
-    accent: 'from-emerald-300/25 via-cyan-400/10 to-amber-300/20',
+    accent: 'from-violet-300/25 via-brand-400/10 to-amber-300/20',
     bio: 'Satya Saibaba is a technology enthusiast and business-focused leader passionate about innovation, digital transformation, and building scalable technology solutions.',
     extra: 'As Co-Founder and Director of GENAIXIS, he plays an important role in strategic growth, product vision, operational planning, and business development initiatives.',
     focus: 'His focus is on helping build a strong technology-driven organization capable of delivering modern digital products, scalable platforms, and future-ready software ecosystems.',
@@ -142,7 +142,7 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.65 }}
           >
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300">Company Story</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-brand-300">Company Story</p>
             <h2 className="mt-4 text-3xl font-bold leading-tight text-white sm:text-5xl">
               We are not just a service-based company.
             </h2>
@@ -166,8 +166,8 @@ export default function About() {
             transition={{ duration: 0.65 }}
             className="premium-card rounded-2xl border border-white/10 bg-[#07101a] p-7"
           >
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-300/10">
-              <Rocket className="h-6 w-6 text-cyan-300" />
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-300/10">
+              <Rocket className="h-6 w-6 text-brand-300" />
             </div>
             <h3 className="mt-6 text-2xl font-bold text-white">Why We Started GENAIXIS</h3>
             <p className="mt-4 leading-7 text-slate-400">
@@ -178,8 +178,8 @@ export default function About() {
             </p>
             <div className="mt-7 grid gap-3 sm:grid-cols-2">
               {foundations.map((item) => (
-                <div key={item} className="premium-card flex items-center gap-3 rounded-xl border border-white/8 bg-white/[0.035] p-3 transition hover:-translate-y-0.5 hover:border-cyan-300/20">
-                  <CheckCircle2 className="h-4 w-4 flex-none text-cyan-300" />
+                <div key={item} className="premium-card flex items-center gap-3 rounded-xl border border-white/8 bg-white/[0.035] p-3 transition hover:-translate-y-0.5 hover:border-brand-300/20">
+                  <CheckCircle2 className="h-4 w-4 flex-none text-brand-300" />
                   <span className="text-sm font-medium text-slate-200">{item}</span>
                 </div>
               ))}
@@ -204,9 +204,9 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.07, duration: 0.55 }}
-                className="premium-card rounded-2xl border border-white/8 bg-white/[0.035] p-5 transition hover:-translate-y-1 hover:border-cyan-300/22"
+                className="premium-card rounded-2xl border border-white/8 bg-white/[0.035] p-5 transition hover:-translate-y-1 hover:border-brand-300/22"
               >
-                <goal.icon className="h-6 w-6 text-cyan-300" />
+                <goal.icon className="h-6 w-6 text-brand-300" />
                 <h3 className="mt-5 text-base font-semibold leading-6 text-white">{goal.title}</h3>
                 <p className="mt-3 text-sm leading-6 text-slate-400">{goal.desc}</p>
               </motion.div>
@@ -223,7 +223,7 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.65 }}
-            className="premium-card rounded-2xl border border-emerald-300/15 bg-emerald-300/[0.04] p-7"
+            className="premium-card rounded-2xl border border-violet-300/15 bg-violet-300/[0.04] p-7"
           >
             <a
               href="https://www.learnstackhub.com/"
@@ -234,15 +234,15 @@ export default function About() {
             >
               <img src="/learnstackhub-logo.png" alt="LearnStackHub logo" className="h-full w-full object-contain" />
             </a>
-            <p className="mt-6 text-sm font-semibold uppercase tracking-[0.24em] text-emerald-300">Our Product</p>
+            <p className="mt-6 text-sm font-semibold uppercase tracking-[0.24em] text-violet-300">Our Product</p>
             <h2 className="mt-4 text-3xl font-bold leading-tight text-white">LearnStackHub</h2>
             <p className="mt-5 leading-7 text-slate-300">
               LearnStackHub is one of the core products developed under GENAIXIS. It demonstrates our ability to build a complete digital platform with AI workflows, product-grade UX, content operations, analytics, and scalable cloud-ready architecture.
             </p>
             <div className="mt-7 grid gap-3">
               {learnStackHubFeatures.map((feature) => (
-                <div key={feature} className="premium-card flex items-center gap-3 rounded-xl border border-white/8 bg-white/[0.035] p-3 transition hover:-translate-y-0.5 hover:border-emerald-300/20">
-                  <CheckCircle2 className="h-4 w-4 flex-none text-emerald-300" />
+                <div key={feature} className="premium-card flex items-center gap-3 rounded-xl border border-white/8 bg-white/[0.035] p-3 transition hover:-translate-y-0.5 hover:border-violet-300/20">
+                  <CheckCircle2 className="h-4 w-4 flex-none text-violet-300" />
                   <span className="text-sm text-slate-200">{feature}</span>
                 </div>
               ))}
@@ -251,7 +251,7 @@ export default function About() {
               href="https://www.learnstackhub.com/"
               target="_blank"
               rel="noreferrer"
-              className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-emerald-300 hover:text-white"
+              className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-violet-300 hover:text-white"
             >
               Visit LearnStackHub
               <ArrowRight className="h-4 w-4" />
@@ -264,7 +264,7 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.65 }}
           >
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300">AI Mock Interview System</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-brand-300">AI Mock Interview System</p>
             <h2 className="mt-4 text-3xl font-bold leading-tight text-white sm:text-5xl">
               A working AI product module with intelligent scoring and guided user flows.
             </h2>
@@ -279,8 +279,8 @@ export default function About() {
                 { icon: Layers, text: 'Receive answer-based scoring' },
                 { icon: Workflow, text: 'Review final performance analysis' },
               ].map((item) => (
-                <div key={item.text} className="premium-card rounded-xl border border-white/8 bg-white/[0.035] p-4 transition hover:-translate-y-0.5 hover:border-cyan-300/20">
-                  <item.icon className="h-5 w-5 text-cyan-300" />
+                <div key={item.text} className="premium-card rounded-xl border border-white/8 bg-white/[0.035] p-4 transition hover:-translate-y-0.5 hover:border-brand-300/20">
+                  <item.icon className="h-5 w-5 text-brand-300" />
                   <p className="mt-3 text-sm font-medium text-slate-200">{item.text}</p>
                 </div>
               ))}
@@ -310,11 +310,11 @@ export default function About() {
               >
                 <div className={`animated-gradient-surface relative min-h-72 bg-gradient-to-br ${leader.accent} p-6`}>
                   <div className="absolute inset-0 grid-pattern opacity-25" />
-                  <div className="absolute inset-x-8 bottom-0 h-px bg-gradient-to-r from-transparent via-cyan-200/40 to-transparent" />
-                  <div className="relative flex h-60 items-end justify-center overflow-hidden rounded-2xl border border-white/10 bg-[#06111d]/80 shadow-2xl shadow-cyan-950/25">
+                  <div className="absolute inset-x-8 bottom-0 h-px bg-gradient-to-r from-transparent via-brand-200/40 to-transparent" />
+                  <div className="relative flex h-60 items-end justify-center overflow-hidden rounded-2xl border border-white/10 bg-[#06111d]/80 shadow-2xl shadow-brand-950/25">
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(34,211,238,0.22),transparent_45%)]" />
-                    <div className="absolute bottom-0 h-44 w-44 rounded-full bg-cyan-300/10 blur-2xl" />
-                    <div className="relative mb-8 flex h-32 w-32 items-center justify-center rounded-full border border-cyan-200/25 bg-[#0b1b2b] text-4xl font-bold text-cyan-100 shadow-2xl shadow-cyan-500/20">
+                    <div className="absolute bottom-0 h-44 w-44 rounded-full bg-brand-300/10 blur-2xl" />
+                    <div className="relative mb-8 flex h-32 w-32 items-center justify-center rounded-full border border-brand-200/25 bg-[#0b1b2b] text-4xl font-bold text-brand-100 shadow-2xl shadow-brand-500/20">
                       {leader.initials}
                     </div>
                   </div>
@@ -323,7 +323,7 @@ export default function About() {
                 <div className="p-7">
                   <div>
                     <h3 className="text-2xl font-bold text-white">{leader.name}</h3>
-                    <p className="mt-1 text-sm font-semibold uppercase tracking-[0.18em] text-cyan-300">{leader.role}</p>
+                    <p className="mt-1 text-sm font-semibold uppercase tracking-[0.18em] text-brand-300">{leader.role}</p>
                   </div>
 
                   <div className="mt-7 space-y-4 leading-7 text-slate-300">
@@ -334,7 +334,7 @@ export default function About() {
 
                   <div className="mt-7 flex flex-wrap gap-2">
                     {leader.areas.map((area) => (
-                      <span key={area} className="premium-card rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-medium text-slate-300 transition hover:-translate-y-0.5 hover:border-cyan-300/20">
+                      <span key={area} className="premium-card rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-medium text-slate-300 transition hover:-translate-y-0.5 hover:border-brand-300/20">
                         {area}
                       </span>
                     ))}
@@ -367,7 +367,7 @@ export default function About() {
 
       <section className="border-t border-white/8 bg-[#07101a] py-20">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300">Future Vision</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-brand-300">Future Vision</p>
           <h2 className="mt-4 text-3xl font-bold leading-tight text-white sm:text-5xl">
             GENAIXIS is being built for the future of intelligent technology.
           </h2>
@@ -376,7 +376,7 @@ export default function About() {
           </p>
           <Link
             to="/contact"
-            className="premium-button mt-9 inline-flex items-center justify-center gap-2 rounded-xl bg-cyan-300 px-7 py-3.5 text-sm font-bold text-slate-950 transition hover:bg-white"
+            className="premium-button mt-9 inline-flex items-center justify-center gap-2 rounded-xl bg-brand-300 px-7 py-3.5 text-sm font-bold text-slate-950 transition hover:bg-white"
           >
             Build With Us
             <ArrowRight className="h-4 w-4" />
