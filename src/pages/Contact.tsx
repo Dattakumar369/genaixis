@@ -15,7 +15,7 @@ const contacts = [
 ];
 
 const companyAddress =
-  'Ground Floor, Kondapur Main Road, Kondapur, Laxmi Cyber City, Whitefields, Kondapur, Hyderabad, Telangana 500081';
+  'Ground Floor, Krishe Emerald, Kondapur, Laxmi Cyber City, Whitefields, HITEC City, Hyderabad, Telangana 500081';
 
 const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(companyAddress)}`;
 
@@ -33,7 +33,7 @@ export default function Contact() {
         title="Contact | GENAIXIS LABS PRIVATE LIMITED"
         description="Contact GENAIXIS LABS PRIVATE LIMITED in Kondapur, Hyderabad for AI product development, SaaS platforms, automation systems, cloud solutions, enterprise software, careers, and support."
         keywords="contact GENAIXIS, GENAIXIS Hyderabad, genaxis contact, gen aixis contact, gen axis software company, AI product development Hyderabad, LearnStackHub contact"
-        canonicalPath="/contact"
+        canonicalPath="/contact/"
       />
       <PageHero
         tag="Contact"

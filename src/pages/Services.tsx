@@ -121,7 +121,7 @@ export default function Services() {
         title="Technology | GENAIXIS LABS PRIVATE LIMITED"
         description="Explore the GENAIXIS technology system: AI engine, platform core, automation OS, cloud layer, product architecture, and future software ecosystems."
         keywords="GENAIXIS technology, AI engine, SaaS platform development, automation OS, cloud software development, enterprise software services, genai technology, genx software"
-        canonicalPath="/services"
+        canonicalPath="/services/"
       />
 
       <section className="relative overflow-hidden pt-36 pb-20 lg:pt-40">

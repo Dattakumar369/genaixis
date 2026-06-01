@@ -124,7 +124,7 @@ export default function About() {
         title="About | GENAIXIS LABS PRIVATE LIMITED"
         description="GENAIXIS LABS PRIVATE LIMITED is a futuristic AI and software innovation company building products, SaaS platforms, enterprise systems, and AI-powered digital ecosystems."
         keywords="about GENAIXIS, GENAIXIS LABS PRIVATE LIMITED, genaxis company, gen aixis company, gen axis AI company, LearnStackHub founder, AI software innovation company"
-        canonicalPath="/about"
+        canonicalPath="/about/"
       />
       <PageHero
         tag="About GENAIXIS"

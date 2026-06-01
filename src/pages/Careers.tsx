@@ -80,7 +80,8 @@ const principles = [
   'Raise the product standard',
 ];
 
-const companyAddress = 'Kondapur, Hyderabad, Telangana';
+const companyAddress =
+  'Ground Floor, Krishe Emerald, Kondapur, Laxmi Cyber City, Whitefields, HITEC City, Hyderabad, Telangana 500081';
 
 function CareersHero() {
   return (
@@ -199,7 +200,7 @@ export default function Careers() {
         title="Careers | GENAIXIS LABS PRIVATE LIMITED"
         description="Join GENAIXIS LABS PRIVATE LIMITED and build AI products, SaaS platforms, automation systems, cloud solutions, and enterprise software with an AI-first product engineering team."
         keywords="GENAIXIS careers, genaxis jobs, gen aixis careers, AI software jobs Hyderabad, SaaS engineering careers, LearnStackHub careers"
-        canonicalPath="/careers"
+        canonicalPath="/careers/"
       />
       <CareersHero />
 

@@ -6,7 +6,7 @@ const lastUpdated = 'May 27, 2026';
 const companyName = 'GENAIXIS LABS PRIVATE LIMITED';
 const contactEmail = 'contact@genaixis.com';
 const companyAddress =
-  'Ground Floor, Kondapur Main Road, Kondapur, Laxmi Cyber City, Whitefields, Kondapur, Hyderabad, Telangana 500081';
+  'Ground Floor, Krishe Emerald, Kondapur, Laxmi Cyber City, Whitefields, HITEC City, Hyderabad, Telangana 500081';
 
 interface LegalSection {
   title: string;
@@ -72,7 +72,7 @@ export function PrivacyPolicy() {
   return (
     <LegalPage
       title="Privacy Policy"
-      canonicalPath="/privacy-policy"
+      canonicalPath="/privacy-policy/"
       keywords="GENAIXIS privacy policy, GENAIXIS data policy, LearnStackHub privacy, AI software company privacy"
       description="Read how GENAIXIS LABS PRIVATE LIMITED collects, uses, protects, and handles information through its company website and related digital services."
       sections={[
@@ -138,7 +138,7 @@ export function TermsAndConditions() {
   return (
     <LegalPage
       title="Terms and Conditions"
-      canonicalPath="/terms-and-conditions"
+      canonicalPath="/terms-and-conditions/"
       keywords="GENAIXIS terms and conditions, GENAIXIS terms of service, AI software company terms, LearnStackHub terms"
       description="Read the terms and conditions for using the GENAIXIS LABS PRIVATE LIMITED website and related company information."
       sections={[
@@ -217,7 +217,7 @@ export function CookiePolicy() {
   return (
     <LegalPage
       title="Cookie Policy"
-      canonicalPath="/cookie-policy"
+      canonicalPath="/cookie-policy/"
       keywords="GENAIXIS cookie policy, website cookies, analytics cookies, LearnStackHub cookies"
       description="Read how GENAIXIS LABS PRIVATE LIMITED may use cookies and similar technologies on its website."
       sections={[

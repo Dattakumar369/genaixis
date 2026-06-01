@@ -55,7 +55,7 @@ function escapeAttribute(value) {
 }
 
 function withRouteMeta(html, route, meta) {
-  const canonical = `${siteUrl}/${route}`;
+  const canonical = `${siteUrl}/${route}/`;
   const robots = meta.noIndex
     ? 'noindex, follow'
     : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';

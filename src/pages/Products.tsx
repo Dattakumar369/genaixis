@@ -56,7 +56,7 @@ export default function Products() {
         title="Products | GENAIXIS LABS PRIVATE LIMITED"
         description="Explore GENAIXIS products and platform capabilities including LearnStackHub, AI systems, SaaS platforms, automation systems, and future product ecosystems."
         keywords="GENAIXIS products, LearnStackHub, LSH, learnstackhub, AI mock interview system, SaaS products, AI automation products, genaxis products"
-        canonicalPath="/products"
+        canonicalPath="/products/"
       />
       <PageHero
         tag="Our Products"
