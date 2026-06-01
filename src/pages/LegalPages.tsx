@@ -46,7 +46,7 @@ function LegalPage({ title, description, canonicalPath, keywords, sections }: Le
             </p>
           </aside>
 
-          <article className="rounded-2xl border border-white/10 bg-[#07101a] p-6 shadow-2xl shadow-brand-950/10 sm:p-8">
+          <article className="rounded-2xl border border-white/10 bg-genaixis-panel p-6 shadow-2xl shadow-brand-950/10 sm:p-8">
             <div className="space-y-10">
               {sections.map((section) => (
                 <section key={section.title}>

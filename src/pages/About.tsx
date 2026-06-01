@@ -74,7 +74,7 @@ const leaders = [
     role: 'Co-Founder & Director',
     icon: Brain,
     initials: 'DP',
-    accent: 'from-brand-300/25 via-blue-400/10 to-violet-300/20',
+    accent: 'from-brand-300/25 via-blue-400/10 to-brand-700/20',
     bio: 'Dattakumar Pandi is a software engineer, product builder, and technology entrepreneur with strong expertise in Java, Spring Boot, scalable backend systems, AI-driven platforms, cloud technologies, and full-stack product development.',
     extra: 'He is the founder of LearnStackHub, a developer-focused digital product that combines platform engineering, AI-powered assessment, content workflows, and user experience systems.',
     focus: 'With a strong focus on innovation and product development, he aims to build intelligent software platforms and scalable technology ecosystems that create real digital impact.',
@@ -94,7 +94,7 @@ const leaders = [
     role: 'Co-Founder & Director',
     icon: Users,
     initials: 'SS',
-    accent: 'from-violet-300/25 via-brand-400/10 to-amber-300/20',
+    accent: 'from-brand-300/25 via-brand-400/10 to-amber-300/20',
     bio: 'Satya Saibaba is a technology enthusiast and business-focused leader passionate about innovation, digital transformation, and building scalable technology solutions.',
     extra: 'As Co-Founder and Director of GENAIXIS, he plays an important role in strategic growth, product vision, operational planning, and business development initiatives.',
     focus: 'His focus is on helping build a strong technology-driven organization capable of delivering modern digital products, scalable platforms, and future-ready software ecosystems.',
@@ -164,7 +164,7 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.65 }}
-            className="premium-card rounded-2xl border border-white/10 bg-[#07101a] p-7"
+            className="premium-card rounded-2xl border border-white/10 bg-genaixis-panel p-7"
           >
             <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-300/10">
               <Rocket className="h-6 w-6 text-brand-300" />
@@ -188,7 +188,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="border-y border-white/8 bg-[#07101a] py-20">
+      <section className="border-y border-white/8 bg-genaixis-panel py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
             tag="Our Goals"
@@ -223,7 +223,7 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.65 }}
-            className="premium-card rounded-2xl border border-violet-300/15 bg-violet-300/[0.04] p-7"
+            className="premium-card rounded-2xl border border-brand-500/15 bg-brand-600/[0.04] p-7"
           >
             <a
               href="https://www.learnstackhub.com/"
@@ -234,15 +234,15 @@ export default function About() {
             >
               <img src="/learnstackhub-logo.png" alt="LearnStackHub logo" className="h-full w-full object-contain" />
             </a>
-            <p className="mt-6 text-sm font-semibold uppercase tracking-[0.24em] text-violet-300">Our Product</p>
+            <p className="mt-6 text-sm font-semibold uppercase tracking-[0.24em] text-brand-300">Our Product</p>
             <h2 className="mt-4 text-3xl font-bold leading-tight text-white">LearnStackHub</h2>
             <p className="mt-5 leading-7 text-slate-300">
               LearnStackHub is one of the core products developed under GENAIXIS. It demonstrates our ability to build a complete digital platform with AI workflows, product-grade UX, content operations, analytics, and scalable cloud-ready architecture.
             </p>
             <div className="mt-7 grid gap-3">
               {learnStackHubFeatures.map((feature) => (
-                <div key={feature} className="premium-card flex items-center gap-3 rounded-xl border border-white/8 bg-white/[0.035] p-3 transition hover:-translate-y-0.5 hover:border-violet-300/20">
-                  <CheckCircle2 className="h-4 w-4 flex-none text-violet-300" />
+                <div key={feature} className="premium-card flex items-center gap-3 rounded-xl border border-white/8 bg-white/[0.035] p-3 transition hover:-translate-y-0.5 hover:border-brand-500/20">
+                  <CheckCircle2 className="h-4 w-4 flex-none text-brand-300" />
                   <span className="text-sm text-slate-200">{feature}</span>
                 </div>
               ))}
@@ -251,7 +251,7 @@ export default function About() {
               href="https://www.learnstackhub.com/"
               target="_blank"
               rel="noreferrer"
-              className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-violet-300 hover:text-white"
+              className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-brand-300 hover:text-white"
             >
               Visit LearnStackHub
               <ArrowRight className="h-4 w-4" />
@@ -289,7 +289,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="border-y border-white/8 bg-[#07101a] py-24">
+      <section className="border-y border-white/8 bg-genaixis-panel py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
             tag="Leadership Team"
@@ -365,7 +365,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="border-t border-white/8 bg-[#07101a] py-20">
+      <section className="border-t border-white/8 bg-genaixis-panel py-20">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
           <p className="text-sm font-semibold uppercase tracking-[0.24em] text-brand-300">Future Vision</p>
           <h2 className="mt-4 text-3xl font-bold leading-tight text-white sm:text-5xl">

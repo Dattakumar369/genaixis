@@ -97,12 +97,15 @@ function ProductShowcase() {
       transition={{ duration: 0.8, delay: 0.15 }}
       className="scene-3d relative min-h-[390px] sm:min-h-[500px] lg:min-h-[560px]"
     >
-      <div className="absolute inset-0 rounded-[2.25rem] bg-[radial-gradient(circle_at_50%_42%,rgba(37,99,235,0.42),rgba(168,85,247,0.18)_34%,rgba(8,9,21,0)_72%)] blur-2xl" />
-      <div className="premium-card absolute inset-0 overflow-hidden rounded-[2rem] border border-white/10 bg-[#080915]/90 shadow-2xl shadow-brand-950/35">
+      <div className="hero-energy-ring absolute left-1/2 top-[42%] h-[310px] w-[310px] -translate-x-1/2 -translate-y-1/2 sm:h-[410px] sm:w-[410px]" />
+      <div className="hero-scan-beam absolute left-8 right-8 top-12 h-24 rounded-full" />
+      <div className="absolute inset-0 rounded-[2.25rem] bg-[radial-gradient(circle_at_50%_42%,rgba(59,158,255,0.42),rgba(26,68,140,0.18)_34%,rgba(8,9,21,0)_72%)] blur-2xl" />
+      <div className="premium-card absolute inset-0 overflow-hidden rounded-[2rem] border border-white/10 bg-genaixis-surface/90 shadow-2xl shadow-brand-950/35">
         <div className="absolute inset-0 grid-pattern opacity-35" />
+        <div className="hero-panel-sheen absolute inset-0" />
         <div className="absolute inset-x-10 top-10 h-px bg-gradient-to-r from-transparent via-brand-200/50 to-transparent" />
         <div className="data-stream absolute left-8 top-24 h-px w-72 bg-gradient-to-r from-transparent via-brand-200/70 to-transparent" />
-        <div className="data-stream absolute bottom-28 right-8 h-px w-80 bg-gradient-to-r from-transparent via-violet-200/60 to-transparent" style={{ animationDelay: '1.2s' }} />
+        <div className="data-stream absolute bottom-28 right-8 h-px w-80 bg-gradient-to-r from-transparent via-brand-200/60 to-transparent" style={{ animationDelay: '1.2s' }} />
       </div>
 
       <div className="absolute left-1/2 top-[42%] h-[260px] w-[260px] -translate-x-1/2 -translate-y-1/2 sm:h-[340px] sm:w-[340px] lg:h-[380px] lg:w-[380px]">
@@ -110,8 +113,8 @@ function ProductShowcase() {
         <div className="orbit-3d-center absolute left-1/2 top-1/2 h-[240px] w-[240px] rounded-full border border-brand-200/22 sm:h-[310px] sm:w-[310px] lg:h-[350px] lg:w-[350px]">
           <span className="absolute left-1/2 top-0 h-3.5 w-3.5 -translate-x-1/2 rounded-full bg-brand-100 shadow-lg shadow-brand-200/60" />
         </div>
-        <div className="orbit-3d-center absolute left-1/2 top-1/2 h-[190px] w-[190px] rounded-full border border-violet-200/18 sm:h-[245px] sm:w-[245px] lg:h-[270px] lg:w-[270px]" style={{ animationDirection: 'reverse', animationDuration: '18s' }}>
-          <span className="absolute bottom-0 left-1/2 h-3 w-3 -translate-x-1/2 rounded-full bg-violet-100 shadow-lg shadow-violet-200/50" />
+        <div className="orbit-3d-center absolute left-1/2 top-1/2 h-[190px] w-[190px] rounded-full border border-brand-400/18 sm:h-[245px] sm:w-[245px] lg:h-[270px] lg:w-[270px]" style={{ animationDirection: 'reverse', animationDuration: '18s' }}>
+          <span className="absolute bottom-0 left-1/2 h-3 w-3 -translate-x-1/2 rounded-full bg-brand-200 shadow-lg shadow-brand-200/50" />
         </div>
       </div>
 
@@ -119,7 +122,7 @@ function ProductShowcase() {
         <div className="platform-layer layer-back" />
         <div className="platform-layer layer-mid">
           <div className="absolute left-9 top-9 h-2 w-28 rounded-full bg-brand-100/60" />
-          <div className="absolute right-9 top-[4.25rem] h-2 w-20 rounded-full bg-violet-200/45" />
+          <div className="absolute right-9 top-[4.25rem] h-2 w-20 rounded-full bg-brand-400/45" />
           <div className="absolute bottom-9 left-9 right-9 h-14 rounded-2xl border border-white/14 bg-white/[0.055]" />
         </div>
         <div className="platform-layer layer-front">
@@ -148,8 +151,8 @@ function ProductShowcase() {
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-brand-200">AI Product Engineering</p>
             <p className="mt-1 text-xs leading-5 text-slate-300 sm:text-sm">Intelligent platforms, automation systems, and SaaS products</p>
           </div>
-          <div className="flex items-center gap-2 rounded-full border border-violet-300/20 bg-violet-300/10 px-3 py-1 text-xs font-semibold text-violet-200">
-            <span className="h-2 w-2 rounded-full bg-violet-200 shadow-lg shadow-violet-200/50" />
+          <div className="flex items-center gap-2 rounded-full border border-brand-500/20 bg-brand-600/10 px-3 py-1 text-xs font-semibold text-brand-200">
+            <span className="h-2 w-2 rounded-full bg-brand-400 shadow-lg shadow-brand-200/50" />
             Live AI Pulse
           </div>
         </div>
@@ -164,8 +167,11 @@ function Hero() {
       <div className="absolute inset-0 grid-pattern opacity-35" />
       <div className="hero-aurora absolute inset-0" />
       <div className="hero-particles absolute inset-0 opacity-60" />
+      <div className="hero-orbital-line absolute left-1/2 top-32 h-[28rem] w-[28rem] -translate-x-1/2 rounded-full" />
+      <div className="hero-floating-light hero-floating-light-a absolute h-32 w-32 rounded-full" />
+      <div className="hero-floating-light hero-floating-light-b absolute h-24 w-24 rounded-full" />
       <div className="absolute -left-44 top-20 h-72 w-72 rounded-full bg-brand-500/16 blur-3xl" />
-      <div className="absolute right-0 top-24 h-80 w-80 rounded-full bg-violet-500/16 blur-3xl" />
+      <div className="absolute right-0 top-24 h-80 w-80 rounded-full bg-brand-600/16 blur-3xl" />
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-300/35 to-transparent" />
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 sm:gap-14 sm:px-6 lg:grid-cols-[0.98fr_1.02fr] lg:px-8">
@@ -175,7 +181,7 @@ function Hero() {
           transition={{ duration: 0.7 }}
         >
           <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-brand-300/25 bg-white/[0.055] px-4 py-2 text-sm font-medium text-brand-100">
-            <span className="h-2 w-2 rounded-full bg-gradient-to-r from-brand-400 to-violet-400" />
+            <span className="h-2 w-2 rounded-full bg-gradient-to-r from-brand-400 to-brand-700" />
             AI, SaaS, automation, and cloud product engineering
           </div>
 
@@ -193,7 +199,7 @@ function Hero() {
           <div className="mt-8 flex flex-col gap-3 sm:mt-9 sm:flex-row">
             <Link
               to="/products"
-              className="premium-button inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-500 via-brand-600 to-violet-500 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-brand-500/20 transition hover:from-brand-400 hover:to-violet-400"
+              className="premium-button inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-500 via-brand-600 to-brand-700 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-brand-500/20 transition hover:from-brand-400 hover:to-brand-400"
             >
               View Capabilities
               <ArrowRight className="h-4 w-4" />
@@ -296,9 +302,9 @@ function BrandProof() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.65 }}
-          className="premium-card overflow-hidden rounded-2xl border border-white/10 bg-[#080915]"
+          className="premium-card overflow-hidden rounded-2xl border border-white/10 bg-genaixis-surface"
         >
-          <div className="animated-gradient-surface relative min-h-72 border-b border-white/10 bg-gradient-to-br from-white/10 via-brand-500/12 to-violet-500/16 p-6">
+          <div className="animated-gradient-surface relative min-h-72 border-b border-white/10 bg-gradient-to-br from-white/10 via-brand-500/12 to-brand-700/16 p-6">
             <div className="absolute inset-0 grid-pattern opacity-30" />
             <div className="absolute right-8 top-8 h-24 w-24 rounded-full bg-white/8 blur-2xl" />
             <div className="relative flex items-center justify-between gap-4">
@@ -324,8 +330,8 @@ function BrandProof() {
 
           <div className="grid gap-4 p-6">
             {process.map((item) => (
-              <div key={item.title} className="premium-card flex gap-3 rounded-xl border border-white/10 bg-white/[0.035] p-4 transition hover:-translate-y-0.5 hover:border-violet-300/22">
-                <CheckCircle2 className="mt-1 h-4 w-4 flex-none text-violet-300" />
+              <div key={item.title} className="premium-card flex gap-3 rounded-xl border border-white/10 bg-white/[0.035] p-4 transition hover:-translate-y-0.5 hover:border-brand-500/22">
+                <CheckCircle2 className="mt-1 h-4 w-4 flex-none text-brand-300" />
                 <div>
                   <p className="text-sm font-semibold text-slate-100">{item.title}</p>
                   <p className="mt-1 text-sm leading-6 text-slate-400">{item.desc}</p>
@@ -341,12 +347,12 @@ function BrandProof() {
           viewport={{ once: true }}
           transition={{ duration: 0.65 }}
         >
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-violet-300">Built For Clients</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-brand-300">Built For Clients</p>
           <h2 className="mt-4 text-3xl font-semibold leading-tight text-white sm:text-5xl">
             The website now feels closer to the logo: minimal, sharp, and premium.
           </h2>
           <p className="mt-6 text-lg leading-8 text-slate-300">
-            The logo has a clean white base, deep black wordmark, and a blue-violet X. The site now mirrors that identity with crisp dark surfaces, lighter typography, premium panels, and focused gradient highlights.
+            The logo pairs deep navy lettering with an electric-blue and navy split X on black. The site mirrors that identity with a true-black canvas, crisp typography, premium panels, and focused blue highlights.
           </p>
           <p className="mt-4 leading-7 text-slate-400">
             This gives clients a stronger startup/product-company impression instead of a generic consultancy or institute-style look.
@@ -400,11 +406,11 @@ function VisionAndWhy() {
     <section className="relative py-24">
       <div className="absolute inset-0 grid-pattern opacity-25" />
       <div className="relative mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[1fr_0.9fr] lg:px-8">
-        <div className="premium-card rounded-2xl border border-white/10 bg-white/[0.04] p-8 transition hover:-translate-y-1 hover:border-violet-300/22 sm:p-10">
-          <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-violet-300/25 bg-violet-400/10">
-            <Network className="h-6 w-6 text-violet-300" />
+        <div className="premium-card rounded-2xl border border-white/10 bg-white/[0.04] p-8 transition hover:-translate-y-1 hover:border-brand-500/22 sm:p-10">
+          <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-brand-500/25 bg-brand-500/10">
+            <Network className="h-6 w-6 text-brand-300" />
           </div>
-          <p className="mt-7 text-sm font-semibold uppercase tracking-[0.24em] text-violet-300">Our Vision</p>
+          <p className="mt-7 text-sm font-semibold uppercase tracking-[0.24em] text-brand-300">Our Vision</p>
           <h2 className="mt-4 text-3xl font-semibold leading-tight text-white sm:text-4xl">
             Building impactful products that transform business operations and digital experiences.
           </h2>
@@ -435,7 +441,7 @@ function TechStrip() {
     <section className="border-y border-white/10 bg-[#070813] py-10">
       <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-3 px-4 sm:px-6 lg:px-8">
         {stack.map((item) => (
-          <span key={item} className="premium-card rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm font-medium text-slate-300 transition hover:-translate-y-0.5 hover:border-violet-300/25 hover:text-white">
+          <span key={item} className="premium-card rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm font-medium text-slate-300 transition hover:-translate-y-0.5 hover:border-brand-500/25 hover:text-white">
             {item}
           </span>
         ))}
@@ -458,7 +464,7 @@ function ContactCTA() {
         <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
           <Link
             to="/contact"
-            className="premium-button inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-500 via-brand-600 to-violet-500 px-7 py-3.5 text-sm font-semibold text-white transition hover:from-brand-400 hover:to-violet-400"
+            className="premium-button inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-500 via-brand-600 to-brand-700 px-7 py-3.5 text-sm font-semibold text-white transition hover:from-brand-400 hover:to-brand-400"
           >
             Contact Us
             <ArrowRight className="h-4 w-4" />

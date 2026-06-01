@@ -99,7 +99,7 @@ export default function Contact() {
                 </div>
               </a>
 
-              <div className="premium-card animated-gradient-surface rounded-2xl bg-gradient-to-br from-brand-500/10 via-blue-500/10 to-violet-500/10 border border-brand-500/20 p-6">
+              <div className="premium-card animated-gradient-surface rounded-2xl bg-gradient-to-br from-brand-500/10 via-blue-500/10 to-brand-700/10 border border-brand-500/20 p-6">
                 <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-white/10">
                   <Sparkles className="h-5 w-5 text-brand-300" />
                 </div>
@@ -186,7 +186,7 @@ export default function Contact() {
               </button>
 
               {submitted && (
-                <div className="mt-5 flex items-start gap-3 rounded-xl border border-violet-400/20 bg-violet-400/10 p-4 text-sm text-violet-200">
+                <div className="mt-5 flex items-start gap-3 rounded-xl border border-brand-500/20 bg-brand-500/10 p-4 text-sm text-brand-200">
                   <CheckCircle2 className="h-5 w-5 flex-shrink-0" />
                   <span>Thanks. Your inquiry is ready for the GENAIXIS team to review.</span>
                 </div>

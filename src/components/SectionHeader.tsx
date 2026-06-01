@@ -26,7 +26,7 @@ export default function SectionHeader({
       {tag && (
         <div className={`flex mb-4 ${centered ? 'justify-center' : ''}`}>
           <span className="inline-flex items-center gap-2 rounded-full border border-brand-300/25 bg-white/[0.055] px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider text-brand-100">
-            <span className="h-1.5 w-1.5 rounded-full bg-gradient-to-r from-brand-400 to-violet-400" />
+            <span className="h-1.5 w-1.5 rounded-full bg-gradient-to-r from-brand-400 to-brand-700" />
             {tag}
           </span>
         </div>

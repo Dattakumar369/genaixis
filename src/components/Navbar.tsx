@@ -31,14 +31,14 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? 'bg-[#05060d]/92 backdrop-blur-xl border-b border-white/10 shadow-2xl'
-          : 'bg-transparent'
+          ? 'bg-white/92 backdrop-blur-xl border-b border-slate-200/80 shadow-xl shadow-slate-950/5'
+          : 'bg-white/[0.86] backdrop-blur-xl border-b border-slate-200/60 shadow-lg shadow-slate-950/5'
       }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between md:h-20">
           {/* Logo */}
-          <Link to="/" className="brand-logo-link flex h-22 w-[220px] items-center sm:h-24 sm:w-[250px]">
+          <Link to="/" className="brand-logo-link flex h-12 w-[220px] items-center sm:h-14 sm:w-[250px]">
             <img src="/genaixis.png" alt="GENAIXIS" className="brand-logo-png h-full w-full" />
           </Link>
 
@@ -52,14 +52,18 @@ export default function Navbar() {
                   to={link.path}
                   className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 group ${
                     isActive
-                      ? 'text-white'
-                      : 'text-slate-400 hover:text-slate-100'
+                      ? 'text-slate-950'
+                      : 'text-slate-600 hover:text-slate-950'
                   }`}
                 >
                   {isActive && (
                     <motion.div
                       layoutId="nav-active"
-                      className="absolute inset-0 rounded-lg border border-brand-300/25 bg-gradient-to-r from-brand-500/18 to-violet-500/14"
+                      className={`absolute inset-0 rounded-lg border ${
+                        scrolled
+                          ? 'border-brand-500/20 bg-brand-500/8'
+                          : 'border-brand-500/15 bg-white/70'
+                      }`}
                       transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
                     />
                   )}
@@ -82,7 +86,11 @@ export default function Navbar() {
           {/* Mobile menu button */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-slate-400 transition-colors hover:text-slate-100 lg:hidden"
+            className={`flex h-10 w-10 items-center justify-center rounded-lg border transition-colors lg:hidden ${
+              scrolled
+                ? 'border-slate-200 bg-white text-slate-700 hover:text-slate-950'
+                : 'border-slate-200 bg-white text-slate-700 hover:text-slate-950'
+            }`}
             aria-label="Toggle menu"
           >
             {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}

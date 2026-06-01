@@ -135,7 +135,7 @@ function CareersHero() {
           className="relative min-h-[500px] sm:min-h-[540px]"
         >
           <div className="absolute inset-0 rounded-[2rem] bg-[radial-gradient(circle_at_50%_38%,rgba(34,211,238,0.34),rgba(16,185,129,0.14)_36%,transparent_72%)] blur-2xl" />
-          <div className="premium-card absolute inset-0 overflow-hidden rounded-[2rem] border border-white/10 bg-[#07101a]/92 shadow-2xl shadow-brand-950/30">
+          <div className="premium-card absolute inset-0 overflow-hidden rounded-[2rem] border border-white/10 bg-genaixis-panel/92 shadow-2xl shadow-brand-950/30">
             <div className="absolute inset-0 grid-pattern opacity-35" />
             <div className="absolute inset-x-8 top-10 h-px bg-gradient-to-r from-transparent via-brand-200/50 to-transparent" />
           </div>
@@ -155,15 +155,15 @@ function CareersHero() {
 
             <div className="mt-5 grid gap-4 sm:grid-cols-3">
               {highlights.map((item) => (
-                <div key={item.label} className="premium-card rounded-2xl border border-white/8 bg-[#07111c]/85 p-4 transition hover:-translate-y-0.5 hover:border-brand-300/20">
+                <div key={item.label} className="premium-card rounded-2xl border border-white/8 bg-genaixis-panel/85 p-4 transition hover:-translate-y-0.5 hover:border-brand-300/20">
                   <p className="text-3xl font-bold text-brand-100">{item.value}</p>
                   <p className="mt-2 text-sm leading-5 text-slate-300">{item.label}</p>
                 </div>
               ))}
             </div>
 
-            <div className="premium-card mt-5 rounded-2xl border border-white/10 bg-[#07111c]/90 p-5">
-              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-violet-200">What You Will Build</p>
+            <div className="premium-card mt-5 rounded-2xl border border-white/10 bg-genaixis-panel/90 p-5">
+              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-brand-200">What You Will Build</p>
               <div className="mt-5 grid gap-3">
                 {[
                   'AI product modules and automation workflows',
@@ -171,8 +171,8 @@ function CareersHero() {
                   'Cloud-ready applications for business operations',
                   'Premium client-facing digital experiences',
                 ].map((item) => (
-                  <div key={item} className="premium-card flex items-center gap-3 rounded-xl border border-white/8 bg-white/[0.035] p-3 transition hover:-translate-y-0.5 hover:border-violet-300/20">
-                    <CheckCircle2 className="h-4 w-4 flex-none text-violet-300" />
+                  <div key={item} className="premium-card flex items-center gap-3 rounded-xl border border-white/8 bg-white/[0.035] p-3 transition hover:-translate-y-0.5 hover:border-brand-500/20">
+                    <CheckCircle2 className="h-4 w-4 flex-none text-brand-300" />
                     <span className="text-sm text-slate-200">{item}</span>
                   </div>
                 ))}
@@ -204,7 +204,7 @@ export default function Careers() {
       />
       <CareersHero />
 
-      <section id="openings" className="relative border-y border-white/8 bg-[#07101a] py-24">
+      <section id="openings" className="relative border-y border-white/8 bg-genaixis-panel py-24">
         <div className="absolute inset-0 grid-pattern opacity-25" />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
@@ -233,7 +233,7 @@ export default function Careers() {
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-brand-300/20 bg-brand-300/10">
                     <role.icon className="h-6 w-6 text-brand-300" />
                   </div>
-                  <span className="rounded-full border border-violet-300/20 bg-violet-300/10 px-3 py-1 text-xs font-semibold text-violet-200">
+                  <span className="rounded-full border border-brand-500/20 bg-brand-600/10 px-3 py-1 text-xs font-semibold text-brand-200">
                     Talent Pool
                   </span>
                 </div>
@@ -280,11 +280,11 @@ export default function Careers() {
         </div>
       </section>
 
-      <section className="relative border-y border-white/8 bg-[#07101a] py-24">
+      <section className="relative border-y border-white/8 bg-genaixis-panel py-24">
         <div className="absolute inset-0 grid-pattern opacity-25" />
         <div className="relative mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-violet-300">How We Hire</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-brand-300">How We Hire</p>
             <h2 className="mt-4 text-3xl font-bold leading-tight text-white sm:text-5xl">
               Clear steps, practical evaluation, respectful communication.
             </h2>
@@ -329,8 +329,8 @@ export default function Careers() {
 
           <div className="grid gap-3">
             {principles.map((item) => (
-              <div key={item} className="premium-card flex items-center gap-3 rounded-xl border border-white/8 bg-white/[0.035] p-4 transition hover:-translate-y-0.5 hover:border-violet-300/20">
-                <CheckCircle2 className="h-4 w-4 flex-none text-violet-300" />
+              <div key={item} className="premium-card flex items-center gap-3 rounded-xl border border-white/8 bg-white/[0.035] p-4 transition hover:-translate-y-0.5 hover:border-brand-500/20">
+                <CheckCircle2 className="h-4 w-4 flex-none text-brand-300" />
                 <span className="text-sm font-medium text-slate-200">{item}</span>
               </div>
             ))}
@@ -338,7 +338,7 @@ export default function Careers() {
         </div>
       </section>
 
-      <section className="border-t border-white/8 bg-[#07101a] py-20">
+      <section className="border-t border-white/8 bg-genaixis-panel py-20">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
           <Mail className="mx-auto h-9 w-9 text-brand-300" />
           <p className="mt-5 text-sm font-semibold uppercase tracking-[0.24em] text-brand-300">Join Our Talent Pool</p>

@@ -81,7 +81,7 @@ export default function Products() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.65 }}
-            className="premium-card rounded-2xl border border-violet-300/15 bg-[#07101a] p-7"
+            className="premium-card rounded-2xl border border-brand-500/15 bg-genaixis-panel p-7"
           >
             <a
               href="https://www.learnstackhub.com/"
@@ -92,15 +92,15 @@ export default function Products() {
             >
               <img src="/learnstackhub-logo.png" alt="LearnStackHub logo" className="h-full w-full object-contain" />
             </a>
-            <p className="mt-6 text-sm font-semibold uppercase tracking-[0.24em] text-violet-300">Core Product</p>
+            <p className="mt-6 text-sm font-semibold uppercase tracking-[0.24em] text-brand-300">Core Product</p>
             <h2 className="mt-4 text-3xl font-bold text-white sm:text-5xl">LearnStackHub</h2>
             <p className="mt-5 text-lg leading-8 text-slate-300">
               A product proof point from GENAIXIS: a full digital platform combining content workflows, AI-powered assessment, user journeys, analytics, and scalable product architecture.
             </p>
             <div className="mt-7 grid gap-3 sm:grid-cols-2">
               {learnStackHub.map((feature) => (
-                <div key={feature} className="premium-card flex items-start gap-3 rounded-xl border border-white/8 bg-white/[0.035] p-3 transition hover:-translate-y-0.5 hover:border-violet-300/20">
-                  <CheckCircle2 className="mt-0.5 h-4 w-4 flex-none text-violet-300" />
+                <div key={feature} className="premium-card flex items-start gap-3 rounded-xl border border-white/8 bg-white/[0.035] p-3 transition hover:-translate-y-0.5 hover:border-brand-500/20">
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 flex-none text-brand-300" />
                   <span className="text-sm text-slate-200">{feature}</span>
                 </div>
               ))}
@@ -109,7 +109,7 @@ export default function Products() {
               href="https://www.learnstackhub.com/"
               target="_blank"
               rel="noreferrer"
-              className="mt-8 inline-flex items-center gap-2 rounded-xl border border-violet-300/25 bg-violet-300/10 px-5 py-3 text-sm font-bold text-violet-200 transition hover:border-violet-200/50 hover:bg-violet-300/15 hover:text-white"
+              className="mt-8 inline-flex items-center gap-2 rounded-xl border border-brand-500/25 bg-brand-600/10 px-5 py-3 text-sm font-bold text-brand-200 transition hover:border-brand-400/50 hover:bg-brand-600/15 hover:text-white"
             >
               Visit LearnStackHub
               <ArrowRight className="h-4 w-4" />
@@ -147,7 +147,7 @@ export default function Products() {
         </div>
       </section>
 
-      <section className="border-y border-white/8 bg-[#07101a] py-20">
+      <section className="border-y border-white/8 bg-genaixis-panel py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <p className="text-sm font-semibold uppercase tracking-[0.24em] text-brand-300">Product Roadmap</p>

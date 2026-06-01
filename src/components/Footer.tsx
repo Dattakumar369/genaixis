@@ -37,7 +37,7 @@ export default function Footer() {
         <div className="py-16 grid grid-cols-1 lg:grid-cols-5 gap-12">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <Link to="/" className="brand-logo-link mb-5 inline-flex h-22 w-[220px] items-center sm:h-24 sm:w-[350px]">
+            <Link to="/" className="brand-logo-link mb-5 inline-flex h-14 w-[240px] items-center sm:h-16 sm:w-[320px]">
               <img src="/genaixis.png" alt="GENAIXIS" className="brand-logo-png h-full w-full" />
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed mb-6 max-w-xs">

@@ -21,7 +21,7 @@ function ScrollToTop() {
 
 function AppContent() {
   return (
-    <div className="min-h-screen bg-genaixis-canvas text-slate-100">
+    <div className="theme-digital-clean min-h-screen bg-genaixis-canvas text-slate-100">
       <ScrollToTop />
       <Navbar />
       <Routes>
