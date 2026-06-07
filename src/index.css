@@ -670,6 +670,60 @@
   animation: panel-sheen 3.8s ease-in-out infinite;
 }
 
+@media (max-width: 640px) {
+  .hero-orbital-line,
+  .hero-floating-light,
+  .hero-energy-ring,
+  .hero-scan-beam,
+  .hero-panel-sheen {
+    display: none;
+  }
+
+  .theme-digital-clean .hero-aurora {
+    opacity: 0.24;
+    animation-duration: 13s;
+  }
+
+  .theme-digital-clean .hero-particles {
+    opacity: 0.22;
+    animation-duration: 18s;
+  }
+
+  .scene-3d {
+    animation: none;
+  }
+
+  .platform-3d {
+    animation-duration: 8s;
+  }
+
+  .neural-orb {
+    animation-duration: 14s;
+    opacity: 0.72;
+  }
+
+  .orbit-3d-center {
+    animation-duration: 18s;
+  }
+
+  .data-stream {
+    animation-duration: 4.8s;
+  }
+
+  .premium-card:hover {
+    transform: none;
+    box-shadow: 0 18px 46px rgba(15, 23, 42, 0.075);
+  }
+
+  .premium-button {
+    animation-duration: 7s;
+  }
+
+  .brand-logo-link {
+    animation-duration: 8s;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

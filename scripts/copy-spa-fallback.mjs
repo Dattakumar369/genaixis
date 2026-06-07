@@ -1,4 +1,4 @@
-import { copyFile, mkdir, readFile, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 
 const distDir = resolve('dist');
@@ -54,6 +54,14 @@ function escapeAttribute(value) {
   return value.replaceAll('&', '&amp;').replaceAll('"', '&quot;');
 }
 
+function escapeHtml(value) {
+  return value
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;');
+}
+
 function withRouteMeta(html, route, meta) {
   const canonical = `${siteUrl}/${route}/`;
   const robots = meta.noIndex
@@ -70,13 +78,19 @@ function withRouteMeta(html, route, meta) {
     .replace(/<meta property="og:url" content=".*?" \/>/, `<meta property="og:url" content="${canonical}" />`)
     .replace(/<meta name="twitter:title" content=".*?" \/>/, `<meta name="twitter:title" content="${escapeAttribute(meta.title)}" />`)
     .replace(/<meta name="twitter:description" content=".*?" \/>/, `<meta name="twitter:description" content="${escapeAttribute(meta.description)}" />`)
-    .replace(/<h1 data-seo-fallback-title>.*?<\/h1>/, `<h1 data-seo-fallback-title>${meta.h1}</h1>`)
-    .replace(/<p data-seo-fallback-description>[\s\S]*?<\/p>/, `<p data-seo-fallback-description>${escapeAttribute(meta.description)}</p>`);
+    .replace(/<h1([^>]*data-seo-fallback-title[^>]*)>[\s\S]*?<\/h1>/, `<h1$1>${escapeHtml(meta.h1)}</h1>`)
+    .replace(/<p([^>]*data-seo-fallback-description[^>]*)>[\s\S]*?<\/p>/, `<p$1>${escapeHtml(meta.description)}</p>`);
 }
 
-await copyFile(indexFile, resolve(distDir, '404.html'));
-
 const indexHtml = await readFile(indexFile, 'utf8');
+
+await writeFile(
+  resolve(distDir, '404.html'),
+  indexHtml.replace(
+    /<meta name="robots" content=".*?" \/>/,
+    '<meta name="robots" content="noindex, follow" />',
+  ),
+);
 
 await Promise.all(
   Object.entries(routes).map(async ([route, meta]) => {
