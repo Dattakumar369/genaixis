@@ -65,7 +65,7 @@ export default function Products() {
         description="GENAIXIS builds owned products and reusable platform systems across AI, automation, SaaS, cloud infrastructure, and intelligent digital experiences."
       >
         <Link
-          to="/contact"
+          to="/contact/"
           className="premium-button inline-flex items-center gap-2 rounded-xl bg-brand-300 px-6 py-3 text-sm font-bold text-slate-950 transition hover:bg-white"
         >
           Discuss a Product
@@ -184,7 +184,7 @@ export default function Products() {
             GENAIXIS can help shape intelligent products, scalable platforms, and automation systems from idea to launch.
           </p>
           <Link
-            to="/contact"
+            to="/contact/"
             className="premium-button mt-8 inline-flex items-center gap-2 rounded-xl bg-brand-300 px-7 py-3.5 text-sm font-bold text-slate-950 transition hover:bg-white"
           >
             Contact Us

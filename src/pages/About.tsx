@@ -375,7 +375,7 @@ export default function About() {
             We believe the future of technology belongs to AI-powered systems, intelligent automation, scalable digital platforms, and product-focused innovation.
           </p>
           <Link
-            to="/contact"
+            to="/contact/"
             className="premium-button mt-9 inline-flex items-center justify-center gap-2 rounded-xl bg-brand-300 px-7 py-3.5 text-sm font-bold text-slate-950 transition hover:bg-white"
           >
             Build With Us

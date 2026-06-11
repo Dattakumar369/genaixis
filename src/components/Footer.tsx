@@ -3,22 +3,22 @@ import { Mail, MapPin, Twitter, Linkedin, Github, ArrowUpRight } from 'lucide-re
 
 const footerLinks = {
   Company: [
-    { label: 'About Us', path: '/about' },
-    { label: 'Products', path: '/products' },
-    { label: 'Technology', path: '/services' },
-    { label: 'Careers', path: '/careers' },
+    { label: 'About Us', path: '/about/' },
+    { label: 'Products', path: '/products/' },
+    { label: 'Technology', path: '/services/' },
+    { label: 'Careers', path: '/careers/' },
   ],
   Technology: [
-    { label: 'AI Engine', path: '/services' },
-    { label: 'Platform Core', path: '/services' },
-    { label: 'Cloud Layer', path: '/services' },
-    { label: 'Automation OS', path: '/services' },
+    { label: 'AI Engine', path: '/services/' },
+    { label: 'Platform Core', path: '/services/' },
+    { label: 'Cloud Layer', path: '/services/' },
+    { label: 'Automation OS', path: '/services/' },
   ],
   Products: [
-    { label: 'LearnStackHub', path: '/products' },
-    { label: 'AI Mock Interviews', path: '/products' },
-    { label: 'SaaS Platforms', path: '/products' },
-    { label: 'Automation Systems', path: '/products' },
+    { label: 'LearnStackHub', path: '/products/' },
+    { label: 'AI Mock Interviews', path: '/products/' },
+    { label: 'SaaS Platforms', path: '/products/' },
+    { label: 'Automation Systems', path: '/products/' },
   ],
 };
 
@@ -104,9 +104,9 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} GENAIXIS LABS PRIVATE LIMITED. All rights reserved.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-6">
-            <Link to="/privacy-policy" className="text-xs text-slate-500 hover:text-slate-300 transition-colors">Privacy Policy</Link>
-            <Link to="/terms-and-conditions" className="text-xs text-slate-500 hover:text-slate-300 transition-colors">Terms and Conditions</Link>
-            <Link to="/cookie-policy" className="text-xs text-slate-500 hover:text-slate-300 transition-colors">Cookie Policy</Link>
+            <Link to="/privacy-policy/" className="text-xs text-slate-500 hover:text-slate-300 transition-colors">Privacy Policy</Link>
+            <Link to="/terms-and-conditions/" className="text-xs text-slate-500 hover:text-slate-300 transition-colors">Terms and Conditions</Link>
+            <Link to="/cookie-policy/" className="text-xs text-slate-500 hover:text-slate-300 transition-colors">Cookie Policy</Link>
           </div>
         </div>
       </div>

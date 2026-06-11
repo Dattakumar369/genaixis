@@ -146,14 +146,14 @@ export default function Services() {
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link
-                to="/products"
+                to="/products/"
               className="premium-button inline-flex items-center justify-center gap-2 rounded-xl bg-brand-300 px-6 py-3.5 text-sm font-bold text-slate-950 shadow-lg shadow-brand-500/20 transition hover:bg-white"
               >
                 View Capabilities
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
-                to="/about"
+                to="/about/"
                 className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/12 bg-white/[0.04] px-6 py-3.5 text-sm font-bold text-white transition hover:border-brand-300/40 hover:bg-white/[0.08]"
               >
                 Company Vision
@@ -242,7 +242,7 @@ export default function Services() {
             Explore our products and technology direction to understand what GENAIXIS is building for the AI era.
           </p>
           <Link
-            to="/products"
+            to="/products/"
             className="premium-button mt-9 inline-flex items-center gap-2 rounded-xl bg-brand-300 px-7 py-3.5 text-sm font-bold text-slate-950 transition hover:bg-white"
           >
             View Product Ecosystem

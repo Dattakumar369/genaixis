@@ -5,11 +5,11 @@ import { Menu, X } from 'lucide-react';
 
 const navLinks = [
   { label: 'Home', path: '/' },
-  { label: 'About', path: '/about' },
-  { label: 'Products', path: '/products' },
-  { label: 'Technology', path: '/services' },
-  { label: 'Careers', path: '/careers' },
-  { label: 'Contact', path: '/contact' },
+  { label: 'About', path: '/about/' },
+  { label: 'Products', path: '/products/' },
+  { label: 'Technology', path: '/services/' },
+  { label: 'Careers', path: '/careers/' },
+  { label: 'Contact', path: '/contact/' },
 ];
 
 export default function Navbar() {
@@ -45,7 +45,7 @@ export default function Navbar() {
           {/* Desktop Nav */}
           <div className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => {
-              const isActive = location.pathname === link.path;
+              const isActive = location.pathname === link.path || location.pathname === link.path.replace(/\/$/, '');
               return (
                 <Link
                   key={link.path}
@@ -76,7 +76,7 @@ export default function Navbar() {
           {/* CTA */}
           <div className="hidden lg:flex items-center gap-3">
             <Link
-              to="/contact"
+              to="/contact/"
               className="premium-button rounded-lg bg-gradient-to-r from-brand-500 via-brand-600 to-violet-500 px-5 py-2 text-sm font-semibold text-white shadow-lg shadow-brand-500/20 transition-all duration-200 hover:from-brand-400 hover:to-violet-400 hover:shadow-violet-500/30"
             >
               Build With Us
@@ -110,7 +110,7 @@ export default function Navbar() {
           >
             <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-1">
               {navLinks.map((link, i) => {
-                const isActive = location.pathname === link.path;
+                const isActive = location.pathname === link.path || location.pathname === link.path.replace(/\/$/, '');
                 return (
                   <motion.div
                     key={link.path}
@@ -132,7 +132,7 @@ export default function Navbar() {
                 );
               })}
               <Link
-                to="/contact"
+                to="/contact/"
                 className="premium-button mt-2 rounded-lg bg-gradient-to-r from-brand-500 via-brand-600 to-violet-500 px-4 py-3 text-center text-sm font-semibold text-white"
               >
                 Build With Us

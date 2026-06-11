@@ -10,6 +10,7 @@
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="theme-color" content="#050812" />
     <link rel="canonical" href="https://genaixis.com/" />
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
     <link rel="icon" type="image/png" href="/genaixis.png" />
     <link rel="apple-touch-icon" href="/genaixis.png" />
     <meta property="og:title" content="GENAIXIS LABS PRIVATE LIMITED | AI Product Engineering Company" />
@@ -41,6 +42,8 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
+        "@graph": [
+          {
         "@type": "Organization",
         "@id": "https://genaixis.com/#organization",
         "name": "GENAIXIS LABS PRIVATE LIMITED",
@@ -77,15 +80,51 @@
         "sameAs": [
           "https://www.learnstackhub.com/"
         ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://genaixis.com/#website",
+            "url": "https://genaixis.com/",
+            "name": "GENAIXIS LABS PRIVATE LIMITED",
+            "publisher": { "@id": "https://genaixis.com/#organization" }
+          }
+        ]
       }
     </script>
     <script>
-      if (location.hostname === 'www.genaixis.com') {
-        location.replace('https://genaixis.com' + location.pathname + location.search + location.hash);
-      }
+      (function () {
+        var host = location.hostname;
+        if (host !== 'genaixis.com' && host !== 'www.genaixis.com') return;
+
+        var path = location.pathname || '/';
+        var search = location.search;
+        var hash = location.hash;
+        var isHome = path === '/';
+        var target = 'https://genaixis.com' + (isHome ? '/' : path) + search + hash;
+        var needsHttps = location.protocol !== 'https:';
+        var needsApex = host === 'www.genaixis.com';
+        var needsHomeSlash =
+          isHome && search === '' && hash === '' && !location.href.endsWith('/');
+
+        if (needsHttps || needsApex || needsHomeSlash) {
+          location.replace(target);
+        }
+      })();
     </script>
   </head>
   <body>
+    <noscript>
+      <nav aria-label="Site navigation">
+        <ul>
+          <li><a href="https://genaixis.com/">Home</a></li>
+          <li><a href="https://genaixis.com/about/">About</a></li>
+          <li><a href="https://genaixis.com/products/">Products</a></li>
+          <li><a href="https://genaixis.com/services/">Technology</a></li>
+          <li><a href="https://genaixis.com/careers/">Careers</a></li>
+          <li><a href="https://genaixis.com/contact/">Contact</a></li>
+        </ul>
+      </nav>
+    </noscript>
     <div id="root">
       <main>
         <h1 data-seo-fallback data-seo-fallback-title>AI Product Engineering for Ambitious Businesses</h1>

@@ -198,14 +198,14 @@ function Hero() {
 
           <div className="mt-8 flex flex-col gap-3 sm:mt-9 sm:flex-row">
             <Link
-              to="/products"
+              to="/products/"
               className="premium-button inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-500 via-brand-600 to-brand-700 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-brand-500/20 transition hover:from-brand-400 hover:to-brand-400"
             >
               View Capabilities
               <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
-              to="/contact"
+              to="/contact/"
               className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/14 bg-white/[0.045] px-6 py-3.5 text-sm font-semibold text-white transition hover:border-brand-300/40 hover:bg-white/[0.08]"
             >
               Build With Us
@@ -358,7 +358,7 @@ function BrandProof() {
             This gives clients a stronger startup/product-company impression instead of a generic consultancy or institute-style look.
           </p>
           <Link
-            to="/services"
+            to="/services/"
             className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-brand-200 hover:text-white"
           >
             Explore technology capabilities
@@ -463,14 +463,14 @@ function ContactCTA() {
         </p>
         <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
           <Link
-            to="/contact"
+            to="/contact/"
             className="premium-button inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-500 via-brand-600 to-brand-700 px-7 py-3.5 text-sm font-semibold text-white transition hover:from-brand-400 hover:to-brand-400"
           >
             Contact Us
             <ArrowRight className="h-4 w-4" />
           </Link>
           <Link
-            to="/about"
+            to="/about/"
             className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/14 bg-white/[0.045] px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-white/[0.08]"
           >
             Learn About GENAIXIS

@@ -62,13 +62,25 @@ function escapeHtml(value) {
     .replaceAll('"', '&quot;');
 }
 
+function breadcrumbScript(route, meta) {
+  const data = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${siteUrl}/` },
+      { '@type': 'ListItem', position: 2, name: meta.h1, item: `${siteUrl}/${route}/` },
+    ],
+  };
+
+  return `<script type="application/ld+json">${JSON.stringify(data)}</script>`;
+}
+
 function withRouteMeta(html, route, meta) {
   const canonical = `${siteUrl}/${route}/`;
   const robots = meta.noIndex
     ? 'noindex, follow'
     : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
-
-  return html
+  let output = html
     .replace(/<title>.*?<\/title>/, `<title>${escapeAttribute(meta.title)}</title>`)
     .replace(/<meta name="description" content=".*?" \/>/, `<meta name="description" content="${escapeAttribute(meta.description)}" />`)
     .replace(/<meta name="robots" content=".*?" \/>/, `<meta name="robots" content="${robots}" />`)
@@ -80,6 +92,12 @@ function withRouteMeta(html, route, meta) {
     .replace(/<meta name="twitter:description" content=".*?" \/>/, `<meta name="twitter:description" content="${escapeAttribute(meta.description)}" />`)
     .replace(/<h1([^>]*data-seo-fallback-title[^>]*)>[\s\S]*?<\/h1>/, `<h1$1>${escapeHtml(meta.h1)}</h1>`)
     .replace(/<p([^>]*data-seo-fallback-description[^>]*)>[\s\S]*?<\/p>/, `<p$1>${escapeHtml(meta.description)}</p>`);
+
+  if (!meta.noIndex) {
+    output = output.replace('</head>', `${breadcrumbScript(route, meta)}\n  </head>`);
+  }
+
+  return output;
 }
 
 const indexHtml = await readFile(indexFile, 'utf8');
