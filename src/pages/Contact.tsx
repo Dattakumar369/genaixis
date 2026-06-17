@@ -1,4 +1,5 @@
 import { FormEvent, useState } from 'react';
+import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
 import {
   ArrowRight, Building2, CheckCircle2, Headphones, Mail,
@@ -10,7 +11,7 @@ import SEO from '../components/SEO';
 
 const contacts = [
   { icon: Building2, label: 'Business Inquiries', email: 'contact@genaixis.com' },
-  { icon: UserRound, label: 'Careers', email: 'careers@genaixis.com' },
+  { icon: UserRound, label: 'Careers', email: 'talent-acquisition@genaixis.com' },
   { icon: Headphones, label: 'Support', email: 'support@genaixis.com' },
 ];
 
@@ -19,12 +20,59 @@ const companyAddress =
 
 const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(companyAddress)}`;
 
+const emailJsConfig = {
+  serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID,
+  templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+  publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+  toEmail: import.meta.env.VITE_EMAILJS_TO_EMAIL || 'contact@genaixis.com',
+};
+
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState('');
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setSubmitted(true);
+    setError('');
+    setSubmitted(false);
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const name = String(formData.get('name') ?? '').trim();
+    const email = String(formData.get('email') ?? '').trim();
+    const subject = String(formData.get('subject') ?? '').trim();
+    const message = String(formData.get('message') ?? '').trim();
+
+    if (!emailJsConfig.serviceId || !emailJsConfig.templateId || !emailJsConfig.publicKey) {
+      setError('Email service is not configured. Please email us directly at contact@genaixis.com.');
+      return;
+    }
+
+    setSending(true);
+
+    try {
+      await emailjs.send(
+        emailJsConfig.serviceId,
+        emailJsConfig.templateId,
+        {
+          from_name: name,
+          from_email: email,
+          reply_to: email,
+          to_email: emailJsConfig.toEmail,
+          subject,
+          message,
+        },
+        { publicKey: emailJsConfig.publicKey },
+      );
+
+      form.reset();
+      setSubmitted(true);
+    } catch {
+      setError('Something went wrong while sending your message. Please try again or email contact@genaixis.com.');
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -130,7 +178,7 @@ export default function Contact() {
                 </div>
                 <h2 className="text-2xl font-bold font-display text-white">Tell us about your project</h2>
                 <p className="mt-2 text-sm text-slate-400">
-                  This demo form captures your details on the page. You can also email us directly at contact@genaixis.com.
+                  Send us your project details and our team will get back to you at contact@genaixis.com.
                 </p>
               </div>
 
@@ -140,7 +188,8 @@ export default function Contact() {
                   <input
                     required
                     name="name"
-                    className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition focus:border-brand-400/60 focus:bg-white/8"
+                    disabled={sending}
+                    className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition focus:border-brand-400/60 focus:bg-white/8 disabled:cursor-not-allowed disabled:opacity-60"
                     placeholder="Your name"
                   />
                 </label>
@@ -150,7 +199,8 @@ export default function Contact() {
                     required
                     type="email"
                     name="email"
-                    className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition focus:border-brand-400/60 focus:bg-white/8"
+                    disabled={sending}
+                    className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition focus:border-brand-400/60 focus:bg-white/8 disabled:cursor-not-allowed disabled:opacity-60"
                     placeholder="you@company.com"
                   />
                 </label>
@@ -161,7 +211,8 @@ export default function Contact() {
                 <input
                   required
                   name="subject"
-                  className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition focus:border-brand-400/60 focus:bg-white/8"
+                  disabled={sending}
+                  className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition focus:border-brand-400/60 focus:bg-white/8 disabled:cursor-not-allowed disabled:opacity-60"
                   placeholder="AI product development inquiry"
                 />
               </label>
@@ -172,23 +223,31 @@ export default function Contact() {
                   required
                   name="message"
                   rows={6}
-                  className="w-full resize-none rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition focus:border-brand-400/60 focus:bg-white/8"
+                  disabled={sending}
+                  className="w-full resize-none rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition focus:border-brand-400/60 focus:bg-white/8 disabled:cursor-not-allowed disabled:opacity-60"
                   placeholder="Tell us about the product, platform, automation, or software system you want to build."
                 />
               </label>
 
               <button
                 type="submit"
-                className="premium-button mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-500 to-blue-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-brand-500/25 hover:from-brand-400 hover:to-blue-500 transition-all duration-300"
+                disabled={sending}
+                className="premium-button mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-500 to-blue-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-brand-500/25 hover:from-brand-400 hover:to-blue-500 transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-60"
               >
-                Send Message
+                {sending ? 'Sending...' : 'Send Message'}
                 <Send className="h-4 w-4" />
               </button>
 
               {submitted && (
                 <div className="mt-5 flex items-start gap-3 rounded-xl border border-brand-500/20 bg-brand-500/10 p-4 text-sm text-brand-200">
                   <CheckCircle2 className="h-5 w-5 flex-shrink-0" />
-                  <span>Thanks. Your inquiry is ready for the GENAIXIS team to review.</span>
+                  <span>Thanks. Your message has been sent to the GENAIXIS team.</span>
+                </div>
+              )}
+
+              {error && (
+                <div className="mt-5 rounded-xl border border-red-500/20 bg-red-500/10 p-4 text-sm text-red-200">
+                  {error}
                 </div>
               )}
             </motion.form>

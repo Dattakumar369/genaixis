@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Mail, MapPin, Twitter, Linkedin, Github, ArrowUpRight } from 'lucide-react';
+import { Mail, MapPin, Twitter, Linkedin, Github, ArrowUpRight, ShieldAlert } from 'lucide-react';
 
 const footerLinks = {
   Company: [
@@ -49,9 +49,9 @@ export default function Footer() {
                 <Mail className="h-4 w-4 text-brand-400/70 transition-colors group-hover:text-violet-300" />
                 contact@genaixis.com
               </a>
-              <a href="mailto:careers@genaixis.com" className="group flex items-center gap-2.5 text-sm text-slate-400 transition-colors hover:text-brand-200">
+              <a href="mailto:talent-acquisition@genaixis.com" className="group flex items-center gap-2.5 text-sm text-slate-400 transition-colors hover:text-brand-200">
                 <Mail className="h-4 w-4 text-brand-400/70 transition-colors group-hover:text-violet-300" />
-                careers@genaixis.com
+                talent-acquisition@genaixis.com
               </a>
               <a
                 href={mapsUrl}
@@ -96,6 +96,41 @@ export default function Footer() {
               </ul>
             </div>
           ))}
+        </div>
+
+        <div className="mb-6 rounded-2xl border border-rose-200 bg-rose-50 p-5 shadow-sm sm:p-6">
+          <div className="flex items-start gap-4">
+            <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl border border-rose-200 bg-rose-100">
+              <ShieldAlert className="h-5 w-5 text-rose-600" />
+            </div>
+            <div>
+              <h3 className="text-sm font-semibold text-rose-950">Fraud Alert</h3>
+              <p className="mt-2 text-sm leading-relaxed text-slate-700">
+                If you receive suspicious messages claiming to be from GENAIXIS, please contact us immediately.
+                Our official communication channels are:
+              </p>
+              <div className="mt-3 flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:gap-4">
+                <a
+                  href="mailto:hr@genaixis.com"
+                  className="inline-flex items-center gap-2 text-sm font-medium text-rose-700 transition-colors hover:text-rose-900"
+                >
+                  <Mail className="h-4 w-4" />
+                  hr@genaixis.com
+                </a>
+                <a
+                  href="mailto:talent-acqusition@genaixis.com"
+                  className="inline-flex items-center gap-2 text-sm font-medium text-rose-700 transition-colors hover:text-rose-900"
+                >
+                  <Mail className="h-4 w-4" />
+                  talent-acqusition@genaixis.com
+                </a>
+              </div>
+              <p className="mt-3 text-xs leading-relaxed text-slate-600">
+                We respond only from these official email addresses. We do not ask for any payments for job offers.
+                Please report any such incidents to us.
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* Bottom bar */}

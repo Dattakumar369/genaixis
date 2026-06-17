@@ -33,6 +33,11 @@ jobs:
 
       - name: Build
         run: npm run build
+        env:
+          VITE_EMAILJS_SERVICE_ID: service_gfcqqqo
+          VITE_EMAILJS_TEMPLATE_ID: template_31zgg3f
+          VITE_EMAILJS_PUBLIC_KEY: H_N6FrbPRGT5VYDhS
+          VITE_EMAILJS_TO_EMAIL: contact@genaixis.com
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
