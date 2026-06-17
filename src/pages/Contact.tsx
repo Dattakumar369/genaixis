@@ -2,7 +2,7 @@ import { FormEvent, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
 import {
-  ArrowRight, Building2, CheckCircle2, Headphones, Mail,
+  ArrowRight, Building2, CheckCircle2, Mail,
   MapPin, MessageSquare, Send, Sparkles, UserRound,
 } from 'lucide-react';
 import PageHero from '../components/PageHero';
@@ -12,7 +12,6 @@ import SEO from '../components/SEO';
 const contacts = [
   { icon: Building2, label: 'Business Inquiries', email: 'contact@genaixis.com' },
   { icon: UserRound, label: 'Careers', email: 'talent-acquisition@genaixis.com' },
-  { icon: Headphones, label: 'Support', email: 'support@genaixis.com' },
 ];
 
 const companyAddress =

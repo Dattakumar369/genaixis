@@ -326,9 +326,9 @@ export default function Careers() {
                     <Mail className="h-4 w-4" />
                     hr@genaixis.com
                   </a>
-                  <a href="mailto:talent-acqusition@genaixis.com" className="inline-flex items-center gap-2 text-sm font-medium text-rose-700 hover:text-rose-900">
+                  <a href="mailto:talent-acquisition@genaixis.com" className="inline-flex items-center gap-2 text-sm font-medium text-rose-700 hover:text-rose-900">
                     <Mail className="h-4 w-4" />
-                    talent-acqusition@genaixis.com
+                    talent-acquisition@genaixis.com
                   </a>
                 </div>
                 <p className="mt-4 text-sm text-slate-600">
