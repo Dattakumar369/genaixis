@@ -1,5 +1,10 @@
 import { Link } from 'react-router-dom';
-import { Mail, MapPin, Twitter, Linkedin, Github, ArrowUpRight, ShieldAlert } from 'lucide-react';
+import { Mail, MapPin, Twitter, Linkedin, ArrowUpRight, ShieldAlert } from 'lucide-react';
+
+const socialLinks = [
+  { icon: Twitter, label: 'GENAIXIS on X', href: 'https://x.com/genaixis' },
+  { icon: Linkedin, label: 'GENAIXIS on LinkedIn', href: 'https://www.linkedin.com/company/genaixis-labs-private-limited/' },
+];
 
 const footerLinks = {
   Company: [
@@ -65,10 +70,13 @@ export default function Footer() {
             </div>
 
             <div className="flex items-center gap-3 mt-6">
-              {[Twitter, Linkedin, Github].map((Icon, i) => (
+              {socialLinks.map(({ icon: Icon, label, href }) => (
                 <a
-                  key={i}
-                  href="#"
+                  key={href}
+                  href={href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={label}
                   className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-white/[0.04] text-slate-400 transition-all duration-200 hover:border-brand-300/35 hover:bg-brand-500/10 hover:text-brand-100"
                 >
                   <Icon className="w-4 h-4" />
