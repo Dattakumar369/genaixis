@@ -11,7 +11,7 @@ interface PageHeroProps {
 
 export default function PageHero({ tag, title, titleHighlight, description, children }: PageHeroProps) {
   return (
-    <section className="relative overflow-hidden border-b border-white/8 pb-14 pt-28 sm:pb-20 sm:pt-32">
+    <section className="relative overflow-hidden border-b border-white/8 pb-12 pt-24 sm:pb-20 sm:pt-32">
       <div className="absolute inset-0 grid-pattern opacity-50" />
       <div className="absolute left-1/2 top-16 h-32 w-[38rem] -translate-x-1/2 rounded-full bg-gradient-to-r from-brand-500/18 via-brand-600/14 to-white/8 blur-3xl" />
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-300/35 to-transparent" />
@@ -35,7 +35,7 @@ export default function PageHero({ tag, title, titleHighlight, description, chil
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="mx-auto max-w-4xl text-3xl font-bold font-display leading-tight text-white sm:text-5xl lg:text-6xl"
+          className="mx-auto max-w-4xl text-[1.75rem] font-bold font-display leading-snug text-white sm:text-5xl sm:leading-tight lg:text-6xl"
         >
           {titleHighlight ? (
             <>
@@ -61,7 +61,7 @@ export default function PageHero({ tag, title, titleHighlight, description, chil
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-8"
+            className="mt-8 w-full max-w-md mx-auto sm:max-w-none"
           >
             {children}
           </motion.div>

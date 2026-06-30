@@ -39,10 +39,10 @@ export default function Footer() {
       <div className="logo-ribbon -right-48 bottom-10 rotate-12" />
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main footer */}
-        <div className="py-16 grid grid-cols-1 lg:grid-cols-5 gap-12">
+        <div className="py-12 grid grid-cols-1 gap-10 lg:grid-cols-5 lg:gap-12 lg:py-16">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <Link to="/" className="brand-logo-link mb-5 inline-flex h-14 w-[240px] items-center sm:h-16 sm:w-[320px]">
+            <Link to="/" className="brand-logo-link mb-5 inline-flex h-12 w-[180px] max-w-full items-center sm:h-16 sm:w-[320px]">
               <img src="/genaixis.png" alt="GENAIXIS" className="brand-logo-png h-full w-full" />
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed mb-6 max-w-xs">
@@ -50,12 +50,12 @@ export default function Footer() {
             </p>
 
             <div className="flex flex-col gap-3">
-              <a href="mailto:contact@genaixis.com" className="group flex items-center gap-2.5 text-sm text-slate-400 transition-colors hover:text-brand-200">
-                <Mail className="h-4 w-4 text-brand-400/70 transition-colors group-hover:text-violet-300" />
+              <a href="mailto:contact@genaixis.com" className="group flex items-center gap-2.5 text-sm text-slate-400 transition-colors hover:text-brand-200 break-all sm:break-normal">
+                <Mail className="h-4 w-4 flex-shrink-0 text-brand-400/70 transition-colors group-hover:text-violet-300" />
                 contact@genaixis.com
               </a>
-              <a href="mailto:talent-acquisition@genaixis.com" className="group flex items-center gap-2.5 text-sm text-slate-400 transition-colors hover:text-brand-200">
-                <Mail className="h-4 w-4 text-brand-400/70 transition-colors group-hover:text-violet-300" />
+              <a href="mailto:talent-acquisition@genaixis.com" className="group flex items-center gap-2.5 text-sm text-slate-400 transition-colors hover:text-brand-200 break-all sm:break-normal">
+                <Mail className="h-4 w-4 flex-shrink-0 text-brand-400/70 transition-colors group-hover:text-violet-300" />
                 talent-acquisition@genaixis.com
               </a>
               <a
@@ -86,6 +86,7 @@ export default function Footer() {
           </div>
 
           {/* Links */}
+          <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:col-span-3 lg:grid-cols-3">
           {Object.entries(footerLinks).map(([title, links]) => (
             <div key={title}>
               <h3 className="text-sm font-semibold text-slate-200 mb-4 tracking-wide">{title}</h3>
@@ -104,14 +105,15 @@ export default function Footer() {
               </ul>
             </div>
           ))}
+          </div>
         </div>
 
-        <div className="mb-6 rounded-2xl border border-rose-200 bg-rose-50 p-5 shadow-sm sm:p-6">
-          <div className="flex items-start gap-4">
+        <div className="mb-6 rounded-2xl border border-rose-200 bg-rose-50 p-4 shadow-sm sm:p-6">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-start">
             <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl border border-rose-200 bg-rose-100">
               <ShieldAlert className="h-5 w-5 text-rose-600" />
             </div>
-            <div>
+            <div className="min-w-0">
               <h3 className="text-sm font-semibold text-rose-950">Fraud Alert</h3>
               <p className="mt-2 text-sm leading-relaxed text-slate-700">
                 If you receive suspicious messages claiming to be from GENAIXIS, please contact us immediately.
@@ -120,14 +122,14 @@ export default function Footer() {
               <div className="mt-3 flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:gap-4">
                 <a
                   href="mailto:hr@genaixis.com"
-                  className="inline-flex items-center gap-2 text-sm font-medium text-rose-700 transition-colors hover:text-rose-900"
+                  className="inline-flex items-center gap-2 break-all text-sm font-medium text-rose-700 transition-colors hover:text-rose-900 sm:break-normal"
                 >
                   <Mail className="h-4 w-4" />
                   hr@genaixis.com
                 </a>
                 <a
                   href="mailto:talent-acquisition@genaixis.com"
-                  className="inline-flex items-center gap-2 text-sm font-medium text-rose-700 transition-colors hover:text-rose-900"
+                  className="inline-flex items-center gap-2 break-all text-sm font-medium text-rose-700 transition-colors hover:text-rose-900 sm:break-normal"
                 >
                   <Mail className="h-4 w-4" />
                   talent-acquisition@genaixis.com
@@ -143,7 +145,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="py-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-slate-500">
+          <p className="text-center text-xs leading-relaxed text-slate-500 sm:text-left">
             &copy; {new Date().getFullYear()} GENAIXIS LABS PRIVATE LIMITED. All rights reserved.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-6">

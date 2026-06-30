@@ -671,6 +671,12 @@
 }
 
 @media (max-width: 640px) {
+  .theme-digital-clean .premium-button,
+  .theme-digital-clean a[class*='bg-gradient-to-r'],
+  .theme-digital-clean button {
+    max-width: 100%;
+  }
+
   .hero-orbital-line,
   .hero-floating-light,
   .hero-energy-ring,

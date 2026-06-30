@@ -38,7 +38,7 @@ export default function Navbar() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between md:h-20">
           {/* Logo */}
-          <Link to="/" className="brand-logo-link flex h-12 w-[220px] items-center sm:h-14 sm:w-[250px]">
+          <Link to="/" className="brand-logo-link flex h-10 w-[148px] min-w-0 shrink items-center sm:h-14 sm:w-[250px]">
             <img src="/genaixis.png" alt="GENAIXIS" className="brand-logo-png h-full w-full" />
           </Link>
 
@@ -106,7 +106,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="overflow-hidden border-b border-white/10 bg-[#060713]/96 backdrop-blur-xl lg:hidden"
+            className="overflow-hidden border-b border-slate-200 bg-white/98 shadow-lg backdrop-blur-xl lg:hidden"
           >
             <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-1">
               {navLinks.map((link, i) => {
@@ -122,8 +122,8 @@ export default function Navbar() {
                       to={link.path}
                       className={`block px-4 py-3 text-sm font-medium rounded-lg transition-colors ${
                         isActive
-                          ? 'border border-brand-300/25 bg-brand-500/12 text-white'
-                          : 'text-slate-400 hover:text-slate-100 hover:bg-white/5'
+                          ? 'border border-brand-500/20 bg-brand-500/10 text-brand-700'
+                          : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
                       }`}
                     >
                       {link.label}

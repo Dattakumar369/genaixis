@@ -21,7 +21,7 @@ export default function SectionHeader({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      className={`mb-14 ${centered ? 'text-center' : ''}`}
+      className={`mb-8 sm:mb-14 ${centered ? 'text-center' : ''}`}
     >
       {tag && (
         <div className={`flex mb-4 ${centered ? 'justify-center' : ''}`}>
@@ -31,7 +31,7 @@ export default function SectionHeader({
           </span>
         </div>
       )}
-      <h2 className="text-3xl font-bold font-display leading-tight text-white sm:text-4xl lg:text-5xl">
+      <h2 className="text-2xl font-bold font-display leading-snug text-white sm:text-4xl sm:leading-tight lg:text-5xl">
         {titleHighlight ? (
           <>
             {title}{' '}

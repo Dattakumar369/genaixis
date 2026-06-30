@@ -20,27 +20,40 @@ import {
   Sparkles,
   Target,
   Users,
+  ClipboardCheck,
 } from 'lucide-react';
 import PageHero from '../components/PageHero';
 import SectionHeader from '../components/SectionHeader';
 import SEO from '../components/SEO';
+import AssessmentLink, { useAssessmentAccess } from '../components/AssessmentLink';
+import {
+  getAssessmentDateLabel,
+  getAssessmentDayLabel,
+  getAssessmentOpenTimeLabel,
+} from '../utils/assessmentAccess';
 
 const talentEmail = 'talent-acquisition@genaixis.com';
-const talentPoolMailto = `mailto:${talentEmail}?subject=GENAIXIS%20Talent%20Pool%20-%20Future%20Opportunities`;
+const applyMailto = `mailto:${talentEmail}?subject=Java%20Developer%20Application%20-%20GENAIXIS`;
 
-const companyStats = [
-  { value: 'Hyderabad', label: 'Primary work location' },
-  { value: 'AI-First', label: 'Product engineering culture' },
-  { value: 'No Openings', label: 'Current hiring status' },
+const companyStats = (openTimeLabel: string, dayLabel: string) => [
+  { value: openTimeLabel.replace(' IST', ''), label: `Virtual assessment opens ${dayLabel.toLowerCase()}` },
+  { value: 'Hyderabad', label: 'Work location' },
+];
+
+const openRoles = [
+  {
+    icon: Code2,
+    title: 'Java Developer',
+    department: 'Engineering',
+    type: 'Full-time',
+    location: 'Hyderabad, India',
+    summary:
+      'Build scalable backend systems, REST APIs, and enterprise-grade Java applications using Spring Boot and modern engineering practices.',
+    skills: ['Java', 'Spring Boot', 'REST APIs', 'Microservices', 'SQL', 'Git'],
+  },
 ];
 
 const futureRoleAreas = [
-  {
-    icon: Code2,
-    title: 'Software Engineering',
-    summary: 'Full-stack development, backend systems, APIs, and cloud-ready platform engineering.',
-    skills: ['React', 'Java', 'Spring Boot', 'REST APIs', 'Cloud'],
-  },
   {
     icon: Cpu,
     title: 'AI & Automation',
@@ -89,11 +102,16 @@ const companyAddress =
   'Ground Floor, Krishe Emerald, Kondapur, Laxmi Cyber City, Whitefields, HITEC City, Hyderabad, Telangana 500081';
 
 export default function Careers() {
+  const assessmentDateLabel = getAssessmentDateLabel();
+  const assessmentDayLabel = getAssessmentDayLabel();
+  const assessmentOpenTimeLabel = getAssessmentOpenTimeLabel();
+  const assessmentIsOpen = useAssessmentAccess();
+
   return (
     <main>
       <SEO
         title="Careers | GENAIXIS LABS PRIVATE LIMITED"
-        description="Learn about careers at GENAIXIS LABS PRIVATE LIMITED. We currently have no open positions, but you can share your profile for future opportunities in AI product engineering."
+        description="GENAIXIS LABS PRIVATE LIMITED is hiring Java Developers in Hyderabad. Complete the virtual L1 assessment on LearnStackHub and apply through our careers page."
         keywords="GENAIXIS careers, genaxis jobs, gen aixis careers, AI software jobs Hyderabad, SaaS engineering careers, LearnStackHub careers"
         canonicalPath="/careers/"
       />
@@ -102,83 +120,198 @@ export default function Careers() {
         tag="Careers"
         title="Build the next generation of"
         titleHighlight="intelligent products"
-        description="GENAIXIS LABS PRIVATE LIMITED is an AI-first product engineering company. We do not have open positions right now, but we welcome strong profiles for future opportunities."
+        description="GENAIXIS is hiring Java Developers in Hyderabad. We are also conducting a virtual L1 assessment — registered candidates can complete it online on LearnStackHub."
       >
-        <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <div className="flex w-full max-w-md flex-col items-stretch gap-3 sm:mx-auto sm:max-w-none sm:flex-row sm:flex-wrap sm:items-center sm:justify-center">
           <a
-            href={talentPoolMailto}
-            className="premium-button inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-500 via-brand-600 to-violet-500 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-brand-500/20 transition hover:from-brand-400 hover:to-violet-400"
+            href="#open-roles"
+            className="premium-button inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-500 via-brand-600 to-violet-500 px-5 py-3.5 text-sm font-semibold text-white shadow-lg shadow-brand-500/20 transition hover:from-brand-400 hover:to-violet-400 sm:w-auto sm:px-6"
           >
-            Share Your Profile
-            <ArrowRight className="h-4 w-4" />
+            View Java Developer Role
+            <Briefcase className="h-4 w-4 flex-shrink-0" />
           </a>
-          <a
-            href="#hiring-status"
-            className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-6 py-3.5 text-sm font-semibold text-slate-700 transition hover:border-brand-300 hover:text-brand-600"
+          <AssessmentLink
+            className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-5 py-3.5 text-sm font-semibold text-slate-700 transition hover:border-brand-300 hover:text-brand-600 sm:w-auto sm:px-6"
           >
-            Hiring Status
-            <Briefcase className="h-4 w-4" />
+            <span className="text-center">Start Virtual L1 Assessment</span>
+            <ArrowRight className="h-4 w-4 flex-shrink-0" />
+          </AssessmentLink>
+          <a
+            href="#l1-assessment"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-5 py-3.5 text-sm font-semibold text-slate-700 transition hover:border-brand-300 hover:text-brand-600 sm:w-auto sm:px-6"
+          >
+            Assessment Details
+            <ClipboardCheck className="h-4 w-4 flex-shrink-0" />
           </a>
         </div>
       </PageHero>
 
-      <section className="relative border-b border-white/8 py-10">
-        <div className="mx-auto grid max-w-7xl gap-4 px-4 sm:grid-cols-3 sm:px-6 lg:px-8">
-          {companyStats.map((stat) => (
+      <section id="l1-assessment" className="relative border-b border-white/8 py-8 sm:py-10">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="relative overflow-hidden rounded-2xl border border-brand-400/30 bg-gradient-to-r from-brand-500/15 via-violet-500/10 to-brand-600/15 p-4 shadow-lg shadow-brand-500/10 sm:p-8"
+          >
+            <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-brand-400/20 blur-3xl" />
+            <div className="relative flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+              <div className="flex min-w-0 flex-col gap-4 sm:flex-row sm:gap-4">
+                <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl border border-brand-400/30 bg-brand-500/20 sm:h-14 sm:w-14">
+                  <ClipboardCheck className="h-6 w-6 text-brand-300 sm:h-7 sm:w-7" />
+                </div>
+                <div className="min-w-0">
+                  <span className="inline-flex rounded-full border border-emerald-400/30 bg-emerald-500/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-emerald-300 sm:text-xs">
+                    Virtual Assessment — {assessmentDayLabel}
+                  </span>
+                  <h2 className="mt-3 text-xl font-bold leading-snug text-white sm:text-3xl">
+                    Virtual L1 Assessment
+                  </h2>
+                  <p className="mt-1 text-sm font-medium text-brand-200 sm:text-base">{assessmentDateLabel}</p>
+                  <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-300 sm:text-base">
+                    GENAIXIS is conducting a virtual L1 assessment on {assessmentDateLabel}. Participate online through
+                    the official LearnStackHub link, which will open at {assessmentOpenTimeLabel}.
+                  </p>
+                  <ul className="mt-4 space-y-2 text-sm text-slate-300">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-brand-300" />
+                      This is a virtual assessment — you can complete it online from any location.
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-brand-300" />
+                      The assessment link will be available from {assessmentOpenTimeLabel} on {assessmentDateLabel}.
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-brand-300" />
+                      Complete the assessment only through the official link shared on this page.
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-brand-300" />
+                      For queries, contact{' '}
+                      <a href="mailto:contact@genaixis.com" className="font-medium text-brand-200 hover:text-brand-100">
+                        contact@genaixis.com
+                      </a>
+                      .
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <AssessmentLink
+                className="premium-button inline-flex w-full flex-shrink-0 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-500 via-brand-600 to-violet-500 px-5 py-3.5 text-center text-sm font-semibold text-white shadow-lg shadow-brand-500/25 transition hover:from-brand-400 hover:to-violet-400 sm:w-auto sm:px-7 sm:py-4 lg:max-w-xs"
+              >
+                <span className="leading-snug">
+                  {assessmentIsOpen ? 'Go to Virtual L1 Assessment' : `Opens ${assessmentOpenTimeLabel}`}
+                </span>
+                <ArrowRight className="h-4 w-4 flex-shrink-0" />
+              </AssessmentLink>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="relative border-b border-white/8 py-8 sm:py-10">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-3 px-4 sm:grid-cols-2 sm:gap-4 sm:px-6 lg:px-8">
+          {companyStats(assessmentOpenTimeLabel, assessmentDayLabel).map((stat) => (
             <div
               key={stat.label}
-              className="premium-card rounded-2xl border border-white/8 bg-glass p-5 text-center"
+              className="premium-card rounded-2xl border border-white/8 bg-glass p-4 text-center sm:p-5"
             >
-              <p className="text-2xl font-bold font-display text-white sm:text-3xl">{stat.value}</p>
-              <p className="mt-2 text-sm text-slate-400">{stat.label}</p>
+              <p className="text-xl font-bold font-display text-white sm:text-3xl">{stat.value}</p>
+              <p className="mt-2 text-xs leading-relaxed text-slate-400 sm:text-sm">{stat.label}</p>
             </div>
           ))}
         </div>
       </section>
 
-      <section id="hiring-status" className="relative py-20 overflow-hidden">
+      <section id="open-roles" className="relative overflow-hidden py-12 sm:py-20">
         <div className="absolute inset-0 grid-pattern opacity-30" />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
-            tag="Hiring Status"
-            title="No open positions"
-            titleHighlight="at this time"
-            description="GENAIXIS is not actively hiring for any roles right now. When new opportunities open, they will be published on this page."
+            tag="Open Roles"
+            title="We are hiring a"
+            titleHighlight="Java Developer"
+            description="Join our engineering team in Hyderabad to build scalable backend systems, APIs, and enterprise Java applications."
           />
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="premium-card mx-auto max-w-3xl rounded-2xl border border-white/8 bg-glass p-8 text-center sm:p-10"
-          >
-            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl border border-slate-200 bg-slate-50">
-              <Briefcase className="h-7 w-7 text-slate-500" />
-            </div>
-            <h3 className="mt-6 text-2xl font-bold text-white">Currently no job openings</h3>
-            <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-slate-400 sm:text-base">
-              We are not accepting applications for active roles at the moment. If you would like to be considered for
-              future opportunities, you may share your resume, portfolio, GitHub, or LinkedIn profile with our team.
-            </p>
-            <a
-              href={talentPoolMailto}
-              className="premium-button mt-8 inline-flex items-center justify-center gap-2 rounded-xl border border-brand-500/20 bg-brand-500/10 px-6 py-3.5 text-sm font-semibold text-brand-200 transition hover:border-brand-400/40 hover:bg-brand-500/15"
-            >
-              Share Profile for Future Roles
-              <ArrowRight className="h-4 w-4" />
-            </a>
-          </motion.div>
+          <div className="grid gap-5">
+            {openRoles.map((role, index) => (
+              <motion.article
+                key={role.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.06, duration: 0.5 }}
+                className="premium-card rounded-2xl border border-white/8 bg-glass p-4 sm:p-8"
+              >
+                <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
+                  <div className="flex min-w-0 flex-col gap-4 sm:flex-row">
+                    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl border border-brand-500/20 bg-brand-500/10">
+                      <role.icon className="h-6 w-6 text-brand-400" />
+                    </div>
+                    <div className="min-w-0">
+                      <div className="flex flex-wrap items-center gap-2">
+                        <h3 className="text-xl font-bold text-white">{role.title}</h3>
+                        <span className="rounded-full border border-emerald-500/25 bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-300">
+                          Now Hiring
+                        </span>
+                      </div>
+                      <div className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-sm text-slate-400">
+                        <span className="inline-flex items-center gap-1.5">
+                          <Briefcase className="h-4 w-4 text-brand-400/70" />
+                          {role.department}
+                        </span>
+                        <span className="inline-flex items-center gap-1.5">
+                          <MapPin className="h-4 w-4 text-brand-400/70" />
+                          {role.location}
+                        </span>
+                        <span>{role.type}</span>
+                      </div>
+                      <p className="mt-4 max-w-3xl text-sm leading-7 text-slate-400 sm:text-base">
+                        {role.summary}
+                      </p>
+                      <div className="mt-5 flex flex-wrap gap-2">
+                        {role.skills.map((skill) => (
+                          <span
+                            key={skill}
+                            className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-medium text-slate-300"
+                          >
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex w-full flex-col gap-3 lg:w-auto lg:flex-col">
+                    <a
+                      href={`${applyMailto}&body=Role%20Interest%3A%20${encodeURIComponent(role.title)}`}
+                      className="premium-button inline-flex h-fit w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-500 via-brand-600 to-violet-500 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-brand-500/20 transition hover:from-brand-400 hover:to-violet-400 sm:w-auto"
+                    >
+                      Apply Now
+                      <ArrowRight className="h-4 w-4 flex-shrink-0" />
+                    </a>
+                    <AssessmentLink
+                      className="inline-flex h-fit w-full items-center justify-center gap-2 rounded-xl border border-brand-500/20 bg-brand-500/10 px-5 py-3 text-center text-sm font-semibold text-brand-200 transition hover:border-brand-400/40 hover:bg-brand-500/15 sm:w-auto"
+                    >
+                      Take Virtual L1 Assessment
+                      <ClipboardCheck className="h-4 w-4 flex-shrink-0" />
+                    </AssessmentLink>
+                  </div>
+                </div>
+              </motion.article>
+            ))}
+          </div>
 
           <div className="mt-14">
             <SectionHeader
               tag="Future Areas"
-              title="Role areas we may hire for"
-              titleHighlight="in the future"
-              description="These are not open positions. They reflect the kind of talent we may look for when hiring resumes."
+              title="Other role areas we may hire for"
+              titleHighlight="later"
+              description="These are not open right now. We are currently hiring only for the Java Developer position."
             />
 
-            <div className="grid gap-5 md:grid-cols-2">
+            <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
               {futureRoleAreas.map((area, index) => (
                 <motion.article
                   key={area.title}
@@ -219,7 +352,7 @@ export default function Careers() {
         </div>
       </section>
 
-      <section className="relative border-y border-white/8 bg-genaixis-panel py-20">
+      <section className="relative border-y border-white/8 bg-genaixis-panel py-12 sm:py-20">
         <div className="absolute inset-0 grid-pattern opacity-25" />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
@@ -250,7 +383,7 @@ export default function Careers() {
         </div>
       </section>
 
-      <section className="py-20">
+      <section className="py-12 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
             tag="Hiring Process"
@@ -281,7 +414,7 @@ export default function Careers() {
         </div>
       </section>
 
-      <section className="relative border-y border-white/8 py-20">
+      <section className="relative border-y border-white/8 py-12 sm:py-20">
         <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[1fr_1fr] lg:px-8">
           <div className="premium-card rounded-2xl border border-white/8 bg-glass p-8">
             <GraduationCap className="h-8 w-8 text-brand-400" />
@@ -340,25 +473,34 @@ export default function Careers() {
         </div>
       </section>
 
-      <section className="border-t border-white/8 bg-genaixis-panel py-20">
+      <section className="border-t border-white/8 bg-genaixis-panel py-12 sm:py-20">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
           <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-2xl border border-brand-500/20 bg-brand-500/10">
             <Sparkles className="h-7 w-7 text-brand-400" />
           </div>
           <SectionHeader
-            tag="Talent Pool"
-            title="Interested in working with"
-            titleHighlight="GENAIXIS?"
-            description="We are not hiring for open roles right now. You may still share your profile for future consideration when positions become available."
+            tag="Apply Now"
+            title="Ready to join as a"
+            titleHighlight="Java Developer?"
+            description="Send your resume, portfolio, GitHub, or LinkedIn profile to our talent team. Complete the virtual L1 assessment online if you are a registered candidate."
           />
-          <a
-            href={talentPoolMailto}
-            className="premium-button inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-500 via-brand-600 to-violet-500 px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-brand-500/20 transition hover:from-brand-400 hover:to-violet-400"
-          >
-            {talentEmail}
-            <ArrowRight className="h-4 w-4" />
-          </a>
-          <p className="mx-auto mt-6 flex max-w-xl items-start justify-center gap-2 text-sm text-slate-400">
+          <div className="flex w-full max-w-md flex-col items-stretch gap-3 sm:mx-auto sm:max-w-none sm:flex-row sm:items-center sm:justify-center">
+            <a
+              href={applyMailto}
+              className="premium-button inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-500 via-brand-600 to-violet-500 px-5 py-3.5 text-sm font-semibold text-white shadow-lg shadow-brand-500/20 transition hover:from-brand-400 hover:to-violet-400 sm:w-auto sm:px-7"
+            >
+              <span>Apply Now</span>
+              <span className="hidden sm:inline">— {talentEmail}</span>
+              <ArrowRight className="h-4 w-4 flex-shrink-0" />
+            </a>
+            <AssessmentLink
+              className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-brand-500/20 bg-brand-500/10 px-5 py-3.5 text-sm font-semibold text-brand-200 transition hover:border-brand-400/40 hover:bg-brand-500/15 sm:w-auto sm:px-7"
+            >
+              Virtual L1 Assessment
+              <ClipboardCheck className="h-4 w-4 flex-shrink-0" />
+            </AssessmentLink>
+          </div>
+          <p className="mx-auto mt-6 flex max-w-xl items-start justify-center gap-2 px-2 text-center text-sm text-slate-400 sm:px-0 sm:text-left">
             <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-brand-400/70" />
             <span>{companyAddress}</span>
           </p>
