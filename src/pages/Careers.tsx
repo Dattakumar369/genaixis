@@ -35,8 +35,11 @@ import {
 const talentEmail = 'talent-acquisition@genaixis.com';
 const applyMailto = `mailto:${talentEmail}?subject=Java%20Developer%20Application%20-%20GENAIXIS`;
 
-const companyStats = (openTimeLabel: string, dayLabel: string) => [
-  { value: openTimeLabel.replace(' IST', ''), label: `Virtual assessment opens ${dayLabel.toLowerCase()}` },
+const companyStats = (openTimeLabel: string, dayLabel: string, isOpen: boolean) => [
+  {
+    value: openTimeLabel.replace(' IST', ''),
+    label: isOpen ? 'Virtual assessment is live today' : `Virtual assessment opens ${dayLabel.toLowerCase()}`,
+  },
   { value: 'Hyderabad', label: 'Work location' },
 ];
 
@@ -169,8 +172,9 @@ export default function Careers() {
                   </h2>
                   <p className="mt-1 text-sm font-medium text-brand-200 sm:text-base">{assessmentDateLabel}</p>
                   <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-300 sm:text-base">
-                    GENAIXIS is conducting a virtual L1 assessment on {assessmentDateLabel}. Participate online through
-                    the official LearnStackHub link, which will open at {assessmentOpenTimeLabel}.
+                    {assessmentIsOpen
+                      ? `GENAIXIS is conducting the virtual L1 assessment today, ${assessmentDateLabel}. Use the official LearnStackHub link below to participate.`
+                      : `GENAIXIS is conducting the virtual L1 assessment on ${assessmentDateLabel}. Participate online through the official LearnStackHub link, which opens at ${assessmentOpenTimeLabel}.`}
                   </p>
                   <ul className="mt-4 space-y-2 text-sm text-slate-300">
                     <li className="flex items-start gap-2">
@@ -179,7 +183,9 @@ export default function Careers() {
                     </li>
                     <li className="flex items-start gap-2">
                       <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-brand-300" />
-                      The assessment link will be available from {assessmentOpenTimeLabel} on {assessmentDateLabel}.
+                      {assessmentIsOpen
+                        ? `The assessment link is live from ${assessmentOpenTimeLabel} on ${assessmentDateLabel}.`
+                        : `The assessment link will be available from ${assessmentOpenTimeLabel} on ${assessmentDateLabel}.`}
                     </li>
                     <li className="flex items-start gap-2">
                       <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-brand-300" />
@@ -212,7 +218,7 @@ export default function Careers() {
 
       <section className="relative border-b border-white/8 py-8 sm:py-10">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-3 px-4 sm:grid-cols-2 sm:gap-4 sm:px-6 lg:px-8">
-          {companyStats(assessmentOpenTimeLabel, assessmentDayLabel).map((stat) => (
+          {companyStats(assessmentOpenTimeLabel, assessmentDayLabel, assessmentIsOpen).map((stat) => (
             <div
               key={stat.label}
               className="premium-card rounded-2xl border border-white/8 bg-glass p-4 text-center sm:p-5"

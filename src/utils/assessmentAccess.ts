@@ -1,6 +1,7 @@
 export const assessmentUrl = 'https://www.learnstackhub.com/assessment';
 
 const ASSESSMENT_TIMEZONE = 'Asia/Kolkata';
+const ASSESSMENT_DATE = '2026-07-01'; // 01-07-2026
 const ASSESSMENT_OPEN_HOUR = 11;
 const ASSESSMENT_OPEN_MINUTE = 0;
 
@@ -17,17 +18,10 @@ function getDatePartsInIst(date = new Date()) {
 }
 
 export function getAssessmentOpensAt(): Date {
-  const { year, month, day } = getDatePartsInIst();
-  const tomorrow = new Date(Date.UTC(year, month - 1, day));
-  tomorrow.setUTCDate(tomorrow.getUTCDate() + 1);
-
-  const openYear = tomorrow.getUTCFullYear();
-  const openMonth = String(tomorrow.getUTCMonth() + 1).padStart(2, '0');
-  const openDay = String(tomorrow.getUTCDate()).padStart(2, '0');
   const hour = String(ASSESSMENT_OPEN_HOUR).padStart(2, '0');
   const minute = String(ASSESSMENT_OPEN_MINUTE).padStart(2, '0');
 
-  return new Date(`${openYear}-${openMonth}-${openDay}T${hour}:${minute}:00+05:30`);
+  return new Date(`${ASSESSMENT_DATE}T${hour}:${minute}:00+05:30`);
 }
 
 export function isAssessmentLinkOpen(): boolean {
@@ -68,12 +62,19 @@ export function getAssessmentOpenTimeLabel(): string {
 
 export function getAssessmentDayLabel(): string {
   const { year, month, day } = getDatePartsInIst();
-  const opensAt = getAssessmentOpensAt();
-  const opensOn = getDatePartsInIst(opensAt);
+  const opensOn = getDatePartsInIst(getAssessmentOpensAt());
 
   if (opensOn.year === year && opensOn.month === month && opensOn.day === day) {
     return 'Today';
   }
 
-  return 'Tomorrow';
+  if (
+    opensOn.year < year ||
+    (opensOn.year === year && opensOn.month < month) ||
+    (opensOn.year === year && opensOn.month === month && opensOn.day < day)
+  ) {
+    return 'Completed';
+  }
+
+  return 'Upcoming';
 }
