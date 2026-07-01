@@ -2,8 +2,11 @@ import { ReactNode, useEffect, useState } from 'react';
 import { Lock } from 'lucide-react';
 import {
   assessmentUrl,
+  getAssessmentCloseTimeLabel,
   getAssessmentOpenTimeLabel,
   getAssessmentOpensAt,
+  getAssessmentClosesAt,
+  getAssessmentStatus,
   isAssessmentLinkOpen,
 } from '../utils/assessmentAccess';
 
@@ -17,30 +20,40 @@ export function useAssessmentAccess() {
   const [isOpen, setIsOpen] = useState(isAssessmentLinkOpen());
 
   useEffect(() => {
-    if (isOpen) return;
+    const sync = () => setIsOpen(isAssessmentLinkOpen());
+    sync();
 
-    const delay = getAssessmentOpensAt().getTime() - Date.now();
-    if (delay <= 0) {
-      setIsOpen(true);
-      return;
+    const now = Date.now();
+    const opensAt = getAssessmentOpensAt().getTime();
+    const closesAt = getAssessmentClosesAt().getTime();
+    const timers: number[] = [];
+
+    if (now < opensAt) {
+      timers.push(window.setTimeout(sync, opensAt - now));
+    }
+    if (now < closesAt) {
+      timers.push(window.setTimeout(sync, closesAt - now));
     }
 
-    const timer = window.setTimeout(() => setIsOpen(true), delay);
-    return () => window.clearTimeout(timer);
-  }, [isOpen]);
+    return () => timers.forEach((timer) => window.clearTimeout(timer));
+  }, []);
 
   return isOpen;
 }
 
 export default function AssessmentLink({ children, className = '', showLockIcon = true }: AssessmentLinkProps) {
   const isOpen = useAssessmentAccess();
+  const status = getAssessmentStatus();
   const opensAtLabel = getAssessmentOpenTimeLabel();
+  const closesAtLabel = getAssessmentCloseTimeLabel();
+  const disabledTitle =
+    status === 'closed' ? `Closed at ${closesAtLabel}` : `Opens ${opensAtLabel}`;
 
   if (!isOpen) {
     return (
       <span
         aria-disabled="true"
-        title={`Opens ${opensAtLabel}`}
+        title={disabledTitle}
         className={`inline-flex cursor-not-allowed items-center justify-center gap-2 text-center leading-snug opacity-60 ${className}`}
       >
         {showLockIcon && <Lock className="h-4 w-4" />}
