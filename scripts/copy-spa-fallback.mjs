@@ -23,7 +23,7 @@ const routes = {
   careers: {
     title: 'Careers | GENAIXIS LABS PRIVATE LIMITED',
     h1: 'Build What the Next Generation of Businesses Will Use',
-    description: 'GENAIXIS LABS PRIVATE LIMITED is hiring Java Developers in Hyderabad. Complete the virtual L1 assessment on LearnStackHub and apply through our careers page.',
+    description: 'GENAIXIS careers in Hyderabad. Explore our workplace, hiring process, and future role areas across AI, product, and engineering.',
   },
   contact: {
     title: 'Contact | GENAIXIS LABS PRIVATE LIMITED',

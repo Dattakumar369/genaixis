@@ -58,6 +58,7 @@ const openRoles = [
     department: 'Engineering',
     type: 'Full-time',
     location: 'Hyderabad, India',
+    isOpen: false,
     summary:
       'Build scalable backend systems, REST APIs, and enterprise-grade Java applications using Spring Boot and modern engineering practices.',
     skills: ['Java', 'Spring Boot', 'REST APIs', 'Microservices', 'SQL', 'Git'],
@@ -125,7 +126,7 @@ export default function Careers() {
     <main>
       <SEO
         title="Careers | GENAIXIS LABS PRIVATE LIMITED"
-        description="GENAIXIS LABS PRIVATE LIMITED is hiring Java Developers in Hyderabad. Complete the virtual L1 assessment on LearnStackHub and apply through our careers page."
+        description="GENAIXIS careers in Hyderabad. Explore our workplace, hiring process, and future role areas across AI, product, and engineering."
         keywords="GENAIXIS careers, genaxis jobs, gen aixis careers, AI software jobs Hyderabad, SaaS engineering careers, LearnStackHub careers"
         canonicalPath="/careers/"
       />
@@ -134,14 +135,14 @@ export default function Careers() {
         tag="Careers"
         title="Build the next generation of"
         titleHighlight="intelligent products"
-        description="GENAIXIS is hiring Java Developers in Hyderabad. We are also conducting a virtual L1 assessment — registered candidates can complete it online on LearnStackHub."
+        description="Build with GENAIXIS in Hyderabad. We are not actively hiring for the Java Developer role right now, but you can explore our culture, process, and future opportunities."
       >
         <div className="flex w-full max-w-md flex-col items-stretch gap-3 sm:mx-auto sm:max-w-none sm:flex-row sm:flex-wrap sm:items-center sm:justify-center">
           <a
             href="#open-roles"
             className="premium-button inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-500 via-brand-600 to-violet-500 px-5 py-3.5 text-sm font-semibold text-white shadow-lg shadow-brand-500/20 transition hover:from-brand-400 hover:to-violet-400 sm:w-auto sm:px-6"
           >
-            View Java Developer Role
+            View Roles
             <Briefcase className="h-4 w-4 flex-shrink-0" />
           </a>
           <AssessmentLink
@@ -253,10 +254,10 @@ export default function Careers() {
         <div className="absolute inset-0 grid-pattern opacity-30" />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
-            tag="Open Roles"
-            title="We are hiring a"
-            titleHighlight="Java Developer"
-            description="Join our engineering team in Hyderabad to build scalable backend systems, APIs, and enterprise Java applications."
+            tag="Roles"
+            title="Java Developer"
+            titleHighlight="position closed"
+            description="Applications for the Java Developer role are currently closed. We may reopen this position in the future."
           />
 
           <div className="grid gap-5">
@@ -277,8 +278,14 @@ export default function Careers() {
                     <div className="min-w-0">
                       <div className="flex flex-wrap items-center gap-2">
                         <h3 className="text-xl font-bold text-white">{role.title}</h3>
-                        <span className="rounded-full border border-emerald-500/25 bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-300">
-                          Now Hiring
+                        <span
+                          className={`rounded-full border px-3 py-1 text-xs font-semibold ${
+                            role.isOpen
+                              ? 'border-emerald-500/25 bg-emerald-500/10 text-emerald-300'
+                              : 'border-slate-200 bg-slate-50 text-slate-600'
+                          }`}
+                        >
+                          {role.isOpen ? 'Now Hiring' : 'Closed'}
                         </span>
                       </div>
                       <div className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-sm text-slate-400">
@@ -309,13 +316,24 @@ export default function Careers() {
                   </div>
 
                   <div className="flex w-full flex-col gap-3 lg:w-auto lg:flex-col">
-                    <a
-                      href={`${applyMailto}&body=Role%20Interest%3A%20${encodeURIComponent(role.title)}`}
-                      className="premium-button inline-flex h-fit w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-500 via-brand-600 to-violet-500 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-brand-500/20 transition hover:from-brand-400 hover:to-violet-400 sm:w-auto"
-                    >
-                      Apply Now
-                      <ArrowRight className="h-4 w-4 flex-shrink-0" />
-                    </a>
+                    {role.isOpen ? (
+                      <a
+                        href={`${applyMailto}&body=Role%20Interest%3A%20${encodeURIComponent(role.title)}`}
+                        className="premium-button inline-flex h-fit w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-500 via-brand-600 to-violet-500 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-brand-500/20 transition hover:from-brand-400 hover:to-violet-400 sm:w-auto"
+                      >
+                        Apply Now
+                        <ArrowRight className="h-4 w-4 flex-shrink-0" />
+                      </a>
+                    ) : (
+                      <span
+                        aria-disabled="true"
+                        title="Applications for this role are currently closed"
+                        className="inline-flex h-fit w-full cursor-not-allowed items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.04] px-5 py-3 text-sm font-semibold text-slate-500 opacity-70 sm:w-auto"
+                      >
+                        Apply Now
+                        <ArrowRight className="h-4 w-4 flex-shrink-0" />
+                      </span>
+                    )}
                     <AssessmentLink
                       className="inline-flex h-fit w-full items-center justify-center gap-2 rounded-xl border border-brand-500/20 bg-brand-500/10 px-5 py-3 text-center text-sm font-semibold text-brand-200 transition hover:border-brand-400/40 hover:bg-brand-500/15 sm:w-auto"
                     >
@@ -333,7 +351,7 @@ export default function Careers() {
               tag="Future Areas"
               title="Other role areas we may hire for"
               titleHighlight="later"
-              description="These are not open right now. We are currently hiring only for the Java Developer position."
+              description="These are not open right now. We are not actively hiring for any roles at the moment."
             />
 
             <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -504,19 +522,26 @@ export default function Careers() {
             <Sparkles className="h-7 w-7 text-brand-400" />
           </div>
           <SectionHeader
-            tag="Apply Now"
-            title="Ready to join as a"
-            titleHighlight="Java Developer?"
-            description="Send your resume, portfolio, GitHub, or LinkedIn profile to our talent team. Complete the virtual L1 assessment online if you are a registered candidate."
+            tag="Stay Connected"
+            title="Interested in"
+            titleHighlight="future roles?"
+            description="The Java Developer position is currently closed. For general career enquiries, reach out to our talent team."
           />
           <div className="flex w-full max-w-md flex-col items-stretch gap-3 sm:mx-auto sm:max-w-none sm:flex-row sm:items-center sm:justify-center">
-            <a
-              href={applyMailto}
-              className="premium-button inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-500 via-brand-600 to-violet-500 px-5 py-3.5 text-sm font-semibold text-white shadow-lg shadow-brand-500/20 transition hover:from-brand-400 hover:to-violet-400 sm:w-auto sm:px-7"
+            <span
+              aria-disabled="true"
+              title="Applications for the Java Developer role are currently closed"
+              className="inline-flex w-full cursor-not-allowed items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.04] px-5 py-3.5 text-sm font-semibold text-slate-500 opacity-70 sm:w-auto sm:px-7"
             >
-              <span>Apply Now</span>
-              <span className="hidden sm:inline">— {talentEmail}</span>
+              <span>Apply Now — Closed</span>
               <ArrowRight className="h-4 w-4 flex-shrink-0" />
+            </span>
+            <a
+              href={`mailto:${talentEmail}?subject=Future%20Career%20Enquiry%20-%20GENAIXIS`}
+              className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-brand-500/20 bg-brand-500/10 px-5 py-3.5 text-sm font-semibold text-brand-200 transition hover:border-brand-400/40 hover:bg-brand-500/15 sm:w-auto sm:px-7"
+            >
+              Contact Talent Team
+              <Mail className="h-4 w-4 flex-shrink-0" />
             </a>
             <AssessmentLink
               className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-brand-500/20 bg-brand-500/10 px-5 py-3.5 text-sm font-semibold text-brand-200 transition hover:border-brand-400/40 hover:bg-brand-500/15 sm:w-auto sm:px-7"
