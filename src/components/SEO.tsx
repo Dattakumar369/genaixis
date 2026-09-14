@@ -26,6 +26,12 @@ const defaultKeywords = [
   'LearnStackHub',
   'LSH',
   'learnstackhub',
+  'PeopleAixis',
+  'peopleaixis',
+  'BHUVEDAM',
+  'bhuvedam',
+  'Ctrl Alt Solve',
+  'ctrlaltsolve',
 ].join(', ');
 
 function setMeta(selector: string, attr: 'content' | 'href', value: string) {

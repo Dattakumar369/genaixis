@@ -18,6 +18,7 @@ import {
 import PageHero from '../components/PageHero';
 import SectionHeader from '../components/SectionHeader';
 import SEO from '../components/SEO';
+import { genaixisProducts } from '../data/genaixisProducts';
 
 const foundations = [
   'Artificial Intelligence',
@@ -123,7 +124,7 @@ export default function About() {
       <SEO
         title="About | GENAIXIS LABS PRIVATE LIMITED"
         description="GENAIXIS LABS PRIVATE LIMITED is a futuristic AI and software innovation company building products, SaaS platforms, enterprise systems, and AI-powered digital ecosystems."
-        keywords="about GENAIXIS, GENAIXIS LABS PRIVATE LIMITED, genaxis company, gen aixis company, gen axis AI company, LearnStackHub founder, AI software innovation company"
+        keywords="about GENAIXIS, GENAIXIS LABS PRIVATE LIMITED, LearnStackHub, PeopleAixis, BHUVEDAM, Ctrl Alt Solve, AI software innovation company"
         canonicalPath="/about/"
       />
       <PageHero
@@ -215,6 +216,61 @@ export default function About() {
         </div>
       </section>
 
+      <section className="border-y border-white/8 bg-genaixis-panel py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <SectionHeader
+            tag="Our Products"
+            title="GENAIXIS"
+            titleHighlight="product ecosystem"
+            description="GENAIXIS builds owned products across developer learning, HR technology, agriculture AI, and real-world engineering knowledge."
+          />
+          <div className="grid gap-5 md:grid-cols-2">
+            {genaixisProducts.map((product, index) => (
+              <motion.a
+                key={product.id}
+                href={product.url}
+                target="_blank"
+                rel="noreferrer"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.06, duration: 0.5 }}
+                className="premium-card group rounded-2xl border border-white/8 bg-white/[0.035] p-6 transition hover:-translate-y-1 hover:border-brand-300/22"
+              >
+                <div className="flex items-start justify-between gap-3">
+                  <div className="flex min-w-0 items-start gap-4">
+                    {product.logo && (
+                      <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center overflow-hidden rounded-xl border border-brand-500/20 bg-white p-1">
+                        <img src={product.logo} alt={`${product.name} logo`} className="h-full w-full object-contain" />
+                      </div>
+                    )}
+                    <div className="min-w-0">
+                      <p className="text-xs font-semibold uppercase tracking-[0.22em] text-brand-300">{product.category}</p>
+                      <h3 className="mt-2 text-xl font-bold text-white group-hover:text-brand-100">{product.name}</h3>
+                      <p className="mt-1 text-sm font-medium text-brand-200">{product.tagline}</p>
+                    </div>
+                  </div>
+                  <span
+                    className={`rounded-full border px-3 py-1 text-xs font-semibold ${
+                      product.status === 'Live'
+                        ? 'border-emerald-500/25 bg-emerald-500/10 text-emerald-300'
+                        : 'border-amber-400/25 bg-amber-500/10 text-amber-200'
+                    }`}
+                  >
+                    {product.status}
+                  </span>
+                </div>
+                <p className="mt-4 text-sm leading-7 text-slate-400">{product.description}</p>
+                <span className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-brand-300 group-hover:text-white">
+                  Visit {product.name}
+                  <ArrowRight className="h-4 w-4" />
+                </span>
+              </motion.a>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="relative py-24">
         <div className="absolute inset-0 grid-pattern opacity-25" />
         <div className="relative mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
@@ -234,10 +290,10 @@ export default function About() {
             >
               <img src="/learnstackhub-logo.png" alt="LearnStackHub logo" className="h-full w-full object-contain" />
             </a>
-            <p className="mt-6 text-sm font-semibold uppercase tracking-[0.24em] text-brand-300">Our Product</p>
+            <p className="mt-6 text-sm font-semibold uppercase tracking-[0.24em] text-brand-300">Flagship Product</p>
             <h2 className="mt-4 text-3xl font-bold leading-tight text-white">LearnStackHub</h2>
             <p className="mt-5 leading-7 text-slate-300">
-              LearnStackHub is one of the core products developed under GENAIXIS. It demonstrates our ability to build a complete digital platform with AI workflows, product-grade UX, content operations, analytics, and scalable cloud-ready architecture.
+              LearnStackHub is the flagship product in the GENAIXIS ecosystem — a developer-focused platform for Java full stack learning with AI mock interviews, virtual assessments, and scalable product architecture.
             </p>
             <div className="mt-7 grid gap-3">
               {learnStackHubFeatures.map((feature) => (

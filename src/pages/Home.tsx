@@ -77,7 +77,7 @@ const reasons = [
   'Founder-led attention to product quality',
   'Scalable engineering built for business use',
   'Clear launch thinking from strategy to deployment',
-  'Strong owned product proof through LearnStackHub',
+  'Strong owned product proof through LearnStackHub, PeopleAixis, BHUVEDAM, and Ctrl Alt Solve',
 ];
 
 const stack = ['AI Systems', 'SaaS', 'Cloud', 'Automation', 'Analytics', 'DevOps', 'Full Stack', 'Product Design'];
@@ -488,7 +488,7 @@ export default function Home() {
       <SEO
         title="GENAIXIS LABS PRIVATE LIMITED | AI Product Engineering Company"
         description="GENAIXIS builds AI-first products, SaaS platforms, intelligent automation systems, and enterprise software for ambitious businesses."
-        keywords="genaixis, genaxis, gen aixis, gen axis, genai software company, genx technology company, lsh, learnstackhub, AI product engineering, SaaS development company"
+        keywords="genaixis, genaxis, learnstackhub, peopleaixis, bhuvedam, ctrlaltsolve, AI product engineering, SaaS development company"
         canonicalPath="/"
       />
       <Hero />

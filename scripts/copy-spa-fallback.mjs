@@ -13,7 +13,7 @@ const routes = {
   products: {
     title: 'Products | GENAIXIS LABS PRIVATE LIMITED',
     h1: 'Product Ecosystems for the AI Era',
-    description: 'Explore GENAIXIS products and platform capabilities including LearnStackHub, AI systems, SaaS platforms, automation systems, and future product ecosystems.',
+    description: 'Explore GENAIXIS products: LearnStackHub, PeopleAixis, BHUVEDAM, and Ctrl Alt Solve — spanning developer learning, HR tech, AgriTech, and engineering knowledge.',
   },
   services: {
     title: 'Technology | GENAIXIS LABS PRIVATE LIMITED',
@@ -23,7 +23,7 @@ const routes = {
   careers: {
     title: 'Careers | GENAIXIS LABS PRIVATE LIMITED',
     h1: 'Build What the Next Generation of Businesses Will Use',
-    description: 'GENAIXIS careers in Hyderabad. Explore our workplace, hiring process, and future role areas across AI, product, and engineering.',
+    description: 'GENAIXIS is hiring interns — 5 WFH positions, 3-month internship. Final year students are eligible. Explore open and past roles on our careers page.',
   },
   contact: {
     title: 'Contact | GENAIXIS LABS PRIVATE LIMITED',

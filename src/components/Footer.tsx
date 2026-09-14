@@ -6,7 +6,9 @@ const socialLinks = [
   { icon: Linkedin, label: 'GENAIXIS on LinkedIn', href: 'https://www.linkedin.com/company/genaixis-labs-private-limited/' },
 ];
 
-const footerLinks = {
+type FooterLink = { label: string; path?: string; href?: string };
+
+const footerLinks: Record<string, FooterLink[]> = {
   Company: [
     { label: 'About Us', path: '/about/' },
     { label: 'Products', path: '/products/' },
@@ -20,10 +22,10 @@ const footerLinks = {
     { label: 'Automation OS', path: '/services/' },
   ],
   Products: [
-    { label: 'LearnStackHub', path: '/products/' },
-    { label: 'AI Mock Interviews', path: '/products/' },
-    { label: 'SaaS Platforms', path: '/products/' },
-    { label: 'Automation Systems', path: '/products/' },
+    { label: 'LearnStackHub', href: 'https://www.learnstackhub.com/' },
+    { label: 'PeopleAixis', href: 'https://peopleaixis.com/' },
+    { label: 'BHUVEDAM', href: 'https://bhuvedam.com/' },
+    { label: 'Ctrl Alt Solve', href: 'https://ctrlaltsolve.com/' },
   ],
 };
 
@@ -93,13 +95,25 @@ export default function Footer() {
               <ul className="flex flex-col gap-2.5">
                 {links.map((link) => (
                   <li key={link.label}>
-                    <Link
-                      to={link.path}
-                      className="group flex items-center gap-1 text-sm text-slate-400 transition-colors hover:text-brand-200"
-                    >
-                      <span>{link.label}</span>
-                      <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                    </Link>
+                    {'href' in link && link.href ? (
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="group flex items-center gap-1 text-sm text-slate-400 transition-colors hover:text-brand-200"
+                      >
+                        <span>{link.label}</span>
+                        <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                      </a>
+                    ) : (
+                      <Link
+                        to={link.path!}
+                        className="group flex items-center gap-1 text-sm text-slate-400 transition-colors hover:text-brand-200"
+                      >
+                        <span>{link.label}</span>
+                        <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>

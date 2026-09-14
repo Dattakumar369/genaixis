@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import {
   ArrowRight,
@@ -20,38 +21,56 @@ import {
   Sparkles,
   Target,
   Users,
+  ChevronDown,
   ClipboardCheck,
 } from 'lucide-react';
 import PageHero from '../components/PageHero';
 import SectionHeader from '../components/SectionHeader';
 import SEO from '../components/SEO';
-import AssessmentLink, { useAssessmentAccess } from '../components/AssessmentLink';
+import AssessmentLink from '../components/AssessmentLink';
 import {
   getAssessmentDateLabel,
-  getAssessmentDayLabel,
   getAssessmentOpenTimeLabel,
   getAssessmentCloseTimeLabel,
   getAssessmentStatus,
   getAssessmentWindowLabel,
 } from '../utils/assessmentAccess';
 
-const talentEmail = 'talent-acquisition@genaixis.com';
-const applyMailto = `mailto:${talentEmail}?subject=Java%20Developer%20Application%20-%20GENAIXIS`;
+const applyEmail = 'contact@genaixis.com';
 
-const companyStats = (windowLabel: string, dayLabel: string, status: ReturnType<typeof getAssessmentStatus>) => [
+function getApplyMailto(roleTitle: string) {
+  return `mailto:${applyEmail}?subject=${encodeURIComponent(`${roleTitle} Application - GENAIXIS`)}&body=Role%20Interest%3A%20${encodeURIComponent(roleTitle)}`;
+}
+
+type CareerRole = {
+  icon: typeof Code2;
+  title: string;
+  department: string;
+  type: string;
+  location: string;
+  isOpen: boolean;
+  summary: string;
+  skills: string[];
+  positions?: string;
+  duration?: string;
+  eligibility?: string;
+};
+
+const openRoles: CareerRole[] = [
   {
-    value: windowLabel.replace(' IST', ''),
-    label:
-      status === 'open'
-        ? 'Virtual assessment is live today'
-        : status === 'closed'
-          ? 'Virtual assessment window ended'
-          : `Virtual assessment opens ${dayLabel.toLowerCase()}`,
+    icon: GraduationCap,
+    title: 'Intern',
+    department: 'Engineering & Product',
+    type: 'Internship',
+    location: 'Work From Home (WFH)',
+    isOpen: true,
+    positions: '5 positions',
+    duration: '3 months',
+    eligibility: 'Final year students are also eligible',
+    summary:
+      'Join GENAIXIS as an intern and work on real AI products, SaaS platforms, and software engineering tasks with mentor-led guidance in a remote-friendly setup.',
+    skills: ['Software Engineering', 'Web Development', 'Java', 'Python', 'AI Basics', 'Git'],
   },
-  { value: 'Hyderabad', label: 'Work location' },
-];
-
-const openRoles = [
   {
     icon: Code2,
     title: 'Java Developer',
@@ -63,6 +82,10 @@ const openRoles = [
       'Build scalable backend systems, REST APIs, and enterprise-grade Java applications using Spring Boot and modern engineering practices.',
     skills: ['Java', 'Spring Boot', 'REST APIs', 'Microservices', 'SQL', 'Git'],
   },
+];
+const companyStats = [
+  { value: '5', label: 'Intern positions open — WFH' },
+  { value: '3 months', label: 'Internship duration' },
 ];
 
 const futureRoleAreas = [
@@ -114,20 +137,19 @@ const companyAddress =
   'Ground Floor, Krishe Emerald, Kondapur, Laxmi Cyber City, Whitefields, HITEC City, Hyderabad, Telangana 500081';
 
 export default function Careers() {
+  const [showAssessmentDetails, setShowAssessmentDetails] = useState(false);
   const assessmentDateLabel = getAssessmentDateLabel();
-  const assessmentDayLabel = getAssessmentDayLabel();
   const assessmentOpenTimeLabel = getAssessmentOpenTimeLabel();
   const assessmentCloseTimeLabel = getAssessmentCloseTimeLabel();
   const assessmentWindowLabel = getAssessmentWindowLabel();
   const assessmentStatus = getAssessmentStatus();
-  const assessmentIsOpen = useAssessmentAccess();
 
   return (
     <main>
       <SEO
         title="Careers | GENAIXIS LABS PRIVATE LIMITED"
-        description="GENAIXIS careers in Hyderabad. Explore our workplace, hiring process, and future role areas across AI, product, and engineering."
-        keywords="GENAIXIS careers, genaxis jobs, gen aixis careers, AI software jobs Hyderabad, SaaS engineering careers, LearnStackHub careers"
+        description="GENAIXIS is hiring interns — 5 WFH positions, 3-month internship. Final year students are eligible. Explore open and past roles on our careers page."
+        keywords="GENAIXIS careers, genaxis jobs, gen aixis careers, GENAIXIS intern hiring, software intern WFH, AI software jobs Hyderabad, SaaS engineering careers"
         canonicalPath="/careers/"
       />
 
@@ -135,110 +157,22 @@ export default function Careers() {
         tag="Careers"
         title="Build the next generation of"
         titleHighlight="intelligent products"
-        description="Build with GENAIXIS in Hyderabad. We are not actively hiring for the Java Developer role right now, but you can explore our culture, process, and future opportunities."
+        description="GENAIXIS is hiring interns for a 3-month WFH program — 5 positions open. Final year students are also eligible."
       >
         <div className="flex w-full max-w-md flex-col items-stretch gap-3 sm:mx-auto sm:max-w-none sm:flex-row sm:flex-wrap sm:items-center sm:justify-center">
           <a
             href="#open-roles"
             className="premium-button inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-500 via-brand-600 to-violet-500 px-5 py-3.5 text-sm font-semibold text-white shadow-lg shadow-brand-500/20 transition hover:from-brand-400 hover:to-violet-400 sm:w-auto sm:px-6"
           >
-            View Roles
+            View Open Roles
             <Briefcase className="h-4 w-4 flex-shrink-0" />
-          </a>
-          <AssessmentLink
-            className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-5 py-3.5 text-sm font-semibold text-slate-700 transition hover:border-brand-300 hover:text-brand-600 sm:w-auto sm:px-6"
-          >
-            <span className="text-center">Start Virtual L1 Assessment</span>
-            <ArrowRight className="h-4 w-4 flex-shrink-0" />
-          </AssessmentLink>
-          <a
-            href="#l1-assessment"
-            className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-5 py-3.5 text-sm font-semibold text-slate-700 transition hover:border-brand-300 hover:text-brand-600 sm:w-auto sm:px-6"
-          >
-            Assessment Details
-            <ClipboardCheck className="h-4 w-4 flex-shrink-0" />
           </a>
         </div>
       </PageHero>
 
-      <section id="l1-assessment" className="relative border-b border-white/8 py-8 sm:py-10">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="relative overflow-hidden rounded-2xl border border-brand-400/30 bg-gradient-to-r from-brand-500/15 via-violet-500/10 to-brand-600/15 p-4 shadow-lg shadow-brand-500/10 sm:p-8"
-          >
-            <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-brand-400/20 blur-3xl" />
-            <div className="relative flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-              <div className="flex min-w-0 flex-col gap-4 sm:flex-row sm:gap-4">
-                <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl border border-brand-400/30 bg-brand-500/20 sm:h-14 sm:w-14">
-                  <ClipboardCheck className="h-6 w-6 text-brand-300 sm:h-7 sm:w-7" />
-                </div>
-                <div className="min-w-0">
-                  <span className="inline-flex rounded-full border border-emerald-400/30 bg-emerald-500/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-emerald-300 sm:text-xs">
-                    Virtual Assessment — {assessmentDayLabel}
-                  </span>
-                  <h2 className="mt-3 text-xl font-bold leading-snug text-white sm:text-3xl">
-                    Virtual L1 Assessment
-                  </h2>
-                  <p className="mt-1 text-sm font-medium text-brand-200 sm:text-base">{assessmentDateLabel}</p>
-                  <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-300 sm:text-base">
-                    {assessmentStatus === 'open'
-                      ? `GENAIXIS is conducting the virtual L1 assessment today, ${assessmentDateLabel}. Use the official LearnStackHub link below to participate before ${assessmentCloseTimeLabel}.`
-                      : assessmentStatus === 'closed'
-                        ? `The virtual L1 assessment window on ${assessmentDateLabel} has ended. The link was available from ${assessmentWindowLabel}.`
-                        : `GENAIXIS is conducting the virtual L1 assessment on ${assessmentDateLabel}. Participate online through the official LearnStackHub link, available from ${assessmentWindowLabel}.`}
-                  </p>
-                  <ul className="mt-4 space-y-2 text-sm text-slate-300">
-                    <li className="flex items-start gap-2">
-                      <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-brand-300" />
-                      This is a virtual assessment — you can complete it online from any location.
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-brand-300" />
-                      {assessmentStatus === 'open'
-                        ? `The assessment link is live until ${assessmentCloseTimeLabel} today.`
-                        : assessmentStatus === 'closed'
-                          ? `The assessment link was available from ${assessmentWindowLabel} on ${assessmentDateLabel}.`
-                          : `The assessment link will be available from ${assessmentWindowLabel} on ${assessmentDateLabel}.`}
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-brand-300" />
-                      Complete the assessment only through the official link shared on this page.
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-brand-300" />
-                      For queries, contact{' '}
-                      <a href="mailto:contact@genaixis.com" className="font-medium text-brand-200 hover:text-brand-100">
-                        contact@genaixis.com
-                      </a>
-                      .
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-              <AssessmentLink
-                className="premium-button inline-flex w-full flex-shrink-0 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-500 via-brand-600 to-violet-500 px-5 py-3.5 text-center text-sm font-semibold text-white shadow-lg shadow-brand-500/25 transition hover:from-brand-400 hover:to-violet-400 sm:w-auto sm:px-7 sm:py-4 lg:max-w-xs"
-              >
-                <span className="leading-snug">
-                  {assessmentStatus === 'open'
-                    ? 'Go to Virtual L1 Assessment'
-                    : assessmentStatus === 'closed'
-                      ? `Closed ${assessmentCloseTimeLabel}`
-                      : `Opens ${assessmentOpenTimeLabel}`}
-                </span>
-                <ArrowRight className="h-4 w-4 flex-shrink-0" />
-              </AssessmentLink>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
       <section className="relative border-b border-white/8 py-8 sm:py-10">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-3 px-4 sm:grid-cols-2 sm:gap-4 sm:px-6 lg:px-8">
-          {companyStats(assessmentWindowLabel, assessmentDayLabel, assessmentStatus).map((stat) => (
+          {companyStats.map((stat) => (
             <div
               key={stat.label}
               className="premium-card rounded-2xl border border-white/8 bg-glass p-4 text-center sm:p-5"
@@ -254,10 +188,10 @@ export default function Careers() {
         <div className="absolute inset-0 grid-pattern opacity-30" />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
-            tag="Roles"
-            title="Java Developer"
-            titleHighlight="position closed"
-            description="Applications for the Java Developer role are currently closed. We may reopen this position in the future."
+            tag="Open Roles"
+            title="We are hiring"
+            titleHighlight="Interns"
+            description="5 WFH intern positions for a 3-month program. Final year students are also eligible. The Java Developer role remains listed below but applications are currently closed."
           />
 
           <div className="grid gap-5">
@@ -298,7 +232,12 @@ export default function Careers() {
                           {role.location}
                         </span>
                         <span>{role.type}</span>
+                        {role.positions && <span>{role.positions}</span>}
+                        {role.duration && <span>{role.duration}</span>}
                       </div>
+                      {role.eligibility && (
+                        <p className="mt-3 text-sm font-medium text-brand-200">{role.eligibility}</p>
+                      )}
                       <p className="mt-4 max-w-3xl text-sm leading-7 text-slate-400 sm:text-base">
                         {role.summary}
                       </p>
@@ -318,7 +257,7 @@ export default function Careers() {
                   <div className="flex w-full flex-col gap-3 lg:w-auto lg:flex-col">
                     {role.isOpen ? (
                       <a
-                        href={`${applyMailto}&body=Role%20Interest%3A%20${encodeURIComponent(role.title)}`}
+                        href={getApplyMailto(role.title)}
                         className="premium-button inline-flex h-fit w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-500 via-brand-600 to-violet-500 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-brand-500/20 transition hover:from-brand-400 hover:to-violet-400 sm:w-auto"
                       >
                         Apply Now
@@ -334,12 +273,6 @@ export default function Careers() {
                         <ArrowRight className="h-4 w-4 flex-shrink-0" />
                       </span>
                     )}
-                    <AssessmentLink
-                      className="inline-flex h-fit w-full items-center justify-center gap-2 rounded-xl border border-brand-500/20 bg-brand-500/10 px-5 py-3 text-center text-sm font-semibold text-brand-200 transition hover:border-brand-400/40 hover:bg-brand-500/15 sm:w-auto"
-                    >
-                      Take Virtual L1 Assessment
-                      <ClipboardCheck className="h-4 w-4 flex-shrink-0" />
-                    </AssessmentLink>
                   </div>
                 </div>
               </motion.article>
@@ -351,7 +284,7 @@ export default function Careers() {
               tag="Future Areas"
               title="Other role areas we may hire for"
               titleHighlight="later"
-              description="These are not open right now. We are not actively hiring for any roles at the moment."
+              description="These are not open right now. We are currently hiring for the Intern role."
             />
 
             <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -522,38 +455,121 @@ export default function Careers() {
             <Sparkles className="h-7 w-7 text-brand-400" />
           </div>
           <SectionHeader
-            tag="Stay Connected"
-            title="Interested in"
-            titleHighlight="future roles?"
-            description="The Java Developer position is currently closed. For general career enquiries, reach out to our talent team."
+            tag="Apply Now"
+            title="Ready to join as an"
+            titleHighlight="Intern?"
+            description="Send your resume and college details to our team at contact@genaixis.com. Final year students are welcome to apply for the 3-month WFH intern program."
           />
           <div className="flex w-full max-w-md flex-col items-stretch gap-3 sm:mx-auto sm:max-w-none sm:flex-row sm:items-center sm:justify-center">
-            <span
-              aria-disabled="true"
-              title="Applications for the Java Developer role are currently closed"
-              className="inline-flex w-full cursor-not-allowed items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.04] px-5 py-3.5 text-sm font-semibold text-slate-500 opacity-70 sm:w-auto sm:px-7"
-            >
-              <span>Apply Now — Closed</span>
-              <ArrowRight className="h-4 w-4 flex-shrink-0" />
-            </span>
             <a
-              href={`mailto:${talentEmail}?subject=Future%20Career%20Enquiry%20-%20GENAIXIS`}
+              href={getApplyMailto('Intern')}
+              className="premium-button inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-500 via-brand-600 to-violet-500 px-5 py-3.5 text-sm font-semibold text-white shadow-lg shadow-brand-500/20 transition hover:from-brand-400 hover:to-violet-400 sm:w-auto sm:px-7"
+            >
+              <span>Apply for Intern</span>
+              <span className="hidden sm:inline">— {applyEmail}</span>
+              <ArrowRight className="h-4 w-4 flex-shrink-0" />
+            </a>
+            <a
+              href={`mailto:${applyEmail}?subject=Future%20Career%20Enquiry%20-%20GENAIXIS`}
               className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-brand-500/20 bg-brand-500/10 px-5 py-3.5 text-sm font-semibold text-brand-200 transition hover:border-brand-400/40 hover:bg-brand-500/15 sm:w-auto sm:px-7"
             >
-              Contact Talent Team
+              Contact Us
               <Mail className="h-4 w-4 flex-shrink-0" />
             </a>
-            <AssessmentLink
-              className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-brand-500/20 bg-brand-500/10 px-5 py-3.5 text-sm font-semibold text-brand-200 transition hover:border-brand-400/40 hover:bg-brand-500/15 sm:w-auto sm:px-7"
-            >
-              Virtual L1 Assessment
-              <ClipboardCheck className="h-4 w-4 flex-shrink-0" />
-            </AssessmentLink>
           </div>
           <p className="mx-auto mt-6 flex max-w-xl items-start justify-center gap-2 px-2 text-center text-sm text-slate-400 sm:px-0 sm:text-left">
             <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-brand-400/70" />
             <span>{companyAddress}</span>
           </p>
+        </div>
+      </section>
+
+      <section id="l1-assessment" className="border-t border-white/8 py-10 sm:py-12">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <button
+            type="button"
+            onClick={() => setShowAssessmentDetails((open) => !open)}
+            aria-expanded={showAssessmentDetails}
+            aria-controls="l1-assessment-details"
+            className="premium-card flex w-full items-center justify-between gap-4 rounded-2xl border border-white/10 bg-white/[0.035] p-5 text-left transition hover:border-brand-400/25 hover:bg-white/[0.05] sm:p-6"
+          >
+            <div className="flex min-w-0 items-start gap-4">
+              <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl border border-brand-500/20 bg-brand-500/10">
+                <ClipboardCheck className="h-5 w-5 text-brand-400" />
+              </div>
+              <div className="min-w-0">
+                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-brand-300">Past Assessment</p>
+                <h2 className="mt-2 text-lg font-bold text-white sm:text-xl">Virtual L1 Assessment Details</h2>
+                <p className="mt-1 text-sm text-slate-400">
+                  {assessmentDateLabel} · {assessmentWindowLabel}
+                </p>
+              </div>
+            </div>
+            <ChevronDown
+              className={`h-5 w-5 flex-shrink-0 text-brand-300 transition-transform ${showAssessmentDetails ? 'rotate-180' : ''}`}
+            />
+          </button>
+
+          {showAssessmentDetails && (
+            <motion.div
+              id="l1-assessment-details"
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.35 }}
+              className="relative mt-4 overflow-hidden rounded-2xl border border-brand-400/20 bg-gradient-to-r from-brand-500/10 via-violet-500/5 to-brand-600/10 p-5 sm:p-8"
+            >
+              <span className="inline-flex rounded-full border border-slate-400/30 bg-slate-500/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-slate-300 sm:text-xs">
+                {assessmentStatus === 'closed' ? 'Assessment Completed' : 'Assessment Record'}
+              </span>
+              <h3 className="mt-4 text-xl font-bold text-white sm:text-2xl">Virtual L1 Assessment</h3>
+              <p className="mt-1 text-sm font-medium text-brand-200 sm:text-base">{assessmentDateLabel}</p>
+              <p className="mt-4 text-sm leading-7 text-slate-300 sm:text-base">
+                {assessmentStatus === 'closed'
+                  ? `GENAIXIS conducted the virtual L1 assessment on ${assessmentDateLabel}. The assessment link was available from ${assessmentWindowLabel}. This record is kept here for reference.`
+                  : assessmentStatus === 'open'
+                    ? `GENAIXIS conducted the virtual L1 assessment on ${assessmentDateLabel}. The link is currently live until ${assessmentCloseTimeLabel}.`
+                    : `GENAIXIS scheduled the virtual L1 assessment on ${assessmentDateLabel}, available from ${assessmentWindowLabel}.`}
+              </p>
+              <ul className="mt-5 space-y-2 text-sm text-slate-300">
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-brand-300" />
+                  This was a virtual assessment completed online through LearnStackHub.
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-brand-300" />
+                  {assessmentStatus === 'closed'
+                    ? `The assessment window was ${assessmentWindowLabel} on ${assessmentDateLabel}.`
+                    : assessmentStatus === 'open'
+                      ? `The assessment link is live until ${assessmentCloseTimeLabel} today.`
+                      : `The assessment link was scheduled for ${assessmentWindowLabel} on ${assessmentDateLabel}.`}
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-brand-300" />
+                  Candidates were asked to complete the assessment only through the official link shared on this page.
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-brand-300" />
+                  For queries, contact{' '}
+                  <a href="mailto:contact@genaixis.com" className="font-medium text-brand-200 hover:text-brand-100">
+                    contact@genaixis.com
+                  </a>
+                  .
+                </li>
+              </ul>
+              <div className="mt-6">
+                <AssessmentLink
+                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-brand-500/25 bg-brand-600/10 px-5 py-3 text-sm font-semibold text-brand-200 transition hover:border-brand-400/40 hover:bg-brand-500/15 hover:text-white"
+                >
+                  {assessmentStatus === 'open'
+                    ? 'Go to Virtual L1 Assessment'
+                    : assessmentStatus === 'closed'
+                      ? `Assessment Closed — ${assessmentCloseTimeLabel}`
+                      : `Opens ${assessmentOpenTimeLabel}`}
+                  <ArrowRight className="h-4 w-4 flex-shrink-0" />
+                </AssessmentLink>
+              </div>
+            </motion.div>
+          )}
         </div>
       </section>
     </main>
