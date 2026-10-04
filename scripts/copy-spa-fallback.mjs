@@ -1,4 +1,4 @@
-import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { copyFile, mkdir, readFile, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 
 const distDir = resolve('dist');
@@ -101,6 +101,8 @@ function withRouteMeta(html, route, meta) {
 }
 
 const indexHtml = await readFile(indexFile, 'utf8');
+
+await copyFile(resolve('public/app-ads.txt'), resolve(distDir, 'app-ads.txt'));
 
 await writeFile(
   resolve(distDir, '404.html'),
