@@ -30,6 +30,7 @@ import SEO from '../components/SEO';
 import AssessmentLink from '../components/AssessmentLink';
 import {
   getAssessmentDateLabel,
+  getAssessmentDayLabel,
   getAssessmentOpenTimeLabel,
   getAssessmentCloseTimeLabel,
   getAssessmentStatus,
@@ -83,10 +84,22 @@ const openRoles: CareerRole[] = [
     skills: ['Java', 'Spring Boot', 'REST APIs', 'Microservices', 'SQL', 'Git'],
   },
 ];
-const companyStats = [
-  { value: '5', label: 'Intern positions open — WFH' },
-  { value: '3 months', label: 'Internship duration' },
-];
+const companyStats = (windowLabel: string, dayLabel: string, status: ReturnType<typeof getAssessmentStatus>) => {
+  const stats = [
+    { value: '5', label: 'Intern positions open — WFH' },
+    { value: '3 months', label: 'Internship duration' },
+  ];
+  if (status === 'upcoming' || status === 'open') {
+    stats.unshift({
+      value: windowLabel.replace(' IST', ''),
+      label:
+        status === 'open'
+          ? 'Online assessment is live today'
+          : `Online assessment opens ${dayLabel.toLowerCase()}`,
+    });
+  }
+  return stats;
+};
 
 const futureRoleAreas = [
   {
@@ -137,12 +150,16 @@ const companyAddress =
   'Ground Floor, Krishe Emerald, Kondapur, Laxmi Cyber City, Whitefields, HITEC City, Hyderabad, Telangana 500081';
 
 export default function Careers() {
-  const [showAssessmentDetails, setShowAssessmentDetails] = useState(false);
+  const assessmentStatus = getAssessmentStatus();
+  const [showAssessmentDetails, setShowAssessmentDetails] = useState(
+    assessmentStatus === 'upcoming' || assessmentStatus === 'open',
+  );
   const assessmentDateLabel = getAssessmentDateLabel();
+  const assessmentDayLabel = getAssessmentDayLabel();
   const assessmentOpenTimeLabel = getAssessmentOpenTimeLabel();
   const assessmentCloseTimeLabel = getAssessmentCloseTimeLabel();
   const assessmentWindowLabel = getAssessmentWindowLabel();
-  const assessmentStatus = getAssessmentStatus();
+  const assessmentIsActive = assessmentStatus === 'upcoming' || assessmentStatus === 'open';
 
   return (
     <main>
@@ -167,12 +184,79 @@ export default function Careers() {
             View Open Roles
             <Briefcase className="h-4 w-4 flex-shrink-0" />
           </a>
+          <a
+            href="#l1-assessment"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-5 py-3.5 text-sm font-semibold text-slate-700 transition hover:border-brand-300 hover:text-brand-600 sm:w-auto sm:px-6"
+          >
+            Online Assessment Details
+            <ClipboardCheck className="h-4 w-4 flex-shrink-0" />
+          </a>
         </div>
       </PageHero>
 
+      {assessmentIsActive && (
+        <section id="l1-assessment" className="relative border-b border-white/8 py-8 sm:py-10">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="relative overflow-hidden rounded-2xl border border-brand-400/30 bg-gradient-to-r from-brand-500/15 via-violet-500/10 to-brand-600/15 p-4 shadow-lg shadow-brand-500/10 sm:p-8"
+            >
+              <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-brand-400/20 blur-3xl" />
+              <div className="relative flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+                <div className="flex min-w-0 flex-col gap-4 sm:flex-row sm:gap-4">
+                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl border border-brand-400/30 bg-brand-500/20 sm:h-14 sm:w-14">
+                    <ClipboardCheck className="h-6 w-6 text-brand-300 sm:h-7 sm:w-7" />
+                  </div>
+                  <div className="min-w-0">
+                    <span className="inline-flex rounded-full border border-emerald-400/30 bg-emerald-500/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-emerald-300 sm:text-xs">
+                      Online Assessment — {assessmentDayLabel}
+                    </span>
+                    <h2 className="mt-3 text-xl font-bold leading-snug text-white sm:text-3xl">Virtual L1 Assessment</h2>
+                    <p className="mt-1 text-sm font-medium text-brand-200 sm:text-base">{assessmentDateLabel}</p>
+                    <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-300 sm:text-base">
+                      {assessmentStatus === 'open'
+                        ? `The online assessment is live today, ${assessmentDateLabel}. Use the official LearnStackHub link below before ${assessmentCloseTimeLabel}.`
+                        : `GENAIXIS is conducting an online assessment on ${assessmentDateLabel}. The link opens at ${assessmentOpenTimeLabel} and is available until ${assessmentCloseTimeLabel}.`}
+                    </p>
+                    <ul className="mt-4 space-y-2 text-sm text-slate-300">
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-brand-300" />
+                        Complete the test online from any location through LearnStackHub.
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-brand-300" />
+                        {assessmentStatus === 'open'
+                          ? `The assessment link is live until ${assessmentCloseTimeLabel} today.`
+                          : `The assessment link opens at ${assessmentOpenTimeLabel} on ${assessmentDateLabel} (${assessmentWindowLabel}).`}
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-brand-300" />
+                        Use only the official link on this page. For help, email contact@genaixis.com.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <AssessmentLink
+                  className="premium-button inline-flex w-full flex-shrink-0 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-500 via-brand-600 to-violet-500 px-5 py-3.5 text-center text-sm font-semibold text-white shadow-lg shadow-brand-500/25 transition hover:from-brand-400 hover:to-violet-400 sm:w-auto sm:px-7 sm:py-4 lg:max-w-xs"
+                >
+                  <span className="leading-snug">
+                    {assessmentStatus === 'open'
+                      ? 'Go to Online Assessment'
+                      : `Opens ${assessmentOpenTimeLabel}`}
+                  </span>
+                  <ArrowRight className="h-4 w-4 flex-shrink-0" />
+                </AssessmentLink>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      )}
+
       <section className="relative border-b border-white/8 py-8 sm:py-10">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-3 px-4 sm:grid-cols-2 sm:gap-4 sm:px-6 lg:px-8">
-          {companyStats.map((stat) => (
+          {companyStats(assessmentWindowLabel, assessmentDayLabel, assessmentStatus).map((stat) => (
             <div
               key={stat.label}
               className="premium-card rounded-2xl border border-white/8 bg-glass p-4 text-center sm:p-5"
@@ -484,6 +568,7 @@ export default function Careers() {
         </div>
       </section>
 
+      {!assessmentIsActive && (
       <section id="l1-assessment" className="border-t border-white/8 py-10 sm:py-12">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <button
@@ -519,16 +604,12 @@ export default function Careers() {
               className="relative mt-4 overflow-hidden rounded-2xl border border-brand-400/20 bg-gradient-to-r from-brand-500/10 via-violet-500/5 to-brand-600/10 p-5 sm:p-8"
             >
               <span className="inline-flex rounded-full border border-slate-400/30 bg-slate-500/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-slate-300 sm:text-xs">
-                {assessmentStatus === 'closed' ? 'Assessment Completed' : 'Assessment Record'}
+                Assessment Completed
               </span>
               <h3 className="mt-4 text-xl font-bold text-white sm:text-2xl">Virtual L1 Assessment</h3>
               <p className="mt-1 text-sm font-medium text-brand-200 sm:text-base">{assessmentDateLabel}</p>
               <p className="mt-4 text-sm leading-7 text-slate-300 sm:text-base">
-                {assessmentStatus === 'closed'
-                  ? `GENAIXIS conducted the virtual L1 assessment on ${assessmentDateLabel}. The assessment link was available from ${assessmentWindowLabel}. This record is kept here for reference.`
-                  : assessmentStatus === 'open'
-                    ? `GENAIXIS conducted the virtual L1 assessment on ${assessmentDateLabel}. The link is currently live until ${assessmentCloseTimeLabel}.`
-                    : `GENAIXIS scheduled the virtual L1 assessment on ${assessmentDateLabel}, available from ${assessmentWindowLabel}.`}
+                {`GENAIXIS conducted the virtual L1 assessment on ${assessmentDateLabel}. The assessment link was available from ${assessmentWindowLabel}. This record is kept here for reference.`}
               </p>
               <ul className="mt-5 space-y-2 text-sm text-slate-300">
                 <li className="flex items-start gap-2">
@@ -537,11 +618,7 @@ export default function Careers() {
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-brand-300" />
-                  {assessmentStatus === 'closed'
-                    ? `The assessment window was ${assessmentWindowLabel} on ${assessmentDateLabel}.`
-                    : assessmentStatus === 'open'
-                      ? `The assessment link is live until ${assessmentCloseTimeLabel} today.`
-                      : `The assessment link was scheduled for ${assessmentWindowLabel} on ${assessmentDateLabel}.`}
+                  {`The assessment window was ${assessmentWindowLabel} on ${assessmentDateLabel}.`}
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-brand-300" />
@@ -560,11 +637,7 @@ export default function Careers() {
                 <AssessmentLink
                   className="inline-flex items-center justify-center gap-2 rounded-xl border border-brand-500/25 bg-brand-600/10 px-5 py-3 text-sm font-semibold text-brand-200 transition hover:border-brand-400/40 hover:bg-brand-500/15 hover:text-white"
                 >
-                  {assessmentStatus === 'open'
-                    ? 'Go to Virtual L1 Assessment'
-                    : assessmentStatus === 'closed'
-                      ? `Assessment Closed — ${assessmentCloseTimeLabel}`
-                      : `Opens ${assessmentOpenTimeLabel}`}
+                  Assessment Closed — {assessmentCloseTimeLabel}
                   <ArrowRight className="h-4 w-4 flex-shrink-0" />
                 </AssessmentLink>
               </div>
@@ -572,6 +645,7 @@ export default function Careers() {
           )}
         </div>
       </section>
+      )}
     </main>
   );
 }

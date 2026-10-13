@@ -1,10 +1,10 @@
 export const assessmentUrl = 'https://www.learnstackhub.com/assessment';
 
 const ASSESSMENT_TIMEZONE = 'Asia/Kolkata';
-const ASSESSMENT_DATE = '2026-07-01'; // 01-07-2026
+const ASSESSMENT_DATE = '2026-10-14'; // 14-10-2026
 const ASSESSMENT_OPEN_HOUR = 11;
 const ASSESSMENT_OPEN_MINUTE = 0;
-const ASSESSMENT_CLOSE_HOUR = 15;
+const ASSESSMENT_CLOSE_HOUR = 13;
 const ASSESSMENT_CLOSE_MINUTE = 0;
 
 function getDatePartsInIst(date = new Date()) {
@@ -96,6 +96,12 @@ export function getAssessmentDayLabel(): string {
 
   if (opensOn.year === year && opensOn.month === month && opensOn.day === day) {
     return 'Today';
+  }
+
+  const noonIst = new Date(`${String(year).padStart(4, '0')}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}T12:00:00+05:30`);
+  const tomorrow = getDatePartsInIst(new Date(noonIst.getTime() + 24 * 60 * 60 * 1000));
+  if (opensOn.year === tomorrow.year && opensOn.month === tomorrow.month && opensOn.day === tomorrow.day) {
+    return 'Tomorrow';
   }
 
   if (
