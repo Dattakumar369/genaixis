@@ -64,7 +64,7 @@ const openRoles: CareerRole[] = [
     department: 'Engineering & Product',
     type: 'Internship',
     location: 'Work From Home (WFH)',
-    isOpen: true,
+    isOpen: false,
     positions: '5 positions',
     duration: '3 months',
     eligibility: 'Final year students are also eligible',
@@ -86,7 +86,7 @@ const openRoles: CareerRole[] = [
 ];
 const companyStats = (windowLabel: string, dayLabel: string, status: ReturnType<typeof getAssessmentStatus>) => {
   const stats = [
-    { value: '5', label: 'Intern positions open — WFH' },
+    { value: 'Closed', label: 'Intern applications — WFH program' },
     { value: '3 months', label: 'Internship duration' },
   ];
   if (status === 'upcoming' || status === 'open') {
@@ -165,7 +165,7 @@ export default function Careers() {
     <main>
       <SEO
         title="Careers | GENAIXIS LABS PRIVATE LIMITED"
-        description="GENAIXIS is hiring interns — 5 WFH positions, 3-month internship. Final year students are eligible. Explore open and past roles on our careers page."
+        description="GENAIXIS careers — explore our workplace, hiring process, and role listings including the intern program and past openings."
         keywords="GENAIXIS careers, genaxis jobs, gen aixis careers, GENAIXIS intern hiring, software intern WFH, AI software jobs Hyderabad, SaaS engineering careers"
         canonicalPath="/careers/"
       />
@@ -174,7 +174,7 @@ export default function Careers() {
         tag="Careers"
         title="Build the next generation of"
         titleHighlight="intelligent products"
-        description="GENAIXIS is hiring interns for a 3-month WFH program — 5 positions open. Final year students are also eligible."
+        description="Explore careers at GENAIXIS. The intern and Java Developer applications are currently closed; you can still view role details and contact us for future opportunities."
       >
         <div className="flex w-full max-w-md flex-col items-stretch gap-3 sm:mx-auto sm:max-w-none sm:flex-row sm:flex-wrap sm:items-center sm:justify-center">
           <a
@@ -272,10 +272,10 @@ export default function Careers() {
         <div className="absolute inset-0 grid-pattern opacity-30" />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
-            tag="Open Roles"
-            title="We are hiring"
-            titleHighlight="Interns"
-            description="5 WFH intern positions for a 3-month program. Final year students are also eligible. The Java Developer role remains listed below but applications are currently closed."
+            tag="Roles"
+            title="Intern & Java Developer"
+            titleHighlight="applications closed"
+            description="The Intern and Java Developer roles remain listed for reference. Applications for both positions are currently closed."
           />
 
           <div className="grid gap-5">
@@ -368,7 +368,7 @@ export default function Careers() {
               tag="Future Areas"
               title="Other role areas we may hire for"
               titleHighlight="later"
-              description="These are not open right now. We are currently hiring for the Intern role."
+              description="These are not open right now. We are not actively hiring for any roles at the moment."
             />
 
             <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -539,20 +539,20 @@ export default function Careers() {
             <Sparkles className="h-7 w-7 text-brand-400" />
           </div>
           <SectionHeader
-            tag="Apply Now"
-            title="Ready to join as an"
-            titleHighlight="Intern?"
-            description="Send your resume and college details to our team at contact@genaixis.com. Final year students are welcome to apply for the 3-month WFH intern program."
+            tag="Stay Connected"
+            title="Interested in"
+            titleHighlight="future roles?"
+            description="Intern applications are currently closed. For general career enquiries, reach out to our team at contact@genaixis.com."
           />
           <div className="flex w-full max-w-md flex-col items-stretch gap-3 sm:mx-auto sm:max-w-none sm:flex-row sm:items-center sm:justify-center">
-            <a
-              href={getApplyMailto('Intern')}
-              className="premium-button inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-500 via-brand-600 to-violet-500 px-5 py-3.5 text-sm font-semibold text-white shadow-lg shadow-brand-500/20 transition hover:from-brand-400 hover:to-violet-400 sm:w-auto sm:px-7"
+            <span
+              aria-disabled="true"
+              title="Applications for the Intern role are currently closed"
+              className="inline-flex w-full cursor-not-allowed items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.04] px-5 py-3.5 text-sm font-semibold text-slate-500 opacity-70 sm:w-auto sm:px-7"
             >
-              <span>Apply for Intern</span>
-              <span className="hidden sm:inline">— {applyEmail}</span>
+              <span>Apply for Intern — Closed</span>
               <ArrowRight className="h-4 w-4 flex-shrink-0" />
-            </a>
+            </span>
             <a
               href={`mailto:${applyEmail}?subject=Future%20Career%20Enquiry%20-%20GENAIXIS`}
               className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-brand-500/20 bg-brand-500/10 px-5 py-3.5 text-sm font-semibold text-brand-200 transition hover:border-brand-400/40 hover:bg-brand-500/15 sm:w-auto sm:px-7"
